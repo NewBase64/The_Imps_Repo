@@ -114,9 +114,9 @@ public class playerController : MonoBehaviour, IDamagable
             {
                 Instantiate(hitEffectSpark, hit.point, hitEffectSpark.transform.rotation);
 
-                if (hit.collider.GetComponent<IDamageable>() != null)
+                if (hit.collider.GetComponent<IDamagable>() != null)
                 {
-                    IDamageable isDamageable = hit.collider.GetComponent<IDamageable>();
+                    IDamagable isDamageable = hit.collider.GetComponent<IDamagable>();
                     if(hit.collider is SphereCollider)
                         isDamageable.takeDamage(weaponDamage * 20);
                     else
