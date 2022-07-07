@@ -249,7 +249,7 @@ MonoBehaviour:
   rend: {fileID: 8306866838529219084}
   HP: 5
   shootRate: 0.23
-  bullet: {fileID: 3852671291776426505, guid: 96ced2a6dbb37c448a9159b59cd0b702, type: 3}
+  bullet: {fileID: 6141390098514373550, guid: e35aa1655dfdee249b1681756c06e83f, type: 3}
 --- !u!195 &8306866838529219088
 NavMeshAgent:
   m_ObjectHideFlags: 0

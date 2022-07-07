@@ -357,8 +357,7 @@ MonoBehaviour:
   shootRate: 0.1
   weaponDamage: 1
   hitEffectSpark: {fileID: 2397663995396650288, guid: bd4d252adce46dc488808cd429e93095, type: 3}
-  muzzleFlashEffect: {fileID: 1628442925}
-  muzzleFlashLight: {fileID: 0}
+  muzzleFlash: {fileID: 1628442925}
 --- !u!33 &9080692403465481835
 MeshFilter:
   m_ObjectHideFlags: 0
