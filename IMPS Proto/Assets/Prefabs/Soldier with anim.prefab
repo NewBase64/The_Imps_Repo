@@ -406,9 +406,9 @@ GameObject:
   - component: {fileID: 3433475396463795832}
   - component: {fileID: 3433475396463795833}
   - component: {fileID: 3433475396361572776}
-  - component: {fileID: 3433475396463795812}
-  - component: {fileID: 3433475396463795815}
   - component: {fileID: 3433475396463795814}
+  - component: {fileID: 3433475396463795815}
+  - component: {fileID: 3433475396463795812}
   m_Layer: 7
   m_Name: Soldier with anim
   m_TagString: Untagged
@@ -497,32 +497,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &3433475396463795812
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433475396371063324}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 15
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!135 &3433475396463795815
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433475396371063324}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.23
-  m_Center: {x: 0.13, y: 2.2, z: 0.3}
 --- !u!136 &3433475396463795814
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -537,6 +511,32 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1.25, z: 0}
+--- !u!135 &3433475396463795815
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433475396371063324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.23
+  m_Center: {x: 0.13, y: 2.2, z: 0.3}
+--- !u!135 &3433475396463795812
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433475396371063324}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3433475396371063326
 GameObject:
   m_ObjectHideFlags: 0
