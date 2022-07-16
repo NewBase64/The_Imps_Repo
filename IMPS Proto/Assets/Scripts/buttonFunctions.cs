@@ -16,7 +16,7 @@ public class buttonFunctions : MonoBehaviour
 
     public void givePlayerHP(int amount)
     {
-        gamemanager.instance.playerScript.giveHP(amount);
+        gamemanager.instance.GiveHP(amount);
     }
 
     public void Respawn()

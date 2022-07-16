@@ -10,7 +10,8 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public static gamemanager instance;
     public GameObject player;
     public playerController playerScript;
-
+    public weaponHandler weaponHandler;
+    public playerCamera cameraScript;
 
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
@@ -20,7 +21,7 @@ public class gamemanager : MonoBehaviour
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
 
-
+    public int numGuns;
     public int enemyKillGoal;
     int enemiesKilled;
 
@@ -31,9 +32,19 @@ public class gamemanager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Set the public game manager for other scripts to access to this game manager
         instance = this;
+
+        // Set the public player object to the player object in the scene
         player = GameObject.FindGameObjectWithTag("Player");
+
+        // Set the public player script to the players playerController
         playerScript = player.GetComponent<playerController>();
+
+        // Set the Weapons Handler script to the players WeaponsHandler
+        weaponHandler = player.GetComponent<weaponHandler>();
+
+        cameraScript = Camera.main.GetComponent<playerCamera>();
     }
 
     // Update is called once per frame
@@ -41,13 +52,12 @@ public class gamemanager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel") && !gameOver)
         {
-
             if(!paused && !menuCurrentlyOpen)
             {
                 paused = true;
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
-                lockCursorPause();
+                ConLockCursor();
             }
             else
             {
@@ -61,7 +71,7 @@ public class gamemanager : MonoBehaviour
         paused = false;
         menuCurrentlyOpen.SetActive(false);
         menuCurrentlyOpen = null;
-        unlockCursorUnpause();
+        LockCursor();
     }
 
     public void restart()
@@ -69,7 +79,7 @@ public class gamemanager : MonoBehaviour
         gameOver = false;
         menuCurrentlyOpen.SetActive(false); ;
         menuCurrentlyOpen = null;
-        unlockCursorUnpause();
+        LockCursor();
     }
 
     public void playerDead()
@@ -77,7 +87,7 @@ public class gamemanager : MonoBehaviour
         gameOver = true;
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
-        lockCursorPause();
+        ConLockCursor();
     }
     public void checkEnemyKills()
     {
@@ -90,18 +100,23 @@ public class gamemanager : MonoBehaviour
             menuCurrentlyOpen = winGameMenu;
             menuCurrentlyOpen.SetActive(true);
             gameOver = true;
-            lockCursorPause();
+            ConLockCursor();
         }
     }
 
-    void lockCursorPause()
+    public void GiveHP(int health)
+    {
+        playerScript.GiveHP(health);
+    }
+
+    public void ConLockCursor()
     {
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
 
-    void unlockCursorUnpause()
+    public void LockCursor()
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.Locked;

@@ -19,9 +19,9 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IDamagable>() != null)
+        if (other.GetComponent<IDamageable>() != null)
         {
-            IDamagable isDamageable = other.GetComponent<IDamagable>();
+            IDamageable isDamageable = other.GetComponent<IDamageable>();
             isDamageable.takeDamage(damage);
         }
 

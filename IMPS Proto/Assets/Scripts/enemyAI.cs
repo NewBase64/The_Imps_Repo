@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 
 
-public class enemyAI : MonoBehaviour, IDamagable
+public class enemyAI : MonoBehaviour, IDamageable
 {
 
     [Header("Components")]
