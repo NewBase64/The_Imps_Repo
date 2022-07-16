@@ -187,7 +187,7 @@ public class weaponHandler : MonoBehaviour
         wepFlash = pistolFlash;
         weapon.SetActive(true);
         magCap = 8;
-        damage = 4;
+        damage = 2;
         fireRate = 0.1f;
         reloadTime = 1;
         semiTautoF = true;
