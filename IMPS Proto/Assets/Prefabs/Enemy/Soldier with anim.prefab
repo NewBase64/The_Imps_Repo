@@ -404,18 +404,18 @@ GameObject:
   m_Component:
   - component: {fileID: 3433475396370841212}
   - component: {fileID: 3433475396463795832}
-  - component: {fileID: 3433475396463795833}
   - component: {fileID: 3433475396361572776}
   - component: {fileID: 3433475396463795814}
   - component: {fileID: 3433475396463795815}
   - component: {fileID: 3433475396463795812}
+  - component: {fileID: 3433475396463795833}
   m_Layer: 7
   m_Name: Soldier with anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3433475396370841212
 Transform:
   m_ObjectHideFlags: 0
@@ -425,8 +425,8 @@ Transform:
   m_GameObject: {fileID: 3433475396371063324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -64.28285, y: 0.19, z: -4.0305777}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3433475396370841160}
   - {fileID: 3433475396370841210}
@@ -452,31 +452,9 @@ MonoBehaviour:
   viewAngle: 25
   playerFaceSpeed: 10
   roamRadius: 3
-  shootRate: 0.23
-  bullet: {fileID: 3852671291776426505, guid: 96ced2a6dbb37c448a9159b59cd0b702, type: 3}
+  shootRate: 1
+  bullet: {fileID: 6141390098514373550, guid: e35aa1655dfdee249b1681756c06e83f, type: 3}
   shootPos: {fileID: 7762394887864114334}
---- !u!195 &3433475396463795833
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433475396371063324}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 8
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 8
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!95 &3433475396361572776
 Animator:
   serializedVersion: 4
@@ -535,8 +513,30 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 9
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!195 &3433475396463795833
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433475396371063324}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 8
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 8
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 0
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3433475396371063326
 GameObject:
   m_ObjectHideFlags: 0

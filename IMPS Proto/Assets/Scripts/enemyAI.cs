@@ -40,7 +40,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         startignPos = transform.position;
         StoppingDisOrig = agent.stoppingDistance;
-        //gamemanager.instance.updateEnemyNumber();
+        gamemanager.instance.updateEnemyNumber();
     }
 
 
@@ -175,7 +175,7 @@ public class enemyAI : MonoBehaviour, IDamageable
         if (HP <= 0)
         {
 
-            //gamemanager.instance.checkEnemyKills();
+            gamemanager.instance.checkEnemyKills();
 
 
             agent.enabled = false;

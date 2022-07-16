@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour, IDamageable
 {
     [Header("----Components----")]
     [SerializeField] CharacterController controller;
@@ -13,6 +13,9 @@ public class playerController : MonoBehaviour
     [Range(1, 50)][SerializeField] float jumpHeight;
     [Range(1, 100)][SerializeField] float gravityValue;
     [Range(1, 10)][SerializeField] int numjumps;
+    [Header("----Physics----")]
+    public Vector3 pushback = Vector3.zero;
+    [SerializeField] int pushResolve;
 
     float playerSpeedOrig;
     int HPOrig;
@@ -36,6 +39,8 @@ public class playerController : MonoBehaviour
     {
         if (!gamemanager.instance.paused)
         {
+            pushback = Vector3.Lerp(pushback, Vector3.zero, Time.deltaTime * pushResolve);
+
             movePlayer();
         }
     }
@@ -58,7 +63,7 @@ public class playerController : MonoBehaviour
     {
         // Add gravity
         playerVelocity.y -= gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+        controller.Move((playerVelocity + pushback) * Time.deltaTime);
 
         // Change the height position of the player
         if (Input.GetButtonDown("Jump") && (timesJumped < numjumps))
@@ -113,10 +118,39 @@ public class playerController : MonoBehaviour
         {
             HP += health;
         }
+
+        updatePlayerHp();
     }
 
     public void respawn()
     {
+        HP = HPOrig;
+        controller.enabled = false;
+        transform.position = playerSpawnPosition;
+        controller.enabled = true;
+        updatePlayerHp();
+        pushback = Vector3.zero;
+    }
 
+    public void takeDamage(int dmg)
+    {
+        HP -= dmg;
+        updatePlayerHp();
+        StartCoroutine(damageFlash());
+        if (HP <= 0)
+        {
+            gamemanager.instance.playerDead();
+        }
+    }
+    public void updatePlayerHp()
+    {
+        gamemanager.instance.HPBar.fillAmount = (float)HP / (float)HPOrig;
+    }
+
+    IEnumerator damageFlash()
+    {
+        gamemanager.instance.playerDamageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        gamemanager.instance.playerDamageFlash.SetActive(false);
     }
 }
