@@ -39,7 +39,7 @@ public class selectionManager : MonoBehaviour
                                 handler.Rifle();
                                 break;
                         }
-                        handler.Armed = true;
+                        //handler.Armed = true;
                     }
                 }
                 else { Pickup = false; }
