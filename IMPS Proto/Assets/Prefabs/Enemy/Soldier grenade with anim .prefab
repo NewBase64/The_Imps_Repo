@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 893600fd47db94c44a2cde07936f2dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
+  agent: {fileID: 4374722493511289955}
   rend: {fileID: 0}
   anim: {fileID: 0}
   HP: 20
@@ -251,10 +251,10 @@ MonoBehaviour:
   roamRadius: 3
   shootRate: 1
   bullet: {fileID: 6141390098514373550, guid: e35aa1655dfdee249b1681756c06e83f, type: 3}
-  shootPos: {fileID: 0}
+  shootPos: {fileID: 8694643581678292612}
   grenadeTossRate: 2
   grenadeCooldownTime: 6
-  grenade: {fileID: 0}
+  grenade: {fileID: 2094192647477228935, guid: 046baa045daf60d44b4ad2a598eb1810, type: 3}
   assignedRoom: 0
 --- !u!195 &4374722493511289955
 NavMeshAgent:

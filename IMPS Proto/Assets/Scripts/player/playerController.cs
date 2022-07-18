@@ -6,6 +6,7 @@ public class playerController : MonoBehaviour, IDamageable
 {
     [Header("----Components----")]
     [SerializeField] CharacterController controller;
+
     [Header("----Player Attributes----")]
     [Range(1, 200)][SerializeField] public int HP;
     [Range(1, 50)][SerializeField] float playerSpeed;
@@ -13,6 +14,7 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(1, 50)][SerializeField] float jumpHeight;
     [Range(1, 100)][SerializeField] float gravityValue;
     [Range(1, 10)][SerializeField] int numjumps;
+
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
     [SerializeField] int pushResolve;
@@ -49,7 +51,9 @@ public class playerController : MonoBehaviour, IDamageable
 
     private void movePlayer()
     {
+
         // Get the inputs from unity's input system
+
         move = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical"));
 
         // Add our move vector into the character controller move
@@ -59,8 +63,10 @@ public class playerController : MonoBehaviour, IDamageable
         Jump();
 
         // Sprint if needed
-        Sprint();    
-    } 
+        Sprint();
+        pushback = Vector3.zero;
+
+    }
     void Jump()
     {
         // Add gravity
@@ -177,5 +183,6 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeedOrig = playerSpeedOrig2;
         playerSpeed = playerSpeedOrig;
         slowed = false;
+
     }
 }

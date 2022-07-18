@@ -374,11 +374,13 @@
 "Assets/Scripts/Main/RoomAssigner.cs"
 "Assets/Scripts/Main/RoomManager.cs"
 "Assets/Scripts/Other/Cubism.cs"
+"Assets/Scripts/Other/explosion.cs"
 "Assets/Scripts/player/camera.cs"
 "Assets/Scripts/player/Camera/playerCamera.cs"
 "Assets/Scripts/player/Camera/selection/selectionManager.cs"
 "Assets/Scripts/player/playerController.cs"
 "Assets/Scripts/player/weaponHandler.cs"
+"Assets/Scripts/Weapons/grenade.cs"
 "Assets/Scripts/Weapons/weaponPickup.cs"
 -langversion:9.0
 
