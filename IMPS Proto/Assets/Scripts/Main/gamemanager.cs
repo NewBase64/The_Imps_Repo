@@ -8,25 +8,27 @@ using TMPro;
 public class gamemanager : MonoBehaviour
 {
     [HideInInspector] public static gamemanager instance;
-    public GameObject player;
-    public playerController playerScript;
-    public weaponHandler weaponHandler;
-    public playerCamera cameraScript;
+    [HideInInspector] public GameObject player;
+    [HideInInspector] public playerController playerScript;
+    [HideInInspector] public weaponHandler weaponHandler;
+    [HideInInspector] public playerCamera cameraScript;
 
+    [Header("----Menus----")]
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
     public GameObject playerDamageFlash;
     public GameObject winGameMenu;
+    [Header("----Stuff----")]
     public Image HPBar;
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
-
+    [Header("----Numbers----")]
     public int numGuns;
     public int enemyKillGoal;
     int enemiesKilled;
 
-    public bool paused = false;
-    public GameObject menuCurrentlyOpen;
+    [HideInInspector] public bool paused = false;
+    [HideInInspector] public GameObject menuCurrentlyOpen;
     [HideInInspector] public bool gameOver;
 
     // Start is called before the first frame update

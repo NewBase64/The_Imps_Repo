@@ -116,7 +116,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
 
         float angle = Vector3.Angle(playerDir, transform.forward);
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
 
 

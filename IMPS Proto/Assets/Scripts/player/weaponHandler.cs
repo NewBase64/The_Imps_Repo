@@ -25,6 +25,11 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject pistolFlash;
     [SerializeField] GameObject rifleFlash;
     [SerializeField] GameObject wepFlash;
+    [Header("----Crosshairs----")]
+    public GameObject NoCrosshair;
+    public GameObject Crosshair1;
+    public GameObject Crosshair2;
+    public GameObject Crosshair3;
     [Header("----Testing----")]
     public bool Armed;
 
@@ -51,16 +56,6 @@ public class weaponHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetButtonDown("Pickup"))
-        //{
-        //    if (GUN != 2)
-        //    {
-        //        Pickup(2);
-        //    }
-        //    else
-        //        Pickup(1);
-        //}
-
         if (semiTautoF)
         {
             if (Input.GetMouseButtonDown(0) && canShoot)
@@ -170,6 +165,8 @@ public class weaponHandler : MonoBehaviour
 
     public void Hands()
     {
+        weapon.SetActive(false);
+        NoCrosshair.SetActive(false);
         magCap = 0;
         damage = 0;
         fireRate = 0.5f;
@@ -179,6 +176,7 @@ public class weaponHandler : MonoBehaviour
     }
     public void Pistol()
     {
+        Crosshair1.SetActive(false);
         weapon.SetActive(false);
         wepFlash.SetActive(false);
         GUN = 1;
@@ -195,6 +193,7 @@ public class weaponHandler : MonoBehaviour
     }
     public void Rifle()
     {
+        Crosshair2.SetActive(false);
         weapon.SetActive(false);
         wepFlash.SetActive(false);
         GUN = 2;
