@@ -29,6 +29,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject shootPos;
+
     bool canShoot;
     bool playerInRange;
     Vector3 playerDir;
@@ -125,15 +126,9 @@ public class enemyAI : MonoBehaviour, IDamageable
             Debug.DrawRay(transform.position, gamemanager.instance.player.transform.position - transform.position);
 
             if (hit.collider.CompareTag("Player") && canShoot && angle <= viewAngle)
-            {
                 StartCoroutine(shoot());
 
-            }
-
         }
-
-
-
 
 
     }
@@ -213,9 +208,6 @@ public class enemyAI : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(shootRate);
         canShoot = true;
     }
-
-
-
 
 
 }
