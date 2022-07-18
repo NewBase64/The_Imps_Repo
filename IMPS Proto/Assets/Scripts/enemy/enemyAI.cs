@@ -35,12 +35,13 @@ public class enemyAI : MonoBehaviour, IDamageable
     Vector3 startignPos;
     float StoppingDisOrig;
 
+    [SerializeField] int assignedRoom;
 
     void Start()
     {
         startignPos = transform.position;
         StoppingDisOrig = agent.stoppingDistance;
-        gamemanager.instance.updateEnemyNumber();
+        RoomManager.instance.updateEnemyNumberOnRoom(assignedRoom);
     }
 
 
@@ -175,7 +176,7 @@ public class enemyAI : MonoBehaviour, IDamageable
         if (HP <= 0)
         {
 
-            gamemanager.instance.checkEnemyKills();
+            RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
 
 
             agent.enabled = false;

@@ -28,6 +28,8 @@ public class playerController : MonoBehaviour, IDamageable
     private Vector3 playerVelocity;
     Vector3 move;
 
+    public bool slowed = false;
+
     void Start()
     {
         playerSpeedOrig = playerSpeed;
@@ -152,5 +154,28 @@ public class playerController : MonoBehaviour, IDamageable
         gamemanager.instance.playerDamageFlash.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gamemanager.instance.playerDamageFlash.SetActive(false);
+    }
+
+    // Slows the player for a certain amount time by a certain percentage
+    public IEnumerator slowPlayer(int time, float slowMultiplier = 0)
+    {
+        float playerSpeedOrig2 = playerSpeedOrig;
+
+        playerSpeedOrig *= slowMultiplier;
+        if (isSprinting)
+        {
+            playerSpeed *= slowMultiplier;
+        }
+        else
+        {
+            playerSpeed = playerSpeedOrig;
+        }
+        slowed = true;
+
+        yield return new WaitForSeconds(time);
+
+        playerSpeedOrig = playerSpeedOrig2;
+        playerSpeed = playerSpeedOrig;
+        slowed = false;
     }
 }
