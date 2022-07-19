@@ -42,6 +42,8 @@ public class weaponHandler : MonoBehaviour
     bool lazer = false;
     [SerializeField] AudioClip[] lazershot;
     [Range(0, 1)][SerializeField] float lazerShotVol;
+    [SerializeField] AudioClip[] outofAmmo;
+    [Range(0, 1)][SerializeField] float outofammoVol;
     //[Header("----Testing----")]
     //public bool Armed;
 
@@ -166,6 +168,10 @@ public class weaponHandler : MonoBehaviour
 
             yield return new WaitForSeconds(fireRate);
             canShoot = true;
+        }
+        else
+        {
+            audi.PlayOneShot(outofAmmo[Random.Range(0, outofAmmo.Length)], outofammoVol);
         }
     }
 

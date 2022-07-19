@@ -26,6 +26,8 @@ public class playerController : MonoBehaviour, IDamageable
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
     [Range(0, 1)][SerializeField] float PlayerhurtVol;
+    [SerializeField] AudioClip[] jumpsound;
+    [Range(0, 1)][SerializeField] float jumpVol;
 
     float playerSpeedOrig;
     int HPOrig;
@@ -85,6 +87,7 @@ public class playerController : MonoBehaviour, IDamageable
         // Change the height position of the player
         if (Input.GetButtonDown("Jump") && (timesJumped < numjumps))
         {
+            audi.PlayOneShot(jumpsound[Random.Range(0, jumpsound.Length)], jumpVol);
             playerVelocity.y += jumpHeight;
             timesJumped++;
         }
