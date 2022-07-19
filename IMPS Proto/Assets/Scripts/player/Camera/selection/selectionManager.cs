@@ -23,23 +23,13 @@ public class selectionManager : MonoBehaviour
             if (selection.CompareTag("Highlightable"))
             {             
                 GameObject obj = selection.gameObject;
-                var pick = obj.GetComponent<weaponPickup>();
+                //var pick = obj.GetComponent<weaponPickup>();
                 if (obj.GetComponent<weaponPickup>())
                 {
                     Pickup = true;
                     if (Input.GetButtonDown("Pickup"))
                     {
-                        int GUN = obj.GetComponent<weaponPickup>().gun;
-                        switch (GUN)
-                        {
-                            case 1:
-                                handler.Pistol();
-                                break;
-                            case 2:
-                                handler.Rifle();
-                                break;
-                        }
-                        //handler.Armed = true;
+                         //gamemanager.instance.weaponHandler.AddGun = obj.stats;                     
                     }
                 }
                 else { Pickup = false; }

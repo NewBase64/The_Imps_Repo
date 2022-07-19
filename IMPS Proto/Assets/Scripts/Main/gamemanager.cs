@@ -132,6 +132,10 @@ public class gamemanager : MonoBehaviour
     {
         enemyKillGoal++;
         enemyTotal.text = enemyKillGoal.ToString("F0");
+    }
+
+    public void ChangeCrosshair(int crossnum)
+    {
 
     }
 }

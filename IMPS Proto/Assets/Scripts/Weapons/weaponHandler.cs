@@ -16,7 +16,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject hands;
     [SerializeField] GameObject pistol;
     [SerializeField] GameObject rifle;
-    [SerializeField] GameObject weapon;
+    [SerializeField] GameObject model;
     [Header("----WepEffects----")]
     [SerializeField] GameObject pistolEffect;
     [SerializeField] GameObject rifleEffect;
@@ -60,11 +60,10 @@ public class weaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapon = hands;
+        model = hands;
         wepFlash = pistolFlash;
         wepBarrel = pistolBarrel;
         CurrCrosshair = NoCrosshair;
-        Hands();
         pistolStartPos = new Vector3(-0.488f, 0.735f, 0.705f);
         rifleStartPos = new Vector3(0.044f, 1.139f, 0.154f);
         pistolAimPos = new Vector3(-0.566f, 0.794f, 0.705f);
@@ -101,10 +100,9 @@ public class weaponHandler : MonoBehaviour
 
     public void unArm()
     {
-        weapon.SetActive(false);
+        model.SetActive(false);
         canShoot = false;
-        weapon = hands;
-        Hands();
+        model = hands;
     }
 
     void aim()
@@ -196,58 +194,15 @@ public class weaponHandler : MonoBehaviour
         reloading = false;
     }
 
-    public void Hands()
+    void AddGun(weapon stats)
     {
-        lazer = false;
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = NoCrosshair;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        magCap = 0;
-        damage = 0;
-        fireRate = 0.5f;
-        reloadTime = 0;
-        semiTautoF = false;
-        ammo = magCap;
-    }
-    public void Pistol()
-    {
-        lazer = false;
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = Crosshair1;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        wepFlash.SetActive(false);
-        GUN = 1;
-        weapon = pistol;
-        wepEffect = pistolEffect;
-        wepFlash = pistolFlash;
-        weapon.SetActive(true);
-        magCap = 8;
-        damage = 2;
-        fireRate = 0.1f;
-        reloadTime = 1;
-        semiTautoF = true;
-        ammo = magCap;
-    }
-    public void Rifle()
-    {
-        lazer = true;
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = Crosshair2;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        wepFlash.SetActive(false);
-        GUN = 2;
-        weapon = rifle;
-        wepEffect = rifleEffect;
-        wepFlash = rifleFlash;
-        weapon.SetActive(true);
-        magCap = 32;
-        damage = 1;
-        fireRate = 0.1f;
-        reloadTime = 1;
-        semiTautoF = false;
-        ammo = magCap;
+        magCap = stats.magCap;
+        damage = stats.damage;
+        fireRate = stats.fireRate;
+        reloadTime = stats.reloadTime;
+        semiTautoF = stats.semiTautoF;
+        model = stats.model;
+        wepEffect = stats.wepEffect;
+        gamemanager.instance.ChangeCrosshair(stats.Crosshair);
     }
 }

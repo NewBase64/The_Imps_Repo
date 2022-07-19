@@ -208,6 +208,8 @@ public class playerController : MonoBehaviour, IDamageable
 
             if (isSprinting)
                 yield return new WaitForSeconds(0.3f);
+            else if (slowed)
+                yield return new WaitForSeconds(0.5f);
             else
                 yield return new WaitForSeconds(0.4f);
             footstepplaying = false;

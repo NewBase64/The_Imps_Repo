@@ -380,6 +380,7 @@
 "Assets/Scripts/player/Camera/selection/selectionManager.cs"
 "Assets/Scripts/player/playerController.cs"
 "Assets/Scripts/Weapons/grenade.cs"
+"Assets/Scripts/Weapons/weapon.cs"
 "Assets/Scripts/Weapons/weaponHandler.cs"
 "Assets/Scripts/Weapons/weaponPickup.cs"
 -langversion:9.0
