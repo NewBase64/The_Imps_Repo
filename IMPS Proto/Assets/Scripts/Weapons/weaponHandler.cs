@@ -44,6 +44,8 @@ public class weaponHandler : MonoBehaviour
     [Range(0, 1)][SerializeField] float lazerShotVol;
     [SerializeField] AudioClip[] outofAmmo;
     [Range(0, 1)][SerializeField] float outofammoVol;
+    [SerializeField] AudioClip[] reloadSound;
+    [Range(0, 1)][SerializeField] float reloadVol;
     //[Header("----Testing----")]
     //public bool Armed;
 
@@ -90,6 +92,7 @@ public class weaponHandler : MonoBehaviour
             }
             if (Input.GetButtonDown("Reload") && !reloading)
             {
+                audi.PlayOneShot(reloadSound[Random.Range(0, reloadSound.Length)], reloadVol);
                 StartCoroutine(Reload());
             }
             aim();
