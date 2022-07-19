@@ -27,8 +27,11 @@ public class RoomManager : MonoBehaviour
 
     public void openDoor()
     {
-        GameObject door = GameObject.Find("Door" + playerRoom);
-        door.SetActive(false);
+        if (GameObject.Find("Door" + playerRoom))
+        {
+            GameObject door = GameObject.Find("Door" + playerRoom);
+            door.SetActive(false);
+        }
     }
 
     public void checkEnemiesKilledOnRoom(int room)
