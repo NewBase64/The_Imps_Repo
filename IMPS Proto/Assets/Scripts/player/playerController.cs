@@ -19,6 +19,14 @@ public class playerController : MonoBehaviour, IDamageable
     public Vector3 pushback = Vector3.zero;
     [SerializeField] int pushResolve;
 
+    [Header("----Audio----")]
+    public AudioSource audi;
+    [SerializeField] AudioClip[] footsep;
+    [Range(0, 1)][SerializeField] float footstepVolume;
+    bool footstepplaying = false;
+    [SerializeField] AudioClip[] playerHurt;
+    [Range(0, 1)][SerializeField] float PlayerhurtVol;
+
     float playerSpeedOrig;
     int HPOrig;
     Vector3 playerSpawnPosition;
@@ -51,13 +59,14 @@ public class playerController : MonoBehaviour, IDamageable
 
     private void movePlayer()
     {
-
         // Get the inputs from unity's input system
-
         move = (transform.right * Input.GetAxis("Horizontal")) + (transform.forward * Input.GetAxis("Vertical"));
 
         // Add our move vector into the character controller move
         controller.Move(move * playerSpeed * Time.deltaTime);
+
+        // play footstep audio
+        StartCoroutine(playFootsteps());
 
         // Jump if needed
         Jump();
@@ -143,6 +152,7 @@ public class playerController : MonoBehaviour, IDamageable
     public void takeDamage(int dmg)
     {
         HP -= dmg;
+        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
         updatePlayerHp();
         StartCoroutine(damageFlash());
         if (HP <= 0)
@@ -184,5 +194,20 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeed = playerSpeedOrig;
         slowed = false;
 
+    }
+
+    IEnumerator playFootsteps()
+    {
+        if (controller.isGrounded && move.normalized.magnitude > 0 && !footstepplaying)
+        {
+            footstepplaying = true;
+            audi.PlayOneShot(footsep[Random.Range(0, footsep.Length)], footstepVolume);
+
+            if (isSprinting)
+                yield return new WaitForSeconds(0.3f);
+            else
+                yield return new WaitForSeconds(0.4f);
+            footstepplaying = false;
+        }
     }
 }

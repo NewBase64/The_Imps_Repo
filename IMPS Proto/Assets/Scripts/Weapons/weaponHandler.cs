@@ -35,6 +35,13 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject Crosshair1;
     [SerializeField] GameObject Crosshair2;
     [SerializeField] GameObject Crosshair3;
+    [Header("----Audio----")]
+    public AudioSource audi;
+    [SerializeField] AudioClip[] gunshot;
+    [Range(0, 1)][SerializeField] float gunShotVol;
+    bool lazer = false;
+    [SerializeField] AudioClip[] lazershot;
+    [Range(0, 1)][SerializeField] float lazerShotVol;
     //[Header("----Testing----")]
     //public bool Armed;
 
@@ -134,6 +141,11 @@ public class weaponHandler : MonoBehaviour
             canShoot = false;
             ammo--;
 
+            if(lazer)
+                audi.PlayOneShot(lazershot[Random.Range(0, lazershot.Length)], lazerShotVol);
+            else
+                audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunShotVol);
+
             RaycastHit hit;
 
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit))
@@ -144,7 +156,7 @@ public class weaponHandler : MonoBehaviour
                 {
                     IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                     if (hit.collider is SphereCollider)
-                        damageable.takeDamage(damage * 2);
+                        damageable.takeDamage(damage * 100);
                     else
                         damageable.takeDamage(damage);
                 }
@@ -177,6 +189,7 @@ public class weaponHandler : MonoBehaviour
 
     public void Hands()
     {
+        lazer = false;
         CurrCrosshair.SetActive(false);
         CurrCrosshair = NoCrosshair;
         CurrCrosshair.SetActive(true);
@@ -190,6 +203,7 @@ public class weaponHandler : MonoBehaviour
     }
     public void Pistol()
     {
+        lazer = false;
         CurrCrosshair.SetActive(false);
         CurrCrosshair = Crosshair1;
         CurrCrosshair.SetActive(true);
@@ -209,6 +223,7 @@ public class weaponHandler : MonoBehaviour
     }
     public void Rifle()
     {
+        lazer = true;
         CurrCrosshair.SetActive(false);
         CurrCrosshair = Crosshair2;
         CurrCrosshair.SetActive(true);
