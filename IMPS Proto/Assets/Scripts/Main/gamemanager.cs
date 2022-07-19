@@ -57,6 +57,7 @@ public class gamemanager : MonoBehaviour
             if(!paused && !menuCurrentlyOpen)
             {
                 paused = true;
+                weaponHandler.CurrCrosshair.SetActive(false);
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
@@ -70,6 +71,7 @@ public class gamemanager : MonoBehaviour
 
     public void resume()
     {
+        weaponHandler.CurrCrosshair.SetActive(true);
         paused = false;
         menuCurrentlyOpen.SetActive(false);
         menuCurrentlyOpen = null;
@@ -87,6 +89,7 @@ public class gamemanager : MonoBehaviour
     public void playerDead()
     {
         gameOver = true;
+        weaponHandler.CurrCrosshair.SetActive(false);
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         ConLockCursor();

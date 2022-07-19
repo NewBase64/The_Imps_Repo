@@ -30,7 +30,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject rifleBarrel;
     [SerializeField] GameObject wepBarrel;
     [Header("----Crosshairs----")]
-    [SerializeField] GameObject CurrCrosshair;
+    [SerializeField] public GameObject CurrCrosshair;
     [SerializeField] GameObject NoCrosshair;
     [SerializeField] GameObject Crosshair1;
     [SerializeField] GameObject Crosshair2;

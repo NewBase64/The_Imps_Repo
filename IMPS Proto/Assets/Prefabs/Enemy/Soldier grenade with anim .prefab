@@ -52,7 +52,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e7b11d6712111440834cb098dd5415a, type: 2}
+  - {fileID: 2100000, guid: 5700d3953ee99e948aad0fa90c079127, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 4374722493511289955}
-  rend: {fileID: 0}
-  anim: {fileID: 0}
+  rend: {fileID: 4374722493610425714}
+  anim: {fileID: 4374722493614556082}
   HP: 20
   viewAngle: 25
   playerFaceSpeed: 10
