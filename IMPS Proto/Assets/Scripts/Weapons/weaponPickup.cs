@@ -11,6 +11,11 @@ public class weaponPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (stats == null)
+        {
+            stats = gamemanager.instance.RandomWeapon();
+        }
+
         mod = stats.model;
         Instantiate(mod, transform.position, transform.rotation);
         mod.SetActive(true);

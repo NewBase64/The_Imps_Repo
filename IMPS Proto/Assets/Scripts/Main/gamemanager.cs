@@ -10,6 +10,7 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public GameObject player;
     [HideInInspector] public playerController playerScript;
     [HideInInspector] public weaponHandler weaponHandler;
+    public List<weapon> weapons;
     [HideInInspector] public playerCamera cameraScript;
 
     [Header("----Menus----")]
@@ -165,6 +166,10 @@ public class gamemanager : MonoBehaviour
                 CurrCrosshair.SetActive(true);
                 break;
         }
-
+    }
+    public weapon RandomWeapon()
+    {
+        int index = Random.Range(0, weapons.Count);
+        return weapons[index];
     }
 }
