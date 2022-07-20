@@ -5,15 +5,31 @@ using UnityEngine;
 public class weaponPickup : MonoBehaviour
 {
     public weapon stats;
+    public GameObject mod;
+    [SerializeField] GameObject prompt;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(stats.model, transform.position, transform.rotation);
+        mod = stats.model;
+        Instantiate(mod, transform.position, transform.rotation);
+        mod.SetActive(true);
+        prompt.SetActive(false);
     }
 
-    public void pickedUp()
+    public void PickMeUp()
     {
-        Destroy(this);
+        prompt.SetActive(true);
+    }
+
+    public void PutMeDown()
+    {
+        prompt.SetActive(false);
+    }
+
+    public void PickedUp()
+    {
+        mod.SetActive(false);
+        Destroy(this.gameObject);
     }
 }

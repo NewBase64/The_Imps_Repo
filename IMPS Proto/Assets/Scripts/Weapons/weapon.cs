@@ -7,7 +7,9 @@ using UnityEngine;
 public class weapon : ScriptableObject
 {
     [Header("----WepStats----")]
+    [SerializeField] public int ammo;
     [SerializeField] public int magCap;
+    [SerializeField] public int mags;
     [SerializeField] public int damage;
     [SerializeField] public float fireRate;
     [SerializeField] public float reloadTime;

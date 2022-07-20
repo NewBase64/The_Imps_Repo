@@ -28,19 +28,24 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
     [Range(0, 1)][SerializeField] float jumpVol;
-
+   
+    //movement vars
     float playerSpeedOrig;
     int HPOrig;
     Vector3 playerSpawnPosition;
-
-    bool isSprinting = false;
-    bool invulnerable = false;
-
     int timesJumped = 0;
     private Vector3 playerVelocity;
     Vector3 move;
 
+    //bools
+    bool isSprinting = false;
     public bool slowed = false;
+    bool invulnerable = false;
+
+    // weapon pickup vars
+    [SerializeField] bool pickingUp;
+    [SerializeField] weapon stats;
+    [SerializeField] GameObject obj;
 
     void Start()
     {
@@ -56,6 +61,47 @@ public class playerController : MonoBehaviour, IDamageable
             pushback = Vector3.Lerp(pushback, Vector3.zero, Time.deltaTime * pushResolve);
 
             movePlayer();
+            picking();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            obj = other.gameObject;
+            obj.GetComponent<weaponPickup>().PickMeUp();
+            stats = obj.GetComponent<weaponPickup>().stats;
+            pickingUp = true;
+        }
+    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.CompareTag("Pickup"))
+    //    {
+    //        obj = other.gameObject;
+    //        obj.GetComponent<weaponPickup>().PickMeUp();
+    //        stats = obj.GetComponent<weaponPickup>().stats;
+    //        pickingUp = true;
+    //        picking();
+    //    }
+    //}
+    private void picking()
+    {
+        if (Input.GetButtonDown("Pickup"))
+        {
+            gamemanager.instance.weaponHandler.AddGun(stats);
+            obj.GetComponent<weaponPickup>().PickedUp();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            pickingUp = false;
+            stats = null;
+            obj.GetComponent<weaponPickup>().PutMeDown();
+            obj = null;
         }
     }
 

@@ -5,36 +5,23 @@ using UnityEngine;
 public class weaponHandler : MonoBehaviour
 {
     [Header("----WepStats----")]
+    [SerializeField] bool GUN = false;
     [SerializeField] int ammo;
     [SerializeField] int magCap;
+    [SerializeField] int mags;
     [SerializeField] int damage;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
     [SerializeField] bool semiTautoF;
     [Header("----Weapon----")]
-    [SerializeField] int GUN;
-    [SerializeField] GameObject hands;
-    [SerializeField] GameObject pistol;
-    [SerializeField] GameObject rifle;
+    [SerializeField] GameObject noModel;   
     [SerializeField] GameObject model;
-    [Header("----WepEffects----")]
-    [SerializeField] GameObject pistolEffect;
-    [SerializeField] GameObject rifleEffect;
     [SerializeField] GameObject wepEffect;
-    [Header("----WepMuzFlash----")]
-    [SerializeField] GameObject pistolFlash;
-    [SerializeField] GameObject rifleFlash;
-    [SerializeField] GameObject wepFlash;
-    [Header("----Wepbarrels----")]
-    [SerializeField] GameObject pistolBarrel;
-    [SerializeField] GameObject rifleBarrel;
-    [SerializeField] GameObject wepBarrel;
-    [Header("----Crosshairs----")]
-    [SerializeField] public GameObject CurrCrosshair;
-    [SerializeField] GameObject NoCrosshair;
-    [SerializeField] GameObject Crosshair1;
-    [SerializeField] GameObject Crosshair2;
-    [SerializeField] GameObject Crosshair3;
+    //[SerializeField] GameObject wepFlash;    
+    //[SerializeField] GameObject wepBarrel;
+    weapon primary;
+    weapon secondary;
+    bool prim;
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] gunshot;
@@ -49,25 +36,13 @@ public class weaponHandler : MonoBehaviour
     //[Header("----Testing----")]
     //public bool Armed;
 
-    Vector3 pistolStartPos;
-    Vector3 rifleStartPos;
-    Vector3 pistolAimPos;
-    Vector3 rifleAimPos;
-
     bool canShoot = true;
     bool reloading = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        model = hands;
-        wepFlash = pistolFlash;
-        wepBarrel = pistolBarrel;
-        CurrCrosshair = NoCrosshair;
-        pistolStartPos = new Vector3(-0.488f, 0.735f, 0.705f);
-        rifleStartPos = new Vector3(0.044f, 1.139f, 0.154f);
-        pistolAimPos = new Vector3(-0.566f, 0.794f, 0.705f);
-        rifleAimPos = new Vector3(-0.033f, 1.197f, 0.154f);
+        model = noModel;
     }
 
     // Update is called once per frame
@@ -94,48 +69,53 @@ public class weaponHandler : MonoBehaviour
                 audi.PlayOneShot(reloadSound[Random.Range(0, reloadSound.Length)], reloadVol);
                 StartCoroutine(Reload());
             }
-            aim();
+            if (Input.GetButtonDown("Mouse ScrollWheel"))
+            {
+                prim = !prim;
+                updateGunStats();
+            }
+            //aim();
         }
     }
 
     public void unArm()
     {
-        model.SetActive(false);
         canShoot = false;
-        model = hands;
+        primary = null;
+        secondary = null;
     }
 
-    void aim()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            switch (GUN)
-            {
-                case 1:
-                    pistol.transform.localPosition = pistolAimPos;
-                    break;
-                case 2:
-                    rifle.transform.localPosition = rifleAimPos;
-                    break;
-            }
-            gamemanager.instance.cameraScript.fov = 45;
-            wepFlash.transform.Translate(wepBarrel.transform.position);
-        }
-        else if (Input.GetMouseButtonUp(1))
-        {
-            switch (GUN)
-            {
-                case 1:
-                    pistol.transform.localPosition = pistolStartPos;
-                    break;
-                case 2:
-                    rifle.transform.localPosition = rifleStartPos;
-                    break;
-            }
-            gamemanager.instance.cameraScript.fov = 90;
-            wepFlash.transform.Translate(wepBarrel.transform.position);
-        }
-    }
+    //void aim()
+    //{
+    //    if (Input.GetMouseButtonDown(1))
+    //    {
+    //        switch (GUN)
+    //        {
+    //            case 1:
+    //                pistol.transform.localPosition = pistolAimPos;
+    //                break;
+    //            case 2:
+    //                rifle.transform.localPosition = rifleAimPos;
+    //                break;
+    //        }
+    //        gamemanager.instance.cameraScript.fov = 45;
+    //        wepFlash.transform.Translate(wepBarrel.transform.position);
+    //    }
+    //    else if (Input.GetMouseButtonUp(1))
+    //    {
+    //        switch (GUN)
+    //        {
+    //            case 1:
+    //                pistol.transform.localPosition = pistolStartPos;
+    //                break;
+    //            case 2:
+    //                rifle.transform.localPosition = rifleStartPos;
+    //                break;
+    //        }
+    //        gamemanager.instance.cameraScript.fov = 90;
+    //        wepFlash.transform.Translate(wepBarrel.transform.position);
+    //    }
+    //}
 
     IEnumerator Shoot()
     {
@@ -178,10 +158,10 @@ public class weaponHandler : MonoBehaviour
 
     IEnumerator Flash()
     {
-        wepFlash.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 90));
-        wepFlash.SetActive(true);
+        //wepFlash.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 90));
+        //wepFlash.SetActive(true);
         yield return new WaitForSeconds(0.05f);
-        wepFlash.SetActive(false);
+        //wepFlash.SetActive(false);
     }
 
     IEnumerator Reload()
@@ -194,15 +174,58 @@ public class weaponHandler : MonoBehaviour
         reloading = false;
     }
 
-    void AddGun(weapon stats)
+    public void AddGun(weapon stats)
     {
-        magCap = stats.magCap;
-        damage = stats.damage;
-        fireRate = stats.fireRate;
-        reloadTime = stats.reloadTime;
-        semiTautoF = stats.semiTautoF;
-        model = stats.model;
-        wepEffect = stats.wepEffect;
-        gamemanager.instance.ChangeCrosshair(stats.Crosshair);
+        if (primary == null)
+        {
+            primary = stats;
+            updateGunStats();
+        }
+        else if (secondary == null)
+        {
+            secondary = stats;
+            prim = false;
+            updateGunStats();
+        }
+    }
+
+    public void updateGunStats()
+    {
+        if (prim && primary != null)
+        {
+            ammo = primary.ammo;
+            magCap = primary.magCap;
+            mags = primary.mags;
+            damage = primary.damage;
+            fireRate = primary.fireRate;
+            reloadTime = primary.reloadTime;
+            semiTautoF = primary.semiTautoF;
+            model = primary.model;
+            wepEffect = primary.wepEffect;
+            gamemanager.instance.ChangeCrosshair(primary.Crosshair);
+        }
+        else if (!prim && secondary != null)
+        {
+            ammo = secondary.ammo;
+            magCap = secondary.magCap;
+            mags = secondary.mags;
+            damage = secondary.damage;
+            fireRate = secondary.fireRate;
+            reloadTime = secondary.reloadTime;
+            semiTautoF = secondary.semiTautoF;
+            model = secondary.model;
+            wepEffect = secondary.wepEffect;
+            gamemanager.instance.ChangeCrosshair(secondary.Crosshair);
+        }
+        else
+        {
+            ammo = 0;
+            magCap = 0;
+            mags = 0;
+            damage = 0;
+            fireRate = 0;
+            reloadTime = 0;
+            model = noModel;
+        }
     }
 }

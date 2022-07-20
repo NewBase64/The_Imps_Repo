@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
+  ammo: 8
   magCap: 8
+  mags: 0
   damage: 2
   fireRate: 0.1
   reloadTime: 1
   semiTautoF: 1
-  modle: {fileID: 2702245358435145323, guid: 7fbcd76e052342c44b0b0938c0e00415, type: 3}
+  model: {fileID: 2702245358435145323, guid: 7fbcd76e052342c44b0b0938c0e00415, type: 3}
   wepEffect: {fileID: 2397663995396650288, guid: bd4d252adce46dc488808cd429e93095, type: 3}
   Crosshair: 1
   gunshot:

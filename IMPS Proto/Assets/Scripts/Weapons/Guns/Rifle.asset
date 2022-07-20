@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
+  ammo: 32
   magCap: 32
+  mags: 0
   damage: 1
   fireRate: 0.1
   reloadTime: 1
   semiTautoF: 0
-  modle: {fileID: 2926298498325330657, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
+  model: {fileID: 1372128445848883169, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
   Crosshair: 2
   gunshot:
