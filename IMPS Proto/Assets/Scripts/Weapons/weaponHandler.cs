@@ -153,7 +153,7 @@ public class weaponHandler : MonoBehaviour
                 {
                     IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                     if (hit.collider is SphereCollider)
-                        damageable.takeDamage(damage * 2);
+                        damageable.takeDamage(damage * 100);
                     else
                         damageable.takeDamage(damage);
                 }
