@@ -54,19 +54,27 @@ public class gamemanager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel") && !gameOver)
         {
-            if(!paused && !menuCurrentlyOpen)
+            if (!paused && !menuCurrentlyOpen)
             {
                 paused = true;
                 weaponHandler.CurrCrosshair.SetActive(false);
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
+
             }
             else
             {
+
                 resume();
             }
         }
+        if (menuCurrentlyOpen)
+            weaponHandler.CurrCrosshair.SetActive(false);
+        else
+            weaponHandler.CurrCrosshair.SetActive(true);
+
+
     }
 
     public void resume()
