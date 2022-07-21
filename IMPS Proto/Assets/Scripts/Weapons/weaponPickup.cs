@@ -22,6 +22,34 @@ public class weaponPickup : MonoBehaviour
         prompt.SetActive(false);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PickMeUp();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetButtonDown("Pickup"))
+            {
+                gamemanager.instance.weaponHandler.AddGun(stats);
+                PickedUp();
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            PutMeDown();
+        }
+    }
+
     public void PickMeUp()
     {
         prompt.SetActive(true);

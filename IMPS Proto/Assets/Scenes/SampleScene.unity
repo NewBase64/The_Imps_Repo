@@ -19348,10 +19348,10 @@ MonoBehaviour:
   model: {fileID: 0}
   wepEffect: {fileID: 0}
   CurrCrosshair: {fileID: 0}
-  NoCrosshair: {fileID: 0}
-  Crosshair1: {fileID: 0}
-  Crosshair2: {fileID: 0}
-  Crosshair3: {fileID: 0}
+  NoCrosshair: {fileID: 452864082}
+  Crosshair1: {fileID: 1455774797}
+  Crosshair2: {fileID: 956416860}
+  Crosshair3: {fileID: 488689184}
   audi: {fileID: 3026332193367205556}
   gunshot:
   - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}

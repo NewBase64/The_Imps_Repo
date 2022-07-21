@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 6044
+  controlID: 2102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 5905
+  controlID: 2103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 5964
+  controlID: 1932
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 6045
+  controlID: 2069
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -374,8 +374,8 @@ MonoBehaviour:
     y: 0
     width: 373
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 24}
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_EnterPlayModeBehavior: 1
+  m_EnterPlayModeBehavior: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -700,9 +700,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -11.507507, y: 13.048346, z: 5.372295}
+    m_Target: {x: -0.4409935, y: 1.7398045, z: 7.387999}
     speed: 2
-    m_Value: {x: -11.507507, y: 13.048346, z: 5.372295}
+    m_Value: {x: -0.4409935, y: 1.7398045, z: 7.387999}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -749,9 +749,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.110457465, y: 0.75898594, z: -0.13458553, w: 0.62670296}
+    m_Target: {x: 0.020917708, y: 0.9751148, z: -0.111336686, w: 0.18824102}
     speed: 2
-    m_Value: {x: 0.11050553, y: 0.7593162, z: -0.13464409, w: 0.62697566}
+    m_Value: {x: 0.02092695, y: 0.97554564, z: -0.111385874, w: 0.18832418}
   m_Size:
     m_Target: 0.29580405
     speed: 2
@@ -1115,10 +1115,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8630000
-      m_LastClickedID: 25592
-      m_ExpandedIDs: 22fbffffea6100002a6200003062000090620000d8620000e062000060630000f8630000
+      scrollPos: {x: 0, y: 177}
+      m_SelectedIDs: 1c280000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 86ecffff8aecffff94faffff38630000786300007e630000be630000de630000266400002e640000ae640000206500003465000046650000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1239,13 +1239,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Other
+    - Assets/Scripts/Weapons/Guns
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts/Other
+  - Assets/Scripts/Weapons/Guns
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\shado\OneDrive\Documents\GitHub\The_Imps_Repo\IMPS
     Proto
@@ -1253,9 +1253,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 506f0000
-    m_LastClickedID: 28496
-    m_ExpandedIDs: 000000000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f0000186f00001a6f00001c6f00001e6f000000ca9a3b
+    m_SelectedIDs: 6a700000
+    m_LastClickedID: 28778
+    m_ExpandedIDs: 00000000f06f0000f26f0000f46f0000f66f0000f86f0000fa6f0000fc6f0000fe6f00000070000002700000047000006870000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1283,7 +1283,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a6f00000c6f00000e6f0000106f0000126f0000146f0000166f0000186f00001a6f00001c6f00001e6f000000ca9a3b
+    m_ExpandedIDs: 00000000f06f0000f26f0000f46f0000f66f0000f86f0000fa6f0000fc6f0000fe6f000000700000027000000470000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0

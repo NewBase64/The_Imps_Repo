@@ -61,50 +61,9 @@ public class playerController : MonoBehaviour, IDamageable
             pushback = Vector3.Lerp(pushback, Vector3.zero, Time.deltaTime * pushResolve);
 
             movePlayer();
-            picking();
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Pickup"))
-        {
-            obj = other.gameObject;
-            obj.GetComponent<weaponPickup>().PickMeUp();
-            stats = obj.GetComponent<weaponPickup>().stats;
-            pickingUp = true;
-        }
-    }
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.CompareTag("Pickup"))
-    //    {
-    //        obj = other.gameObject;
-    //        obj.GetComponent<weaponPickup>().PickMeUp();
-    //        stats = obj.GetComponent<weaponPickup>().stats;
-    //        pickingUp = true;
-    //        picking();
-    //    }
-    //}
-    private void picking()
-    {
-        if (Input.GetButtonDown("Pickup"))
-        {
-            gamemanager.instance.weaponHandler.AddGun(stats);
-            obj.GetComponent<weaponPickup>().PickedUp();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Pickup"))
-        {
-            pickingUp = false;
-            stats = null;
-            obj.GetComponent<weaponPickup>().PutMeDown();
-            obj = null;
-        }
-    }
-
+    
     private void movePlayer()
     {
         // Get the inputs from unity's input system

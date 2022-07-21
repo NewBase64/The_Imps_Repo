@@ -27,8 +27,8 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject Crosshair3;
     //       ----weapon vars----
     weapon primary;
-    weapon secondary;
-    bool prim;
+    //weapon secondary;
+    //bool prim;
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] gunshot;
@@ -52,7 +52,7 @@ public class weaponHandler : MonoBehaviour
         // Set defaults so no null references
         model = noModel;
         CurrCrosshair = NoCrosshair;
-        
+        //prim = true;
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class weaponHandler : MonoBehaviour
             }
             if (Input.GetButtonDown("Mouse ScrollWheel"))
             {
-                prim = !prim;
+                //prim = !prim;
                 updateGunStats();
             }
             //aim();
@@ -92,9 +92,9 @@ public class weaponHandler : MonoBehaviour
     {
         canShoot = false;
         primary = null;
-        secondary = null;
+        //secondary = null;
 
-        prim = true;
+        //prim = true;
         
         primary.ammo = 0;
         primary.magCap = 0;
@@ -196,31 +196,29 @@ public class weaponHandler : MonoBehaviour
 
     public void AddGun(weapon stats)
     {
-        if (primary == null)
-        {
-            primary = stats;
-            updateGunStats();
-        }
-        else if (secondary == null)
-        {
-            secondary = stats;
-            prim = false;
-            updateGunStats();
-        }
-        else
-        {
-            if(prim)           
-                primary = stats;           
-            else
-                secondary = stats;
-            updateGunStats();
-        }
+        //if (primary == null)
+        //{
+            primary = stats;            
+        //}
+        //else if (secondary == null)
+        //{
+        //    secondary = stats;
+        //    prim = false;            
+        //}
+        //else
+        //{
+        //    if(prim)           
+        //        primary = stats;           
+        //    else
+        //        secondary = stats;            
+        //}
+        updateGunStats();
     }
 
     public void updateGunStats()
     {
-        if (prim)
-        {
+        //if (prim)
+        //{
             ammo = primary.ammo;
             magCap = primary.magCap;
             mags = primary.mags;
@@ -231,20 +229,20 @@ public class weaponHandler : MonoBehaviour
             model = primary.model;
             wepEffect = primary.wepEffect;
             ChangeCrosshair(primary.Crosshair);
-        }
-        else if (!prim)
-        {
-            ammo = secondary.ammo;
-            magCap = secondary.magCap;
-            mags = secondary.mags;
-            damage = secondary.damage;
-            fireRate = secondary.fireRate;
-            reloadTime = secondary.reloadTime;
-            semiTautoF = secondary.semiTautoF;
-            model = secondary.model;
-            wepEffect = secondary.wepEffect;
-            ChangeCrosshair(secondary.Crosshair);
-        }      
+        //}
+        //else if (!prim)
+        //{
+        //    ammo = secondary.ammo;
+        //    magCap = secondary.magCap;
+        //    mags = secondary.mags;
+        //    damage = secondary.damage;
+        //    fireRate = secondary.fireRate;
+        //    reloadTime = secondary.reloadTime;
+        //    semiTautoF = secondary.semiTautoF;
+        //    model = secondary.model;
+        //    wepEffect = secondary.wepEffect;
+        //    ChangeCrosshair(secondary.Crosshair);
+        //}      
     }
 
     public void ChangeCrosshair(int crossnum)
