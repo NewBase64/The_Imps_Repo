@@ -49,13 +49,11 @@ public class RoomManager : MonoBehaviour
         if (rooms == 0)
         {
             gamemanager.instance.menuCurrentlyOpen = gamemanager.instance.winGameMenu;
-            gamemanager.instance.CurrCrosshair.SetActive(false);
+            gamemanager.instance.weaponHandler.CurrCrosshair.SetActive(false);
             gamemanager.instance.menuCurrentlyOpen.SetActive(true);
             gamemanager.instance.gameOver = true;
             gamemanager.instance.ConLockCursor();
         }
-
-
     }
 
     public void updateEnemyNumberOnRoom(int room)

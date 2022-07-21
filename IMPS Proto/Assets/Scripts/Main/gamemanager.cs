@@ -22,12 +22,6 @@ public class gamemanager : MonoBehaviour
     public Image HPBar;
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
-    [Header("----Crosshairs----")]
-    [SerializeField] public GameObject CurrCrosshair;
-    [SerializeField] GameObject NoCrosshair;
-    [SerializeField] GameObject Crosshair1;
-    [SerializeField] GameObject Crosshair2;
-    [SerializeField] GameObject Crosshair3;
     [Header("----Numbers----")]
     public int enemyKillGoal;
     int enemiesKilled;
@@ -52,10 +46,7 @@ public class gamemanager : MonoBehaviour
         weaponHandler = player.GetComponent<weaponHandler>();
 
         // Set the camera Script from the main camera
-        cameraScript = Camera.main.GetComponent<playerCamera>();
-
-        // Set the current crosshair
-        CurrCrosshair = NoCrosshair;
+        cameraScript = Camera.main.GetComponent<playerCamera>();       
     }
 
     // Update is called once per frame
@@ -66,7 +57,7 @@ public class gamemanager : MonoBehaviour
             if(!paused && !menuCurrentlyOpen)
             {
                 paused = true;
-                CurrCrosshair.SetActive(false);
+                weaponHandler.CurrCrosshair.SetActive(false);
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
@@ -80,7 +71,7 @@ public class gamemanager : MonoBehaviour
 
     public void resume()
     {
-        CurrCrosshair.SetActive(true);
+        weaponHandler.CurrCrosshair.SetActive(true);
         paused = false;
         menuCurrentlyOpen.SetActive(false);
         menuCurrentlyOpen = null;
@@ -98,7 +89,7 @@ public class gamemanager : MonoBehaviour
     public void playerDead()
     {
         gameOver = true;
-        CurrCrosshair.SetActive(false);
+        weaponHandler.CurrCrosshair.SetActive(false);
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         ConLockCursor();
@@ -142,31 +133,7 @@ public class gamemanager : MonoBehaviour
         enemyKillGoal++;
         enemyTotal.text = enemyKillGoal.ToString("F0");
     }
-
-    public void ChangeCrosshair(int crossnum)
-    {
-        switch (crossnum)
-        { 
-            case 0:
-                CurrCrosshair.SetActive(false);
-                break;
-            case 1:
-                CurrCrosshair.SetActive(false);
-                CurrCrosshair = Crosshair1;
-                CurrCrosshair.SetActive(true);
-                break;
-            case 2:
-                CurrCrosshair.SetActive(false);
-                CurrCrosshair = Crosshair1;
-                CurrCrosshair.SetActive(true);
-                break;
-            case 3:
-                CurrCrosshair.SetActive(false);
-                CurrCrosshair = Crosshair1;
-                CurrCrosshair.SetActive(true);
-                break;
-        }
-    }
+   
     public weapon RandomWeapon()
     {
         int index = Random.Range(0, weapons.Count);

@@ -19347,6 +19347,11 @@ MonoBehaviour:
   noModel: {fileID: 3026332192963966240}
   model: {fileID: 0}
   wepEffect: {fileID: 0}
+  CurrCrosshair: {fileID: 0}
+  NoCrosshair: {fileID: 0}
+  Crosshair1: {fileID: 0}
+  Crosshair2: {fileID: 0}
+  Crosshair3: {fileID: 0}
   audi: {fileID: 3026332193367205556}
   gunshot:
   - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
@@ -24011,7 +24016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993568367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.65, y: 3.181258, z: -35.15}
+  m_LocalPosition: {x: 16.65, y: 3.18, z: -35.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27885,6 +27890,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fc8f1d4a78ef664abbf946abe497f1e, type: 3}
+--- !u!1 &3718931621522627373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1656715085191226204, guid: 5fc8f1d4a78ef664abbf946abe497f1e, type: 3}
+  m_PrefabInstance: {fileID: 3718931621522627372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3718931621522627374
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3718931621522627373}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &3964626282731971658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6294940677494588390, guid: a0710e22854627448be1213017c17858, type: 3}

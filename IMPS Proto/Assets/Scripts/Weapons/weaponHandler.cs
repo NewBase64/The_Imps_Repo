@@ -19,6 +19,13 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject wepEffect;
     //[SerializeField] GameObject wepFlash;    
     //[SerializeField] GameObject wepBarrel;
+    [Header("----Crosshairs----")]
+    [SerializeField] public GameObject CurrCrosshair;
+    [SerializeField] GameObject NoCrosshair;
+    [SerializeField] GameObject Crosshair1;
+    [SerializeField] GameObject Crosshair2;
+    [SerializeField] GameObject Crosshair3;
+    //       ----weapon vars----
     weapon primary;
     weapon secondary;
     bool prim;
@@ -42,7 +49,10 @@ public class weaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Set defaults so no null references
         model = noModel;
+        CurrCrosshair = NoCrosshair;
+        
     }
 
     // Update is called once per frame
@@ -83,6 +93,16 @@ public class weaponHandler : MonoBehaviour
         canShoot = false;
         primary = null;
         secondary = null;
+
+        prim = true;
+        
+        primary.ammo = 0;
+        primary.magCap = 0;
+        primary.mags = 0;
+        primary.damage = 0;
+        primary.fireRate = 0;
+        primary.reloadTime = 0;
+        primary.model = noModel;       
     }
 
     //void aim()
@@ -187,11 +207,19 @@ public class weaponHandler : MonoBehaviour
             prim = false;
             updateGunStats();
         }
+        else
+        {
+            if(prim)           
+                primary = stats;           
+            else
+                secondary = stats;
+            updateGunStats();
+        }
     }
 
     public void updateGunStats()
     {
-        if (prim && primary != null)
+        if (prim)
         {
             ammo = primary.ammo;
             magCap = primary.magCap;
@@ -202,9 +230,9 @@ public class weaponHandler : MonoBehaviour
             semiTautoF = primary.semiTautoF;
             model = primary.model;
             wepEffect = primary.wepEffect;
-            gamemanager.instance.ChangeCrosshair(primary.Crosshair);
+            ChangeCrosshair(primary.Crosshair);
         }
-        else if (!prim && secondary != null)
+        else if (!prim)
         {
             ammo = secondary.ammo;
             magCap = secondary.magCap;
@@ -215,17 +243,32 @@ public class weaponHandler : MonoBehaviour
             semiTautoF = secondary.semiTautoF;
             model = secondary.model;
             wepEffect = secondary.wepEffect;
-            gamemanager.instance.ChangeCrosshair(secondary.Crosshair);
-        }
-        else
+            ChangeCrosshair(secondary.Crosshair);
+        }      
+    }
+
+    public void ChangeCrosshair(int crossnum)
+    {
+        switch (crossnum)
         {
-            ammo = 0;
-            magCap = 0;
-            mags = 0;
-            damage = 0;
-            fireRate = 0;
-            reloadTime = 0;
-            model = noModel;
+            case 0:
+                CurrCrosshair.SetActive(false);
+                break;
+            case 1:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair1;
+                CurrCrosshair.SetActive(true);
+                break;
+            case 2:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair1;
+                CurrCrosshair.SetActive(true);
+                break;
+            case 3:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair1;
+                CurrCrosshair.SetActive(true);
+                break;
         }
     }
 }
