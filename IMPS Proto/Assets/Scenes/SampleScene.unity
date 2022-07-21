@@ -28297,6 +28297,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: audi
+      value: 
+      objectReference: {fileID: 3026332193367205559}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: reloadVol
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: Crosshair1
       value: 
       objectReference: {fileID: 1455774797}
@@ -28317,9 +28325,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1269802125}
     - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: outofammoVol
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: pistolBarrel
       value: 
       objectReference: {fileID: 1889836149}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: gunshotVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: reload.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: gunshot.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: outofammo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: reload.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: gunshot.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
+    - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: outofammo.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}
     - target: {fileID: 5852648693521394134, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: m_IsActive
       value: 0

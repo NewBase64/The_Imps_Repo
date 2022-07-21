@@ -35,6 +35,14 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject Crosshair1;
     [SerializeField] GameObject Crosshair2;
     [SerializeField] GameObject Crosshair3;
+    [Header("----Audio----")]
+    public AudioSource audi;
+    [SerializeField] AudioClip[] gunshot;
+    [Range(0, 1)][SerializeField] float gunshotVolume;
+    [SerializeField] AudioClip[] outofammo;
+    [Range(0, 1)][SerializeField] float outofammoVol;
+    [SerializeField] AudioClip[] reload;
+    [Range(0, 1)][SerializeField] float reloadVol;
     //[Header("----Testing----")]
     //public bool Armed;
 
@@ -132,6 +140,7 @@ public class weaponHandler : MonoBehaviour
         if (ammo > 0)
         {
             canShoot = false;
+            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunshotVolume);
             ammo--;
 
             RaycastHit hit;
@@ -155,6 +164,8 @@ public class weaponHandler : MonoBehaviour
             yield return new WaitForSeconds(fireRate);
             canShoot = true;
         }
+        else
+            audi.PlayOneShot(outofammo[Random.Range(0, outofammo.Length)], outofammoVol);
     }
 
     IEnumerator Flash()
@@ -169,6 +180,7 @@ public class weaponHandler : MonoBehaviour
     {
         canShoot = false;
         reloading = true;
+        audi.PlayOneShot(reload[Random.Range(0, reload.Length)], reloadVol);
         yield return new WaitForSeconds(reloadTime);
         ammo = magCap;
         canShoot = true;
