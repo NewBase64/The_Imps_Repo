@@ -5,51 +5,50 @@ using UnityEngine;
 public class weaponHandler : MonoBehaviour
 {
     [Header("----WepStats----")]
-    [SerializeField] int ammo;
+    [SerializeField] int ammoMax;
+    [SerializeField] public int ammoReserve;
+    [SerializeField] public int ammo;
     [SerializeField] int magCap;
-    [SerializeField] int damage;
+    [SerializeField] public int damage;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
     [SerializeField] bool semiTautoF;
     [Header("----Weapon----")]
-    [SerializeField] int GUN;
-    [SerializeField] GameObject hands;
-    [SerializeField] GameObject pistol;
-    [SerializeField] GameObject rifle;
-    [SerializeField] GameObject weapon;
-    [Header("----WepEffects----")]
-    [SerializeField] GameObject pistolEffect;
-    [SerializeField] GameObject rifleEffect;
+    [SerializeField] GameObject noModel;   
+    [SerializeField] GameObject model;
     [SerializeField] GameObject wepEffect;
-    [Header("----WepMuzFlash----")]
-    [SerializeField] GameObject pistolFlash;
-    [SerializeField] GameObject rifleFlash;
-    [SerializeField] GameObject wepFlash;
-    [Header("----Wepbarrels----")]
-    [SerializeField] GameObject pistolBarrel;
-    [SerializeField] GameObject rifleBarrel;
-    [SerializeField] GameObject wepBarrel;
+    //[SerializeField] GameObject wepFlash;    
+    [SerializeField] GameObject wepSpawn;
     [Header("----Crosshairs----")]
     [SerializeField] public GameObject CurrCrosshair;
     [SerializeField] GameObject NoCrosshair;
     [SerializeField] GameObject Crosshair1;
     [SerializeField] GameObject Crosshair2;
     [SerializeField] GameObject Crosshair3;
+    [Header("----Weapon Drop stuff----")]
+    [SerializeField] GameObject wepPickup;
+    [SerializeField] GameObject cam;
+    public bool catchMe = false;
+    //[Header("----weapon vars----")]
+    public weapon primary;
+    public weapon secondary;
+    public weapon tempHolder;
+    //bool prim;
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] gunshot;
-    [Range(0, 1)][SerializeField] float gunshotVolume;
-    [SerializeField] AudioClip[] outofammo;
+    [Range(0, 1)][SerializeField] float gunShotVol;
+    bool lazer = false;
+    [SerializeField] AudioClip[] lazershot;
+    [Range(0, 1)][SerializeField] float lazerShotVol;
+    [SerializeField] AudioClip[] outofAmmo;
     [Range(0, 1)][SerializeField] float outofammoVol;
-    [SerializeField] AudioClip[] reload;
+    bool oOASound = false;
+    [SerializeField] AudioClip[] reloadSound;
     [Range(0, 1)][SerializeField] float reloadVol;
     //[Header("----Testing----")]
     //public bool Armed;
-
-    Vector3 pistolStartPos;
-    Vector3 rifleStartPos;
-    Vector3 pistolAimPos;
-    Vector3 rifleAimPos;
+    [SerializeField] public bool bottomlessClip;
 
     bool canShoot = true;
     bool reloading = false;
@@ -57,15 +56,10 @@ public class weaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weapon = hands;
-        wepFlash = pistolFlash;
-        wepBarrel = pistolBarrel;
+        // Set defaults so no null references
+        model = noModel;
         CurrCrosshair = NoCrosshair;
-        Hands();
-        pistolStartPos = new Vector3(-0.488f, 0.735f, 0.705f);
-        rifleStartPos = new Vector3(0.044f, 1.139f, 0.154f);
-        pistolAimPos = new Vector3(-0.566f, 0.794f, 0.705f);
-        rifleAimPos = new Vector3(-0.033f, 1.197f, 0.154f);
+        //prim = true;
     }
 
     // Update is called once per frame
@@ -89,59 +83,92 @@ public class weaponHandler : MonoBehaviour
             }
             if (Input.GetButtonDown("Reload") && !reloading)
             {
+                audi.PlayOneShot(reloadSound[Random.Range(0, reloadSound.Length)], reloadVol);
                 StartCoroutine(Reload());
+            }
+            if (Input.mouseScrollDelta != Vector2.zero)
+            {
+                SwitchWeapon();
+                updateGunStats();
             }
             aim();
         }
     }
 
+    void SwitchWeapon()
+    {
+        if (secondary != null)
+        {
+            tempHolder = primary;
+            primary = secondary;
+            secondary = tempHolder;
+            tempHolder = null;
+        }
+    }
+
     public void unArm()
     {
-        weapon.SetActive(false);
-        canShoot = false;
-        weapon = hands;
-        Hands();
+        //canShoot = false;
+        primary = null;
+        secondary = null;
+        primary.ammoMax = 0;
+        primary.ammo = 0;
+        primary.MagCap = 0;
+        primary.damage = 0;
+        primary.fireRate = 0;
+        primary.reloadTime = 0;
+        primary.model = noModel;
+        primary.Crosshair = 0;
+        ChangeCrosshair();
     }
 
     void aim()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            switch (GUN)
-            {
-                case 1:
-                    pistol.transform.localPosition = pistolAimPos;
-                    break;
-                case 2:
-                    rifle.transform.localPosition = rifleAimPos;
-                    break;
-            }
+            //switch (GUN)
+            //{
+            //    case 1:
+            //        pistol.transform.localPosition = pistolAimPos;
+            //        break;
+            //    case 2:
+            //        rifle.transform.localPosition = rifleAimPos;
+            //        break;
+            //}
             gamemanager.instance.cameraScript.fov = 45;
-            wepFlash.transform.Translate(wepBarrel.transform.position);
+            //wepFlash.transform.Translate(wepBarrel.transform.position);
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            switch (GUN)
-            {
-                case 1:
-                    pistol.transform.localPosition = pistolStartPos;
-                    break;
-                case 2:
-                    rifle.transform.localPosition = rifleStartPos;
-                    break;
-            }
+            //switch (GUN)
+            //{
+            //    case 1:
+            //        pistol.transform.localPosition = pistolStartPos;
+            //        break;
+            //    case 2:
+            //        rifle.transform.localPosition = rifleStartPos;
+            //        break;
+            //}
             gamemanager.instance.cameraScript.fov = 90;
-            wepFlash.transform.Translate(wepBarrel.transform.position);
+            //wepFlash.transform.Translate(wepBarrel.transform.position);
         }
     }
 
     IEnumerator Shoot()
     {
-        if (ammo > 0)
+        if (ammo > 0 && !reloading)
         {
             canShoot = false;
-            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunshotVolume);
-            ammo--;
+            if (!bottomlessClip)
+            {
+                ammo--;
+                primary.ammo = ammo;
+                //updateammo();
+            }
+            if (lazer)
+                audi.PlayOneShot(lazershot[Random.Range(0, lazershot.Length)], lazerShotVol);
+            else
+                audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunShotVol);
 
             RaycastHit hit;
 
@@ -159,83 +186,131 @@ public class weaponHandler : MonoBehaviour
                 }
             }
 
-            StartCoroutine(Flash());
+            //StartCoroutine(Flash());
 
             yield return new WaitForSeconds(fireRate);
             canShoot = true;
         }
-        else
-            audi.PlayOneShot(outofammo[Random.Range(0, outofammo.Length)], outofammoVol);
+        else if (primary != null)
+        {
+            if (!oOASound)
+            {
+                oOASound = true;
+                audi.PlayOneShot(outofAmmo[Random.Range(0, outofAmmo.Length)], outofammoVol);
+                yield return new WaitForSeconds(fireRate);
+                oOASound = false;
+            }
+        }
     }
 
     IEnumerator Flash()
     {
-        wepFlash.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 90));
-        wepFlash.SetActive(true);
+        //wepFlash.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(0, 90));
+        //wepFlash.SetActive(true);
         yield return new WaitForSeconds(0.05f);
-        wepFlash.SetActive(false);
+        //wepFlash.SetActive(false);
     }
 
     IEnumerator Reload()
     {
         canShoot = false;
         reloading = true;
-        audi.PlayOneShot(reload[Random.Range(0, reload.Length)], reloadVol);
+        ammoReserve += ammo;
         yield return new WaitForSeconds(reloadTime);
-        ammo = magCap;
+        if (ammoReserve >= magCap)
+        {
+            ammoReserve -= magCap;
+            ammo = magCap;
+            primary.ammoReserve = ammoReserve;
+            primary.ammo = ammo;
+        }
+        else if (ammoReserve < magCap)
+        {
+            ammo = ammoReserve;
+            ammoReserve = 0;
+            primary.ammoReserve = ammoReserve;
+            primary.ammo = ammo;
+        }
         canShoot = true;
         reloading = false;
+        //updateammo();
     }
 
-    public void Hands()
+    public void GiveAmmo(int addedAmmo, weapon gun = null)
     {
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = NoCrosshair;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        magCap = 0;
-        damage = 0;
-        fireRate = 0.5f;
-        reloadTime = 0;
-        semiTautoF = false;
-        ammo = magCap;
+        if ((addedAmmo + ammo) > ammoMax)
+        {
+            ammo = ammoMax;
+        }
+        else
+        {
+            ammo += addedAmmo;
+        }
     }
-    public void Pistol()
+
+    public void AddGun(weapon stats)
     {
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = Crosshair1;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        wepFlash.SetActive(false);
-        GUN = 1;
-        weapon = pistol;
-        wepEffect = pistolEffect;
-        wepFlash = pistolFlash;
-        weapon.SetActive(true);
-        magCap = 8;
-        damage = 2;
-        fireRate = 0.1f;
-        reloadTime = 1;
-        semiTautoF = true;
-        ammo = magCap;
+        if (primary == null)
+        {
+            primary = stats;            
+        }
+        else if (secondary == null)
+        {
+            secondary = primary;
+            primary = stats;
+            //prim = false;            
+        }
+        else
+        {
+            catchMe = true;
+            Instantiate(wepPickup, cam.transform.position, cam.transform.rotation);
+            tempHolder = primary;
+            primary = stats;     
+        }
+        updateGunStats();
     }
-    public void Rifle()
+
+    public void updateGunStats()
+    {        
+        ammoMax = primary.ammoMax;
+        ammoReserve = primary.ammoReserve;
+        ammo = primary.ammo;
+        magCap = primary.MagCap;
+        damage = primary.damage;
+        fireRate = primary.fireRate;
+        reloadTime = primary.reloadTime;
+        semiTautoF = primary.semiTautoF;
+        lazer = primary.Lazer;
+        model = primary.model;
+        wepEffect = primary.wepEffect;
+        ChangeCrosshair();
+        //updateammo();
+    }
+
+    public void ChangeCrosshair()
     {
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = Crosshair2;
-        CurrCrosshair.SetActive(true);
-        weapon.SetActive(false);
-        wepFlash.SetActive(false);
-        GUN = 2;
-        weapon = rifle;
-        wepEffect = rifleEffect;
-        wepFlash = rifleFlash;
-        weapon.SetActive(true);
-        magCap = 32;
-        damage = 1;
-        fireRate = 0.1f;
-        reloadTime = 1;
-        semiTautoF = false;
-        ammo = magCap;
+        switch (primary.Crosshair)
+        {
+            case 0:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = NoCrosshair;
+                CurrCrosshair.SetActive(true);
+                break;
+            case 1:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair1;
+                CurrCrosshair.SetActive(true);
+                break;
+            case 2:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair2;
+                CurrCrosshair.SetActive(true);
+                break;
+            case 3:
+                CurrCrosshair.SetActive(false);
+                CurrCrosshair = Crosshair3;
+                CurrCrosshair.SetActive(true);
+                break;
+        }
     }
 }

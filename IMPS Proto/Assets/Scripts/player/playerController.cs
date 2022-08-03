@@ -30,7 +30,7 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float jumpVol;
 
     float playerSpeedOrig;
-    int HPOrig;
+    [HideInInspector] public int HPOrig;
     Vector3 playerSpawnPosition;
 
     bool isSprinting = false;

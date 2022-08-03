@@ -11,6 +11,7 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public GameObject player;
     [HideInInspector] public playerController playerScript;
     [HideInInspector] public weaponHandler weaponHandler;
+    public List<weapon> weapons;
     [HideInInspector] public playerCamera cameraScript;
 
     [Header("----Menus----")]
@@ -18,12 +19,11 @@ public class gamemanager : MonoBehaviour
     public GameObject playerDeadMenu;
     public GameObject playerDamageFlash;
     public GameObject winGameMenu;
-    [Header("----Stuff----")]
+    [Header("----UI Stuff----")]
     public Image HPBar;
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
     [Header("----Numbers----")]
-    public int numGuns;
     public int enemyKillGoal;
     int enemiesKilled;
 
@@ -46,6 +46,7 @@ public class gamemanager : MonoBehaviour
         // Set the Weapons Handler script to the players WeaponsHandler
         weaponHandler = player.GetComponent<weaponHandler>();
 
+        // Set the camera Script from the main camera
         cameraScript = Camera.main.GetComponent<playerCamera>();
     }
 
@@ -61,20 +62,12 @@ public class gamemanager : MonoBehaviour
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
-
             }
             else
             {
-
                 resume();
             }
         }
-        if (menuCurrentlyOpen)
-            weaponHandler.CurrCrosshair.SetActive(false);
-        else
-            weaponHandler.CurrCrosshair.SetActive(true);
-
-
     }
 
     public void resume()
@@ -140,6 +133,11 @@ public class gamemanager : MonoBehaviour
     {
         enemyKillGoal++;
         enemyTotal.text = enemyKillGoal.ToString("F0");
+    }
 
+    public weapon RandomWeapon()
+    {
+        int index = Random.Range(1, weapons.Count);
+        return weapons[index];
     }
 }
