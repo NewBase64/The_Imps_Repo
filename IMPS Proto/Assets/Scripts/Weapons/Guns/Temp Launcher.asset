@@ -20,12 +20,12 @@ MonoBehaviour:
   fireRate: 1
   reloadTime: 2
   semiTautoF: 1
-  Lazer: 1
+  shootType: 0
   model: {fileID: 3623933414003541785, guid: 6c8b1ff50dd894d4e9f47ee4292d59ef, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
   Crosshair: 3
   gunshot:
-  - {fileID: 8300000, guid: 604bcb260f7baaa4c8eea5f53c3b9d16, type: 3}
+  - {fileID: 8300000, guid: b668cf9f79ff57a408850696b6ea2299, type: 3}
   gunShotVol: 1
   outofAmmo:
   - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}

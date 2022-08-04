@@ -12,6 +12,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] public int damage;
     [SerializeField] float fireRate;
     [SerializeField] float reloadTime;
+    [SerializeField] float shootType;
     [SerializeField] bool semiTautoF;
     [Header("----Dev----")]
     [SerializeField] public bool InfiniteAmmo;
@@ -47,7 +48,6 @@ public class weaponHandler : MonoBehaviour
     public AudioSource audi;
     [SerializeField] AudioClip[] gunshot;
     [Range(0, 1)][SerializeField] float gunShotVol;
-    bool lazer = false;
     [SerializeField] AudioClip[] lazershot;
     [Range(0, 1)][SerializeField] float lazerShotVol;
     [SerializeField] AudioClip[] outofAmmo;
@@ -75,20 +75,9 @@ public class weaponHandler : MonoBehaviour
     {
         if (!gamemanager.instance.menuCurrentlyOpen) // if there is not a menu open
         {
-            if (semiTautoF)                                  // if the weapon is semi auto
-            {                                                //
-                if (Input.GetMouseButtonDown(0) && canShoot) // shoot once
-                {
-                    StartCoroutine(Shoot());
-                }
-            }
-            else                                         // if the weapon is full auto
-            {                                            //
-                if (Input.GetMouseButton(0) && canShoot) // shoot while held
-                {
-                    StartCoroutine(Shoot());
-                }
-            }
+            // shoot
+            Shooting();
+
             // Reload
             if (Input.GetButtonDown("Reload") && !reloading) 
             {
@@ -102,6 +91,24 @@ public class weaponHandler : MonoBehaviour
                 updateGunStats();
             }
             aim(); // aim
+        }
+    }
+
+    void Shooting()
+    {
+        if (semiTautoF)                                  // if the weapon is semi auto
+        {                                                //
+            if (Input.GetMouseButtonDown(0) && canShoot) // shoot once
+            {
+                StartCoroutine(Shoot());
+            }
+        }
+        else                                         // if the weapon is full auto
+        {                                            //
+            if (Input.GetMouseButton(0) && canShoot) // shoot while held
+            {
+                StartCoroutine(Shoot());
+            }
         }
     }
 
@@ -150,26 +157,23 @@ public class weaponHandler : MonoBehaviour
                 // updateammo();
                 //
             }
-            //change the sounds of the gun
-            if (lazer)
-                audi.PlayOneShot(lazershot[Random.Range(0, lazershot.Length)], lazerShotVol);
-            else
-                audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunShotVol);
-            // hitscan weapons
-            RaycastHit hit;
-            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit))
-            {
-                Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);
+            // play gunshot          
+            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunShotVol);
 
-                if (hit.collider.GetComponent<IDamageable>() != null)
-                {
-                    IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-                    if (hit.collider is SphereCollider)
-                        damageable.takeDamage(damage * 100);
-                    else
-                        damageable.takeDamage(damage);
-                }
-            }
+            RaycastHit hit;                                                                          //
+            if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit))//
+            {                                                                                        //
+                Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                     //
+                                                                                                     //
+                if (hit.collider.GetComponent<IDamageable>() != null)                                //
+                {                                                                                    //
+                    IDamageable damageable = hit.collider.GetComponent<IDamageable>();               //  Hitscan weapons
+                    if (hit.collider is SphereCollider)                                              //
+                        damageable.takeDamage(damage * 100);                                         //
+                    else                                                                             //
+                        damageable.takeDamage(damage);                                               //
+                }                                                                                    //
+            }                                                                                        //
 
             //StartCoroutine(Flash());
 
@@ -314,9 +318,15 @@ public class weaponHandler : MonoBehaviour
         fireRate = primary.fireRate;
         reloadTime = primary.reloadTime;
         semiTautoF = primary.semiTautoF;
-        lazer = primary.Lazer;
+        shootType = primary.shootType;
         model = primary.model;
         wepEffect = primary.wepEffect;
+        gunshot = primary.gunshot;
+        gunShotVol = primary.gunShotVol;
+        reloadSound = primary.reloadSound;
+        reloadVol = primary.reloadVol;
+        outofAmmo = primary.outofAmmo;
+        outofammoVol = primary.outofammoVol;
         ChangeCrosshair();
         // ---- todo ----
         //
