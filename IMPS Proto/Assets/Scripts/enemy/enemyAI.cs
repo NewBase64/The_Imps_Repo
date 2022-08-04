@@ -43,6 +43,7 @@ public class enemyAI : MonoBehaviour, IDamageable
         startignPos = transform.position;
         StoppingDisOrig = agent.stoppingDistance;
         RoomManager.instance.updateEnemyNumberOnRoom(assignedRoom);
+        RoomManager.instance.updateObjectiveUi();
     }
 
 

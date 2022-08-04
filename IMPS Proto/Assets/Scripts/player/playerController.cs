@@ -8,12 +8,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [Header("----Player Attributes----")]
-    [Range(1, 200)][SerializeField] public int HP;
-    [Range(1, 50)][SerializeField] float playerSpeed;
-    [Range(-10, 10)][SerializeField] float sprintMult;
-    [Range(1, 50)][SerializeField] float jumpHeight;
-    [Range(1, 100)][SerializeField] float gravityValue;
-    [Range(1, 10)][SerializeField] int numjumps;
+    [Range(1, 200)] [SerializeField] public int HP;
+    [Range(1, 50)] [SerializeField] float playerSpeed;
+    [Range(-10, 10)] [SerializeField] float sprintMult;
+    [Range(1, 50)] [SerializeField] float jumpHeight;
+    [Range(1, 100)] [SerializeField] float gravityValue;
+    [Range(1, 10)] [SerializeField] int numjumps;
 
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
@@ -22,12 +22,12 @@ public class playerController : MonoBehaviour, IDamageable
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] footsep;
-    [Range(0, 1)][SerializeField] float footstepVolume;
+    [Range(0, 1)] [SerializeField] float footstepVolume;
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
-    [Range(0, 1)][SerializeField] float PlayerhurtVol;
+    [Range(0, 1)] [SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
-    [Range(0, 1)][SerializeField] float jumpVol;
+    [Range(0, 1)] [SerializeField] float jumpVol;
 
     float playerSpeedOrig;
     [HideInInspector] public int HPOrig;
@@ -40,7 +40,9 @@ public class playerController : MonoBehaviour, IDamageable
     private Vector3 playerVelocity;
     Vector3 move;
 
+    public Shield shield;
     public bool slowed = false;
+    public bool takingDamage = false;
 
     void Start()
     {
@@ -146,7 +148,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP = HPOrig;
         controller.enabled = false;
-        transform.position = playerSpawnPosition;
+        transform.position = RoomManager.instance.checkpoint.transform.position;
         controller.enabled = true;
         updatePlayerHp();
         pushback = Vector3.zero;
@@ -154,10 +156,17 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void takeDamage(int dmg)
     {
-        HP -= dmg;
-        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-        updatePlayerHp();
-        StartCoroutine(damageFlash());
+        if (shield != null && shield.isActive)
+        {
+            shield.takeDamage(dmg);
+        }
+        else
+        {
+            HP -= dmg;
+            audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
+            updatePlayerHp();
+            StartCoroutine(damageFlash());
+        }
         if (HP <= 0)
         {
             gamemanager.instance.playerDead();
@@ -166,6 +175,11 @@ public class playerController : MonoBehaviour, IDamageable
     public void updatePlayerHp()
     {
         gamemanager.instance.HPBar.fillAmount = (float)HP / (float)HPOrig;
+    }
+
+    public void updateShieldHp()
+    {
+        gamemanager.instance.ShieldBar.fillAmount = (float)shield.shieldCurrentHp / (float)shield.shieldHp;
     }
 
     IEnumerator damageFlash()

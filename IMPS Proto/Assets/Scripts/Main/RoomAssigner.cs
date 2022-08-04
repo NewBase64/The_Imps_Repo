@@ -8,17 +8,4 @@ public class RoomAssigner : MonoBehaviour
     {
         RoomManager.instance.updateNumberOfRooms();
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player"))
-        {
-            RoomManager.instance.playerRoom++;
-            RoomManager.instance.entrance = gameObject;
-            gameObject.SetActive(false);
-            RoomManager.instance.updateObjectiveUi(RoomManager.instance.playerRoom);
-        }    
-    }
-
-
 }

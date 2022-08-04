@@ -24,6 +24,10 @@ public class gamemanager : MonoBehaviour
     public Image HPBar;
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
+    public Image ShieldBar; 
+    public Image ShieldIndicator;
+    public TMP_Text ammo;
+    public TMP_Text ammoReserve;
     [Header("----Numbers----")]
     public int enemyKillGoal;
     int enemiesKilled;
@@ -142,5 +146,11 @@ public class gamemanager : MonoBehaviour
     {
         int index = Random.Range(1, weapons.Count);
         return weapons[index];
+    }
+
+    public void updateAmmoCount()
+    {
+        ammo.text = weaponHandler.ammo.ToString();
+        ammoReserve.text = weaponHandler.magCap.ToString();
     }
 }

@@ -7,7 +7,7 @@ public class weaponHandler : MonoBehaviour
     [Header("----WepStats----")]
     [SerializeField] public int ammo;
     [SerializeField] public int ammoReserve;
-    [SerializeField] int magCap;
+    [SerializeField] public int magCap;
     [SerializeField] int ammoMax;
     [SerializeField] public int damage;
     [SerializeField] float fireRate;
@@ -47,14 +47,14 @@ public class weaponHandler : MonoBehaviour
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] gunshot;
-    [Range(0, 1)][SerializeField] float gunShotVol;
+    [Range(0, 1)] [SerializeField] float gunShotVol;
     [SerializeField] AudioClip[] lazershot;
-    [Range(0, 1)][SerializeField] float lazerShotVol;
+    [Range(0, 1)] [SerializeField] float lazerShotVol;
     [SerializeField] AudioClip[] outofAmmo;
-    [Range(0, 1)][SerializeField] float outofammoVol;
+    [Range(0, 1)] [SerializeField] float outofammoVol;
     bool oOASound = false;
     [SerializeField] AudioClip[] reloadSound;
-    [Range(0, 1)][SerializeField] float reloadVol;
+    [Range(0, 1)] [SerializeField] float reloadVol;
     [Header("----Weapon Drop stuff----")]
     [SerializeField] GameObject wepPickup;
 
@@ -67,7 +67,7 @@ public class weaponHandler : MonoBehaviour
         // Set defaults so no null references
         model = noModel;
         CurrCrosshair = NoCrosshair;
-        
+
     }
 
     // Update is called once per frame
@@ -78,8 +78,10 @@ public class weaponHandler : MonoBehaviour
             // shoot
             Shooting();
 
+            gamemanager.instance.updateAmmoCount(); // updates the UI for the ammo
+
             // Reload
-            if (Input.GetButtonDown("Reload") && !reloading) 
+            if (Input.GetButtonDown("Reload") && !reloading)
             {
                 audi.PlayOneShot(reloadSound[Random.Range(0, reloadSound.Length)], reloadVol);
                 StartCoroutine(Reload());
@@ -206,21 +208,21 @@ public class weaponHandler : MonoBehaviour
         reloading = true;
         ammoReserve += ammo;
         yield return new WaitForSeconds(reloadTime);
-        if(InfiniteAmmo)
+        if (InfiniteAmmo)
         {
             ammo = magCap;
         }
         else if (ammoReserve >= magCap)
         {
             ammoReserve -= magCap;
-            ammo = magCap;            
+            ammo = magCap;
         }
         else if (ammoReserve < magCap)
         {
             ammo = ammoReserve;
             ammoReserve = 0;
         }
-        
+
         canShoot = true;
         reloading = false;
         // ---- todo ----
@@ -262,6 +264,7 @@ public class weaponHandler : MonoBehaviour
             secammo = holdammo;
             secammoRes = holdammoRes;
             tempHolder = null;
+
         }
     }
 
@@ -301,7 +304,7 @@ public class weaponHandler : MonoBehaviour
     }
 
     public void updateGunStats()
-    {        
+    {
         if (InfiniteAmmo || bottomlessClip)
         {
             ammoMax = primary.ammoMax;

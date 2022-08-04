@@ -100,6 +100,7 @@ public class weaponPickup : MonoBehaviour
         modle.SetActive(false);
         //Destroy(cloneMod);
         Destroy(gameObject);
+        gamemanager.instance.updateAmmoCount(); // updates the UI for the ammo
     }
     //private void OnTriggerStay(Collider other)
     //{

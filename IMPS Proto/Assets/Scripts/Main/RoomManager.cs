@@ -9,7 +9,7 @@ public class RoomManager : MonoBehaviour
 
     public int rooms;
 
-    public int playerRoom;
+    public int playerRoom = 1;
 
     List<int> enemiesInRoom = new List<int>();
     List<int> enemiesKilledInRoom = new List<int>();
@@ -18,11 +18,12 @@ public class RoomManager : MonoBehaviour
     public TMP_Text enemyTotal;
     public TMP_Text currentRoom;
 
-    public GameObject entrance;
+    public GameObject checkpoint;
 
     void Awake()
     {
         instance = this;
+        checkpoint = GameObject.Find("Checkpoint1");
     }
 
     public void openDoor()
@@ -31,6 +32,9 @@ public class RoomManager : MonoBehaviour
         {
             GameObject door = GameObject.Find("Door" + playerRoom);
             door.SetActive(false);
+            playerRoom++;
+            checkpoint = GameObject.Find("Checkpoint" + playerRoom);
+            updateObjectiveUi();
         }
     }
 
@@ -53,8 +57,6 @@ public class RoomManager : MonoBehaviour
             gamemanager.instance.gameOver = true;
             gamemanager.instance.ConLockCursor();
         }
-
-
     }
 
     public void updateEnemyNumberOnRoom(int room)
@@ -70,10 +72,11 @@ public class RoomManager : MonoBehaviour
         enemiesKilledInRoom.Add(0);
     }
 
-    public void updateObjectiveUi(int room)
+    public void updateObjectiveUi()
     {
+        Debug.Log(playerRoom);
         currentRoom.text = playerRoom.ToString("F0");
-        enemyDead.text = enemiesKilledInRoom[room - 1].ToString("F0");
-        enemyTotal.text = enemiesInRoom[room - 1].ToString("F0");
+        enemyDead.text = enemiesKilledInRoom[playerRoom - 1].ToString("F0");
+        enemyTotal.text = enemiesInRoom[playerRoom - 1].ToString("F0");
     }
 }

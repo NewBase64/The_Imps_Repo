@@ -23,12 +23,17 @@ public class buttonFunctions : MonoBehaviour
     public void Respawn()
     {
         gamemanager.instance.playerScript.respawn();
-        gamemanager.instance.resume();
+        gamemanager.instance.restart();
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gamemanager.instance.restart();
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene(1);
     }
 }
