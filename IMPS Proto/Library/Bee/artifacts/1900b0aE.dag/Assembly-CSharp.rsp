@@ -378,6 +378,7 @@
 "Assets/Scripts/Other/explosion.cs"
 "Assets/Scripts/Other/healthPickup.cs"
 "Assets/Scripts/player/Camera/playerCamera.cs"
+"Assets/Scripts/player/facePlayer.cs"
 "Assets/Scripts/player/playerController.cs"
 "Assets/Scripts/Weapons/grenade.cs"
 "Assets/Scripts/Weapons/landmine.cs"

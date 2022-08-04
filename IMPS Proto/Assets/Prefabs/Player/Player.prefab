@@ -2419,6 +2419,7 @@ MonoBehaviour:
   PlayerhurtVol: 0
   jumpsound: []
   jumpVol: 0
+  HPOrig: 0
   slowed: 0
 --- !u!143 &8703058816639673490
 CharacterController:
@@ -2465,37 +2466,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 0
+  ammoReserve: 0
   magCap: 0
+  ammoMax: 0
   damage: 0
   fireRate: 0
   reloadTime: 0
   semiTautoF: 0
-  GUN: 0
-  hands: {fileID: 8703058816774354690}
-  pistol: {fileID: 389337672162778718}
-  rifle: {fileID: 8847466717981710775}
-  weapon: {fileID: 0}
-  pistolEffect: {fileID: 2397663995396650288, guid: bd4d252adce46dc488808cd429e93095, type: 3}
-  rifleEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
+  InfiniteAmmo: 0
+  bottomlessClip: 0
+  noModel: {fileID: 0}
+  model: {fileID: 0}
   wepEffect: {fileID: 0}
-  pistolFlash: {fileID: 5852648692381394215}
-  rifleFlash: {fileID: 5852648693521394134}
-  wepFlash: {fileID: 0}
-  pistolBarrel: {fileID: 0}
-  rifleBarrel: {fileID: 0}
-  wepBarrel: {fileID: 0}
+  wepSpawn: {fileID: 0}
   CurrCrosshair: {fileID: 0}
   NoCrosshair: {fileID: 0}
   Crosshair1: {fileID: 0}
   Crosshair2: {fileID: 0}
   Crosshair3: {fileID: 0}
+  catchMe: 0
+  primary: {fileID: 0}
+  secondary: {fileID: 0}
+  pubHolder: {fileID: 0}
+  pubammo: 0
+  pubammoRes: 0
   audi: {fileID: 0}
   gunshot: []
-  gunshotVolume: 0
-  outofammo: []
+  gunShotVol: 0
+  lazershot: []
+  lazerShotVol: 0
+  outofAmmo: []
   outofammoVol: 0
-  reload: []
+  reloadSound: []
   reloadVol: 0
+  wepPickup: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!54 &5265345355661488053
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2512,51 +2517,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &8703058816646005094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8703058816646005089}
-  - component: {fileID: 5852648692532141247}
-  m_Layer: 6
-  m_Name: SelectionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8703058816646005089
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8703058816646005094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8703058816981106958}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5852648692532141247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8703058816646005094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d489886abdb225d4082e4846601c1333, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pickup: 0
 --- !u!1 &8703058816774354690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,7 +4206,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8703058816646005089}
   - {fileID: 8703058817889580949}
   m_Father: {fileID: 8703058816639673488}
   m_RootOrder: 1
@@ -4383,7 +4342,7 @@ Transform:
   - {fileID: 988589859694909935}
   - {fileID: 8703058816577905850}
   m_Father: {fileID: 8703058816981106958}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8703058818537859707
 GameObject:

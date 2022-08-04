@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   ammo: 32
-  ammoMax: 160
   ammoReserve: 64
-  MagCap: 32
+  magCap: 32
+  ammoMax: 160
   damage: 1
   fireRate: 0.1
   reloadTime: 1
   semiTautoF: 0
   Lazer: 1
-  model: {fileID: 8970092465910318242, guid: 7d827b4953343d14d8851eabdac9c1f1, type: 3}
+  model: {fileID: 1372128445848883169, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
   Crosshair: 2
   gunshot:

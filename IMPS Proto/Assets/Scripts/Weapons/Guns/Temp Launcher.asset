@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
+  m_Name: Temp Launcher
+  m_EditorClassIdentifier: 
+  ammo: 1
+  ammoMax: 4
+  ammoReserve: 4
+  magCap: 1
+  damage: 10
+  fireRate: 1
+  reloadTime: 2
+  semiTautoF: 1
+  Lazer: 1
+  model: {fileID: 3623933414003541785, guid: 6c8b1ff50dd894d4e9f47ee4292d59ef, type: 3}
+  wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
+  Crosshair: 3
+  gunshot:
+  - {fileID: 8300000, guid: 604bcb260f7baaa4c8eea5f53c3b9d16, type: 3}
+  gunShotVol: 1
+  outofAmmo:
+  - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}
+  outofammoVol: 1
+  reloadSound:
+  - {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}
+  reloadVol: 1

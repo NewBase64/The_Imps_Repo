@@ -13,6 +13,7 @@ public class gamemanager : MonoBehaviour
     [HideInInspector] public weaponHandler weaponHandler;
     public List<weapon> weapons;
     [HideInInspector] public playerCamera cameraScript;
+    [HideInInspector] public GameObject mainCam;
 
     [Header("----Menus----")]
     public GameObject pauseMenu;
@@ -39,6 +40,8 @@ public class gamemanager : MonoBehaviour
 
         // Set the public player object to the player object in the scene
         player = GameObject.FindGameObjectWithTag("Player");
+
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
         // Set the public player script to the players playerController
         playerScript = player.GetComponent<playerController>();

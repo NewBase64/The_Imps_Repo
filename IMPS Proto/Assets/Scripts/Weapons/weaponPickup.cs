@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class weaponPickup : MonoBehaviour
 {
+    public int ammo;
+    public int ammoReserve;
     public weapon stats;
     [HideInInspector] public GameObject modle = null;
     [HideInInspector] public GameObject cloneMod = null;
@@ -17,12 +19,13 @@ public class weaponPickup : MonoBehaviour
     {
         if (gamemanager.instance.weaponHandler.catchMe)
         {
-            stats = gamemanager.instance.weaponHandler.tempHolder;
             gamemanager.instance.weaponHandler.catchMe = false;
+            stats = gamemanager.instance.weaponHandler.pubHolder;
+            ammo = gamemanager.instance.weaponHandler.pubammo;
+            ammoReserve = gamemanager.instance.weaponHandler.pubammoRes;
             modle = stats.model;
             cloneMod = Instantiate(modle, transform.position, transform.rotation);
             cloneMod.transform.parent = transform;
-            modle.transform.Rotate(0, 90, 90);
             cloneMod.SetActive(true);
             modle.SetActive(true);
             prompt.SetActive(false);
@@ -33,7 +36,8 @@ public class weaponPickup : MonoBehaviour
             {
                 stats = gamemanager.instance.RandomWeapon();
             }
-
+            ammo = stats.ammo;
+            ammoReserve = stats.ammoReserve;
             modle = stats.model;
             cloneMod = Instantiate(modle, transform.position, transform.rotation);
             cloneMod.transform.parent = transform;
@@ -48,9 +52,12 @@ public class weaponPickup : MonoBehaviour
         if (Pick)
         {
             if (Input.GetButtonDown("Pickup"))
-            {               
-                gamemanager.instance.weaponHandler.AddGun(stats);
-                PickedUp();
+            {
+                if (gamemanager.instance.weaponHandler.primary.model != stats.model && gamemanager.instance.weaponHandler.secondary.model != stats.model)
+                {
+                    gamemanager.instance.weaponHandler.AddGun(stats, ammo, ammoReserve);
+                    PickedUp();
+                }
             }
         }
     }
@@ -62,17 +69,18 @@ public class weaponPickup : MonoBehaviour
             player = other.GetComponent<weaponHandler>();
             if (player.primary == null)
             {
-                player.AddGun(stats);
+                player.AddGun(stats, ammo, ammoReserve);
                 PickedUp();
             }
             else if (player.secondary == null)
             {
-                player.AddGun(stats);
+                player.AddGun(stats, ammo, ammoReserve);
                 PickedUp();
             }
             else
             {
-                PickMeUp();
+                Pick = true;
+                prompt.SetActive(true);
             }
         }
     }
@@ -82,20 +90,9 @@ public class weaponPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PutMeDown();
+            prompt.SetActive(false);
+            Pick = false;
         }
-    }
-
-    public void PickMeUp()
-    {
-        Pick = true;
-        prompt.SetActive(true);
-    }
-
-    public void PutMeDown()
-    {
-        prompt.SetActive(false);
-        Pick = false;
     }
 
     public void PickedUp()
