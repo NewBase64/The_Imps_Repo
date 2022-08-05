@@ -1458,7 +1458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6982801583036030200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1681,7 +1681,12 @@ MonoBehaviour:
   player: {fileID: 0}
   playerScript: {fileID: 0}
   weaponHandler: {fileID: 0}
+  weapons:
+  - {fileID: 11400000, guid: f3d3ddb1c40d7a5468587173238f2e20, type: 2}
+  - {fileID: 11400000, guid: 5ac53fbef53fad24c8346dfc178bb4b8, type: 2}
+  - {fileID: 11400000, guid: 8e0aa049776335147837dbb6edd11c27, type: 2}
   cameraScript: {fileID: 0}
+  mainCam: {fileID: 0}
   pauseMenu: {fileID: 9025514285071892010}
   playerDeadMenu: {fileID: 9025514284145247316}
   playerDamageFlash: {fileID: 9025514285389578758}
@@ -1689,7 +1694,10 @@ MonoBehaviour:
   HPBar: {fileID: 9025514285531553393}
   enemyDead: {fileID: 5134607533701457963}
   enemyTotal: {fileID: 5134607532367787561}
-  numGuns: 2
+  ShieldBar: {fileID: 0}
+  ShieldIndicator: {fileID: 0}
+  ammo: {fileID: 0}
+  ammoReserve: {fileID: 0}
   enemyKillGoal: 0
   paused: 0
   menuCurrentlyOpen: {fileID: 0}

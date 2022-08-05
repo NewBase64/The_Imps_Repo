@@ -29,7 +29,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject Crosshair1;
     [SerializeField] GameObject Crosshair2;
     [SerializeField] GameObject Crosshair3;
-    public bool catchMe = false;
+    [HideInInspector] public bool catchMe = false;
     //[Header("----weapon vars----")]
     [HideInInspector] public weapon primary;
     [HideInInspector] public weapon secondary;
@@ -37,8 +37,8 @@ public class weaponHandler : MonoBehaviour
     [HideInInspector] public weapon pubHolder;
     int primammo;
     int primammoRes;
-    int secammo;
-    int secammoRes;
+    [HideInInspector] public int secammo;
+    [HideInInspector] public int secammoRes;
     int holdammo;
     int holdammoRes;
     [HideInInspector] public int pubammo;
@@ -46,15 +46,13 @@ public class weaponHandler : MonoBehaviour
     //bool prim;
     [Header("----Audio----")]
     public AudioSource audi;
-    [SerializeField] AudioClip[] gunshot;
-    [Range(0, 1)] [SerializeField] float gunShotVol;
-    [SerializeField] AudioClip[] lazershot;
-    [Range(0, 1)] [SerializeField] float lazerShotVol;
+    [SerializeField] AudioClip gunshot;
+    [Range(0, 1)][SerializeField] float gunShotVol;
     [SerializeField] AudioClip[] outofAmmo;
-    [Range(0, 1)] [SerializeField] float outofammoVol;
+    [Range(0, 1)][SerializeField] float outofammoVol;
     bool oOASound = false;
     [SerializeField] AudioClip[] reloadSound;
-    [Range(0, 1)] [SerializeField] float reloadVol;
+    [Range(0, 1)][SerializeField] float reloadVol;
     [Header("----Weapon Drop stuff----")]
     [SerializeField] GameObject wepPickup;
 
@@ -78,7 +76,7 @@ public class weaponHandler : MonoBehaviour
             // shoot
             Shooting();
 
-            gamemanager.instance.updateAmmoCount(); // updates the UI for the ammo
+            //gamemanager.instance.updateAmmoCount(); // updates the UI for the ammo
 
             // Reload
             if (Input.GetButtonDown("Reload") && !reloading)
@@ -154,13 +152,10 @@ public class weaponHandler : MonoBehaviour
             if (!bottomlessClip) // Do not decrement ammo if bottomless clip
             {
                 ammo--;
-                // ---- todo ----
-                //
-                // updateammo();
-                //
+                gamemanager.instance.updateAmmoCount();
             }
             // play gunshot          
-            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Length)], gunShotVol);
+            audi.PlayOneShot(gunshot, gunShotVol);
 
             RaycastHit hit;                                                                          //
             if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit))//
@@ -225,22 +220,79 @@ public class weaponHandler : MonoBehaviour
 
         canShoot = true;
         reloading = false;
-        // ---- todo ----
-        //
-        // updateammo();
-        //
+        gamemanager.instance.updateAmmoCount();
     }
 
-    public void GiveAmmo(int addedAmmo, weapon gun = null)
+    public int GiveAmmo(int primsec, int addammo = 0)
     {
-        if ((addedAmmo + ammo) > ammoMax)
-        {
-            ammo = ammoMax;
+        // If not adding a specific amount of ammo
+        if (addammo == 0)
+        {            
+            if (primsec == 1) // If adding to the primary weapon
+            {
+                if ((magCap * 2 + ammoReserve) > ammoMax)                
+                    ammoReserve = ammoMax;                
+                else                
+                    ammoReserve += magCap * 2;               
+            }
+            else if (primsec == 2) // If adding to the secondary weapon
+            {
+                if ((magCap * 2 + secammoRes) > secondary.ammoMax)                
+                    secammoRes = secondary.ammoMax;               
+                else               
+                    secammoRes += magCap * 2;                
+            }
+            else // Add to both
+            {
+                if ((magCap * 2 + ammoReserve) > ammoMax)                
+                    ammoReserve = ammoMax;                
+                else                
+                    ammoReserve += magCap * 2;
+                
+                if ((magCap * 2 + secammoRes) > secondary.ammoMax)                
+                    secammoRes = secondary.ammoMax;                
+                else                
+                    secammoRes += magCap * 2;                
+            }
+            return 0;
         }
-        else
+        else // If adding a specific amount of ammo
         {
-            ammo += addedAmmo;
+            if (primsec == 1) // If giving to the primary weapon
+            {
+                if ((addammo + ammoReserve) > ammoMax) // If ammo overflow
+                {
+                    int ammoback = ammoMax - ammoReserve; // get the amount of ammo needed to fill up 
+                    ammoReserve = ammoMax; // set ammo to max
+                    return ammoback; // tell the caller how much I took
+                }
+                else
+                {
+                    ammoReserve += addammo; // add ammo to primary
+                    return 0;
+                }
+            }
+            else // Giving to the secondary
+            {
+                if ((addammo + secammoRes) > secondary.ammoMax)
+                {
+                    int ammoback = secondary.ammoMax - secammoRes;
+                    secammoRes = secondary.ammoMax;
+                    return ammoback;
+                }
+                else
+                {
+                    secammoRes += addammo;
+                    return 0;
+                }
+            }
         }
+    }
+
+    public void FillAmmo()
+    {
+        ammoReserve = ammoMax;
+        secammoRes = secondary.ammoMax;
     }
 
     public void unArm()
@@ -278,13 +330,9 @@ public class weaponHandler : MonoBehaviour
         }
         else if (secondary == null)
         {
-            secondary = primary;
-            secammo = ammo;
-            ammo = addammo;
-            secammoRes = ammoReserve;
-            ammoReserve = addammoRes;
-            primary = stats;
-            //prim = false;            
+            secondary = stats;
+            secammo = addammo;
+            secammoRes = addammoRes;
         }
         else
         {
@@ -331,10 +379,7 @@ public class weaponHandler : MonoBehaviour
         outofAmmo = primary.outofAmmo;
         outofammoVol = primary.outofammoVol;
         ChangeCrosshair();
-        // ---- todo ----
-        //
-        // updateammo();
-        //
+        gamemanager.instance.updateAmmoCount();
     }
 
     public void ChangeCrosshair()

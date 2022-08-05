@@ -24,8 +24,7 @@ MonoBehaviour:
   model: {fileID: 1372128445848883169, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
   Crosshair: 2
-  gunshot:
-  - {fileID: 8300000, guid: 604bcb260f7baaa4c8eea5f53c3b9d16, type: 3}
+  gunshot: {fileID: 8300000, guid: 604bcb260f7baaa4c8eea5f53c3b9d16, type: 3}
   gunShotVol: 1
   outofAmmo:
   - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}

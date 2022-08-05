@@ -8,12 +8,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [Header("----Player Attributes----")]
-    [Range(1, 200)] [SerializeField] public int HP;
-    [Range(1, 50)] [SerializeField] float playerSpeed;
-    [Range(-10, 10)] [SerializeField] float sprintMult;
-    [Range(1, 50)] [SerializeField] float jumpHeight;
-    [Range(1, 100)] [SerializeField] float gravityValue;
-    [Range(1, 10)] [SerializeField] int numjumps;
+    [Range(1, 200)][SerializeField] public int HP;
+    [Range(1, 50)][SerializeField] float playerSpeed;
+    [Range(-10, 10)][SerializeField] float sprintMult;
+    [Range(1, 50)][SerializeField] float jumpHeight;
+    [Range(1, 100)][SerializeField] float gravityValue;
+    [Range(1, 10)][SerializeField] int numjumps;
 
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
@@ -22,27 +22,33 @@ public class playerController : MonoBehaviour, IDamageable
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] footsep;
-    [Range(0, 1)] [SerializeField] float footstepVolume;
+    [Range(0, 1)][SerializeField] float footstepVolume;
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
-    [Range(0, 1)] [SerializeField] float PlayerhurtVol;
+    [Range(0, 1)][SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
-    [Range(0, 1)] [SerializeField] float jumpVol;
-
+    [Range(0, 1)][SerializeField] float jumpVol;
+   
+    //movement vars
     float playerSpeedOrig;
     [HideInInspector] public int HPOrig;
+    [HideInInspector] public bool jetpack;
     Vector3 playerSpawnPosition;
-
-    bool isSprinting = false;
-    bool invulnerable = false;
-
     int timesJumped = 0;
     private Vector3 playerVelocity;
     Vector3 move;
 
+    //bools
     public Shield shield;
+    bool isSprinting = false;
     public bool slowed = false;
+    bool invulnerable = false;
     public bool takingDamage = false;
+
+    // weapon pickup vars
+    [SerializeField] bool pickingUp;
+    [SerializeField] weapon stats;
+    [SerializeField] GameObject obj;
 
     void Start()
     {
@@ -60,7 +66,7 @@ public class playerController : MonoBehaviour, IDamageable
             movePlayer();
         }
     }
-
+    
     private void movePlayer()
     {
         // Get the inputs from unity's input system
@@ -132,7 +138,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void GiveHP(int health)
     {
-        if ((health + HP) > HPOrig)
+        if((health + HP) > HPOrig)
         {
             HP = HPOrig;
         }
@@ -148,7 +154,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP = HPOrig;
         controller.enabled = false;
-        transform.position = RoomManager.instance.checkpoint.transform.position;
+        transform.position = playerSpawnPosition;
         controller.enabled = true;
         updatePlayerHp();
         pushback = Vector3.zero;
@@ -156,17 +162,10 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void takeDamage(int dmg)
     {
-        if (shield != null && shield.isActive)
-        {
-            shield.takeDamage(dmg);
-        }
-        else
-        {
-            HP -= dmg;
-            audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-            updatePlayerHp();
-            StartCoroutine(damageFlash());
-        }
+        HP -= dmg;
+        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
+        updatePlayerHp();
+        StartCoroutine(damageFlash());
         if (HP <= 0)
         {
             gamemanager.instance.playerDead();
@@ -222,6 +221,8 @@ public class playerController : MonoBehaviour, IDamageable
 
             if (isSprinting)
                 yield return new WaitForSeconds(0.3f);
+            else if (slowed)
+                yield return new WaitForSeconds(0.5f);
             else
                 yield return new WaitForSeconds(0.4f);
             footstepplaying = false;

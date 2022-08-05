@@ -48,11 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994e855982b049148aed4330c68714a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 5ac53fbef53fad24c8346dfc178bb4b8, type: 2}
-  modle: {fileID: 1372128445848883169, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
+  ammo: 0
+  ammoReserve: 0
+  stats: {fileID: 0}
+  modle: {fileID: 0}
   cloneMod: {fileID: 0}
   prompt: {fileID: 3718931622687100523}
-  Pick: 0
 --- !u!135 &1656715085191226196
 SphereCollider:
   m_ObjectHideFlags: 0
