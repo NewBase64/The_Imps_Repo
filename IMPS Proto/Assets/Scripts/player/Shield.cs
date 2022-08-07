@@ -89,4 +89,11 @@ public class Shield : MonoBehaviour
         }
         regenning = false;
     }
+
+    public void Restart()
+    {
+        isActive = true;
+        takeDamage(-shieldHp);
+        gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 1);
+    }
 }

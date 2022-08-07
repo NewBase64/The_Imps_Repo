@@ -4,13 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laser : MonoBehaviour, IDamageable
+public class Laser : MonoBehaviour
 {
     [SerializeField] GameObject laserStart;
     [SerializeField] GameObject laserEnd;
     LineRenderer laser;
-    [SerializeField] int hp;
     [SerializeField] int dmg;
+    [SerializeField] int disableTimer;
+    [SerializeField] int delayBetweenDisables;
+    public bool isActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,20 +24,16 @@ public class Laser : MonoBehaviour, IDamageable
     // Update is called once per frame
     void Update()
     {
-        laser.SetPosition(0, laserStart.transform.position);
-        laser.SetPosition(1, laserEnd.transform.position);
-    }
-
-    public void takeDamage(int dmg)
-    {
-        hp -= dmg;
-        if (hp <= 0)
+        if (isActive)
         {
-            Destroy(gameObject);
+            laser.SetPosition(0, laserStart.transform.position);
+            laser.SetPosition(1, laserEnd.transform.position);
+            StartCoroutine(disableDelay());
         }
+
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerStay(Collider other)
     {
         if (other.GetComponent<IDamageable>() != null)
         {
@@ -51,7 +49,26 @@ public class Laser : MonoBehaviour, IDamageable
     IEnumerator delay(IDamageable isDamageable)
     {
         isDamageable.takeDamage(dmg);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         gamemanager.instance.playerScript.takingDamage = false;
+    }
+
+    IEnumerator disableDelay()
+    {
+        isActive = false;
+        yield return new WaitForSeconds(delayBetweenDisables);
+        StartCoroutine(disable());
+    }
+
+    IEnumerator disable()
+    {
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponent<LineRenderer>().enabled = false;
+        gameObject.transform.parent.transform.Find("LaserStart").GetComponent<ParticleSystem>().Stop();
+        yield return new WaitForSeconds(disableTimer);
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<LineRenderer>().enabled = true;
+        gameObject.transform.parent.transform.Find("LaserStart").GetComponent<ParticleSystem>().Play();
+        isActive = true;
     }
 }

@@ -36,7 +36,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     Vector3 startignPos;
     float StoppingDisOrig;
 
-    [SerializeField] int assignedRoom;
+    [HideInInspector] public int assignedRoom;
 
     void Start()
     {

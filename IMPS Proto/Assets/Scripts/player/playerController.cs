@@ -9,12 +9,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [Header("----Player Attributes----")]
-    [Range(1, 200)][SerializeField] public int HP;
-    [Range(1, 50)][SerializeField] float playerSpeed;
-    [Range(-10, 10)][SerializeField] float sprintMult;
-    [Range(1, 50)][SerializeField] float jumpHeight;
-    [Range(1, 100)][SerializeField] float gravityValue;
-    [Range(1, 10)][SerializeField] int numjumps;
+    [Range(1, 200)] [SerializeField] public int HP;
+    [Range(1, 50)] [SerializeField] float playerSpeed;
+    [Range(-10, 10)] [SerializeField] float sprintMult;
+    [Range(1, 50)] [SerializeField] float jumpHeight;
+    [Range(1, 100)] [SerializeField] float gravityValue;
+    [Range(1, 10)] [SerializeField] int numjumps;
 
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
@@ -23,12 +23,12 @@ public class playerController : MonoBehaviour, IDamageable
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] footsep;
-    [Range(0, 1)][SerializeField] float footstepVolume;
+    [Range(0, 1)] [SerializeField] float footstepVolume;
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
-    [Range(0, 1)][SerializeField] float PlayerhurtVol;
+    [Range(0, 1)] [SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
-    [Range(0, 1)][SerializeField] float jumpVol;
+    [Range(0, 1)] [SerializeField] float jumpVol;
 
     [Header("----Crouch and Wall Running----")]
     public Transform orientation;
@@ -91,6 +91,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Start()
     {
+        audi = AudioManager.instance.sfx;
+
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -155,7 +157,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (_wallLeft)
         {
 
-            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime *100);
+            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.Rotate(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -163,7 +165,7 @@ public class playerController : MonoBehaviour, IDamageable
 
         else if (_wallRight)
         {
-            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime *100);
+            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -239,12 +241,12 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped = 0;
             jumpHeight = jumpheightOrig;
         }
-        if(jetpack)
+        if (jetpack)
         {
             numjumps = 2;
-            if(timesJumped==2)
+            if (timesJumped == 2)
             {
-                jumpHeight = jumpHeight *2;
+                jumpHeight = jumpHeight * 2;
 
 
             }
@@ -252,7 +254,7 @@ public class playerController : MonoBehaviour, IDamageable
 
 
         }
-         
+
 
 
     }
@@ -305,10 +307,17 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void takeDamage(int dmg)
     {
-        HP -= dmg;
-        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-        updatePlayerHp();
-        StartCoroutine(damageFlash());
+        if (shield != null && shield.isActive)
+        {
+            shield.takeDamage(dmg);
+        }
+        else
+        {
+            HP -= dmg;
+            audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
+            updatePlayerHp();
+            StartCoroutine(damageFlash());
+        }
         if (HP <= 0)
         {
             gamemanager.instance.playerDead();

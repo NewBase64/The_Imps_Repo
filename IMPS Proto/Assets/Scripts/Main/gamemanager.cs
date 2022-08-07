@@ -20,6 +20,7 @@ public class gamemanager : MonoBehaviour
     public GameObject playerDeadMenu;
     public GameObject playerDamageFlash;
     public GameObject winGameMenu;
+    public GameObject settingsMenu;
     [Header("----UI Stuff----")]
     public Image HPBar;
     public TMP_Text enemyDead;
@@ -89,7 +90,8 @@ public class gamemanager : MonoBehaviour
     public void restart()
     {
         gameOver = false;
-        menuCurrentlyOpen.SetActive(false); ;
+        menuCurrentlyOpen.SetActive(false);
+        playerScript.shield.Restart();
         menuCurrentlyOpen = null;
         LockCursor();
     }
@@ -115,6 +117,14 @@ public class gamemanager : MonoBehaviour
             gameOver = true;
             ConLockCursor();
         }
+    }
+
+    public void OpenSettings()
+    {
+        menuCurrentlyOpen.SetActive(false);
+        menuCurrentlyOpen = settingsMenu;
+        menuCurrentlyOpen.SetActive(true);
+        ConLockCursor();
     }
 
     public void GiveHP(int health)
