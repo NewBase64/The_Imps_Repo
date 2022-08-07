@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
+  m_Name: Shotgun
+  m_EditorClassIdentifier: 
+  model: {fileID: 154868483340486660, guid: e97adba056f504e4bb9605613d81b2be, type: 3}
+  wepEffect: {fileID: 964930514814309113, guid: 96d5150d24ffb1549881b041e4e11f78, type: 3}
+  Crosshair: {fileID: 6343804671921266003, guid: c3bdb1c6486100647843c76951010196, type: 3}
+  ammo: 6
+  ammoMax: 30
+  ammoReserve: 12
+  magCap: 6
+  damage: 1
+  fireRate: 0.1
+  reloadTime: 1
+  shootAction: 0
+  shootType: 1
+  spreadshots: 15
+  spreadangle: 5
+  gunshot:
+  - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
+  outofAmmo:
+  - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}
+  reloadSound:
+  - {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}

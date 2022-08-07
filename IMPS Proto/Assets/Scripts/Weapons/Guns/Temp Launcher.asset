@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
   m_Name: Temp Launcher
   m_EditorClassIdentifier: 
+  model: {fileID: 3623933414003541785, guid: 6c8b1ff50dd894d4e9f47ee4292d59ef, type: 3}
+  wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
+  Crosshair: {fileID: 891171137142701797, guid: 21dd2c97d4843164dbf96af6bd5207ed, type: 3}
   ammo: 1
   ammoMax: 4
   ammoReserve: 4
@@ -19,16 +22,13 @@ MonoBehaviour:
   damage: 10
   fireRate: 1
   reloadTime: 2
-  semiTautoF: 1
-  shootType: 0
-  model: {fileID: 3623933414003541785, guid: 6c8b1ff50dd894d4e9f47ee4292d59ef, type: 3}
-  wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
-  Crosshair: 3
-  gunshot: {fileID: 8300000, guid: b668cf9f79ff57a408850696b6ea2299, type: 3}
-  gunShotVol: 1
+  shootAction: 0
+  shootType: 2
+  spreadshots: 0
+  spreadangle: 0
+  gunshot:
+  - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
   outofAmmo:
   - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}
-  outofammoVol: 1
   reloadSound:
   - {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}
-  reloadVol: 1

@@ -17,8 +17,8 @@ public class weaponPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if spaning from player, get the players info
-        if (gamemanager.instance.weaponHandler.catchMe) 
+        // if spawning from player, get the players info
+        if (gamemanager.instance.weaponHandler.catchMe)
         {
             gamemanager.instance.weaponHandler.catchMe = false;
             stats = gamemanager.instance.weaponHandler.pubHolder;
@@ -35,12 +35,12 @@ public class weaponPickup : MonoBehaviour
         {
             if (stats == null) // if I'm not specified to be a certain gun 
                 stats = gamemanager.instance.RandomWeapon(); // Randomise me
-            
+
             if (ammo == 0) // if I don't have a specified amount of ammo   
                 ammo = stats.ammo; // default ammo      
-            if (ammoReserve == 0)  //repeat      
-                ammoReserve = stats.ammoReserve; 
-            
+            if (ammoReserve == 0)  //repeat for reserve  
+                ammoReserve = stats.ammoReserve;
+
             //set defaults
             modle = stats.model;
             cloneMod = Instantiate(modle, transform.position, transform.rotation);
@@ -58,7 +58,7 @@ public class weaponPickup : MonoBehaviour
         {
             // if the player inputs
             if (Input.GetButtonDown("Pickup"))
-            {               
+            {
                 gamemanager.instance.weaponHandler.AddGun(stats, ammo, ammoReserve); // give player my stuff
                 Destroy(gameObject);
             }
@@ -70,48 +70,50 @@ public class weaponPickup : MonoBehaviour
         if (other.CompareTag("Player")) // if player enters me
         {
             player = other.GetComponent<weaponHandler>(); // grab players weapon stuff
+            weapon primary = player.GetPrimary();
+            weapon secondary = player.GetSecondary();
             // if players has no weapon
-            if (player.primary == null) 
+            if (primary == null)
             {
                 player.AddGun(stats, ammo, ammoReserve); // give him my stuff
                 Destroy(gameObject);
             }
             // if players has no secondary weapon
-            else if (player.secondary == null) 
+            else if (secondary == null)
             {
                 player.AddGun(stats, ammo, ammoReserve); // give him my stuff
                 Destroy(gameObject);
             }
             // if player is holding the same gun
-            else if (player.primary.model == modle || player.secondary.model == modle) 
+            else if (primary.model == modle || secondary.model == modle)
             {
-                if (player.primary.model == modle)
+                if (primary.model == modle)
                 {
                     // if players weapons need ammo
-                    if (player.ammoReserve != player.primary.ammoMax)
+                    if (player.GetAmmoReserve() != primary.ammoMax)
                     {
                         // give the player all my ammo and wait to get the ammount of ammo they took
                         int subammo = player.GiveAmmo(1, ammo + ammoReserve);
                         // if I got ammo back
                         if (subammo != 0)
-                        {                            
+                        {
                             // if I take away all ammo from reserve
                             if (ammoReserve - subammo < 0)
                             {
                                 subammo -= ammoReserve; // subtract the reserve
                                 ammoReserve = 0; // remove the reserve 
                                 ammo -= subammo; // take from ammo. if math is right, ammo should never be 0 or less 
-                            }                           
-                            else                            
+                            }
+                            else
                                 ammoReserve -= subammo;
                         }
                         else // I didn't get ammo back, so I'm out of ammo                        
-                            Destroy(gameObject);                       
+                            Destroy(gameObject);
                     }
                 }
                 else
                 {
-                    if (player.secammoRes != player.secondary.ammoMax) // repeat for secondary
+                    if (player.GetSecondaryAmmoReserve() != secondary.ammoMax) // repeat for secondary
                     {
                         int subammo = player.GiveAmmo(2, ammo + ammoReserve);
                         if (subammo != 0)
@@ -121,12 +123,12 @@ public class weaponPickup : MonoBehaviour
                                 subammo -= ammoReserve;
                                 ammoReserve = 0;
                                 ammo -= subammo;
-                            }                            
+                            }
                             else
                                 ammoReserve -= subammo;
                         }
-                        else                        
-                            Destroy(gameObject);                        
+                        else
+                            Destroy(gameObject);
                     }
                 }
             }
@@ -140,7 +142,7 @@ public class weaponPickup : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        // if player leave me
+        // if player leaves me
         if (other.CompareTag("Player"))
         {
             prompt.SetActive(false);

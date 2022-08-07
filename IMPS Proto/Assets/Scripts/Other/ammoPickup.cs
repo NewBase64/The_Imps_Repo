@@ -11,25 +11,27 @@ public class ammoPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            weaponHandler gun = other.GetComponent<weaponHandler>();
-            if (gun.primary != null)
+            weaponHandler player = other.GetComponent<weaponHandler>();
+            weapon primary = player.GetPrimary();
+            weapon secondary = player.GetSecondary();
+            if (primary != null)
             {
                 if (fillAmmo)
                 {
                     gamemanager.instance.weaponHandler.FillAmmo();
                 }
-                else 
+                else
                 {
-                    if (gun.primary.ammo != gun.primary.ammoMax)
+                    if (player.GetAmmoReserve() != primary.ammoMax)
                     {
-                        gamemanager.instance.weaponHandler.GiveAmmo(1);
+                        player.GiveAmmo(1);
                         Destroy(gameObject);
                     }
-                    if (gun.secondary != null)
+                    if (secondary != null)
                     {
-                        if (gun.secondary.ammo != gun.secondary.ammoMax)
+                        if (player.GetSecondaryAmmoReserve() != secondary.ammoMax)
                         {
-                            gamemanager.instance.weaponHandler.GiveAmmo(2);
+                            player.GiveAmmo(2);
                             Destroy(gameObject);
                         }
                     }

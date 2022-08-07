@@ -150,7 +150,7 @@ public class gamemanager : MonoBehaviour
 
     public void updateAmmoCount()
     {
-        ammo.text = weaponHandler.ammo.ToString();
-        ammoReserve.text = weaponHandler.magCap.ToString();
+        ammo.text = weaponHandler.GetAmmo().ToString();
+        ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
     }
 }

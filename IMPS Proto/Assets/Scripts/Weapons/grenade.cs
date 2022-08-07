@@ -9,13 +9,16 @@ public class grenade : MonoBehaviour
     [SerializeField] int speed;
     [SerializeField] int timer;
     [SerializeField] GameObject explosion;
+    public bool direction;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.velocity = (gamemanager.instance.player.transform.position - transform.position) + new Vector3(0, 0.5f, 0) * speed;
         StartCoroutine(explosionTime());
-
+        if (direction)
+            rb.velocity = -(gamemanager.instance.player.transform.forward + transform.position) + new Vector3(0, 0.5f, 0) * speed;
+        else
+            rb.velocity = (gamemanager.instance.player.transform.forward + transform.position) + new Vector3(0, 0.5f, 0) * speed;
     }
     IEnumerator explosionTime()
     {
@@ -23,5 +26,4 @@ public class grenade : MonoBehaviour
         Instantiate(explosion, transform.position, explosion.transform.rotation);
         Destroy(gameObject);
     }
-
 }
