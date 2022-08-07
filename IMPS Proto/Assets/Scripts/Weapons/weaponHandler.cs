@@ -256,7 +256,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] weapon.ShootAction shootAction;
     [SerializeField] weapon.ShootType shootType;
     [SerializeField] int spreadshots;
-    [SerializeField] int spreadangle;
+    [SerializeField] float spreadangle;
 
     [SerializeField] bool canShoot = true;
     [SerializeField] bool reloading = false;

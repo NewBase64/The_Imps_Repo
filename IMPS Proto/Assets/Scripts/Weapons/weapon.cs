@@ -234,7 +234,7 @@ public class weapon : ScriptableObject
     public ShootAction shootAction;
     public ShootType shootType;
     public int spreadshots;
-    public int spreadangle;
+    public float spreadangle;
     //[Header("----WepSounds----")]
     public List<AudioClip> gunshot;
     public List<AudioClip> outofAmmo;

@@ -20,12 +20,12 @@ MonoBehaviour:
   ammoReserve: 12
   magCap: 6
   damage: 1
-  fireRate: 0.1
+  fireRate: 1
   reloadTime: 1
   shootAction: 0
   shootType: 1
   spreadshots: 15
-  spreadangle: 5
+  spreadangle: 0.5
   gunshot:
   - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
   outofAmmo:

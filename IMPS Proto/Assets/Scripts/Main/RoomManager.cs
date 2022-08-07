@@ -74,7 +74,7 @@ public class RoomManager : MonoBehaviour
 
     public void updateObjectiveUi()
     {
-        Debug.Log(playerRoom);
+        //Debug.Log(playerRoom);
         currentRoom.text = playerRoom.ToString("F0");
         enemyDead.text = enemiesKilledInRoom[playerRoom - 1].ToString("F0");
         enemyTotal.text = enemiesInRoom[playerRoom - 1].ToString("F0");
