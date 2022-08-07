@@ -53,5 +53,15 @@ public class playerCamera : MonoBehaviour
             transform.parent.Rotate(Vector3.up * mouseX);
 
         Camera.main.fieldOfView = fov;
+
     }
+        public void crouch()
+        {
+            transform.Translate(0, -1, 0);
+
+        }
+        public void goUP()
+        {
+            transform.Translate(0, 1, 0);
+        }
 }

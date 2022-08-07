@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour, IDamageable
 {
+    #region Organized_Fields
     [Header("----Components----")]
     [SerializeField] CharacterController controller;
 
@@ -28,35 +29,80 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
     [Range(0, 1)][SerializeField] float jumpVol;
-   
-    //movement vars
+
+    [Header("----Crouch and Wall Running----")]
+    public Transform orientation;
+    [SerializeField] Rigidbody rigid;
+    CapsuleCollider Collider;
+    [SerializeField] float minimumJumpHeight = 1.5f;
+    [SerializeField] float slidespeed = 10f;
+    [SerializeField] float distanceOfWall = 0.3f;
+    [SerializeField] float RunUp = 10f;
+    [SerializeField] float WallJumpForce;
+    [SerializeField] float camTiltAngle;
+    [SerializeField] float tiltTime;
+
+    [SerializeField] public float wallRunSpeed;
+    [SerializeField] public float Tilt { get; private set; }
+    [SerializeField] public LayerMask whatwall;
+
+
+
+
+
+    #endregion
+
+
+
+
+
+    #region non_serialized_values_
     float playerSpeedOrig;
-    [HideInInspector] public int HPOrig;
-    [HideInInspector] public bool jetpack;
+    public int HPOrig;
     Vector3 playerSpawnPosition;
+    float origCapsuleHeight;
+    public float reducedCapsHeight;
+    bool isSliding;
+    bool isSprinting = false;
+    //private bool isWallRunning=false;
+    bool invulnerable = false;
+    [SerializeField] public bool jetpack;
+    float jumpheightOrig;
     int timesJumped = 0;
     private Vector3 playerVelocity;
     Vector3 move;
-
-    //bools
-    public Shield shield;
-    bool isSprinting = false;
     public bool slowed = false;
-    bool invulnerable = false;
     public bool takingDamage = false;
+    private bool _wallLeft, _wallRight;
 
-    // weapon pickup vars
-    [SerializeField] bool pickingUp;
-    [SerializeField] weapon stats;
-    [SerializeField] GameObject obj;
+    private RaycastHit _leftWallHit, _rightWallHit;
+    public Shield shield;
+    public GameObject cam;
+
+
+
+
+
+
+    #endregion
+
+
+
 
     void Start()
     {
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
-    }
 
+        Collider = GetComponent<CapsuleCollider>();
+
+        origCapsuleHeight = Collider.height;
+        jumpheightOrig = jumpHeight;
+        rigid = GetComponent<Rigidbody>();
+
+    }
+    #region Player_Functions
     void Update()
     {
         if (!gamemanager.instance.paused)
@@ -65,8 +111,86 @@ public class playerController : MonoBehaviour, IDamageable
 
             movePlayer();
         }
+
+        if (Input.GetButtonDown("Crouch"))
+            Sliding();
+        else if (Input.GetButtonUp("Crouch"))
+            GoUp();
+        CheckForWall();
+
+
+        if (CanWallRun())
+        {
+
+            if (_wallLeft)
+            {
+                //Debug.Log(_wallLeft);
+                StartWall();
+            }
+            else if (_wallRight)
+            {
+                //Debug.Log(_wallRight);
+                StartWall();
+
+            }
+            else
+            {
+
+                StopWall();
+
+            }
+        }
+        else
+        {
+            StopWall();
+        }
+
+
     }
-    
+
+    void StartWall()
+    {
+        //Debug.Log("StartWall hit");
+        rigid.AddForce(orientation.forward * wallRunSpeed, ForceMode.Acceleration);
+        if (_wallLeft)
+        {
+
+            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime *100);
+            cam.transform.Rotate(0, 0, Tilt);
+            //Debug.Log(Tilt);
+            //Debug.Log(cam.transform.rotation);
+        }
+
+        else if (_wallRight)
+        {
+            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime *100);
+            cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
+            //Debug.Log(Tilt);
+            //Debug.Log(cam.transform.rotation);
+        }
+
+        if (Input.GetButton("Jump"))
+        {
+            if (_wallLeft)
+            {
+                Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
+                rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
+                rigid.AddForce(wallJumpDirect * WallJumpForce * 70, ForceMode.Force);
+            }
+            else if (_wallRight)
+            {
+                Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
+                rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
+                rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
+
+            }
+        }
+    }
+    void StopWall()
+    {
+        Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
+        cam.transform.Rotate(0, 0, Tilt);
+    }
     private void movePlayer()
     {
         // Get the inputs from unity's input system
@@ -95,7 +219,9 @@ public class playerController : MonoBehaviour, IDamageable
         // Change the height position of the player
         if (Input.GetButtonDown("Jump") && (timesJumped < numjumps))
         {
-            audi.PlayOneShot(jumpsound[Random.Range(0, jumpsound.Length)], jumpVol);
+            if (timesJumped == 0)
+            { audi.PlayOneShot(jumpsound[Random.Range(0, jumpsound.Length)], jumpVol); }
+
             playerVelocity.y += jumpHeight;
             timesJumped++;
         }
@@ -111,7 +237,24 @@ public class playerController : MonoBehaviour, IDamageable
         {
             playerVelocity.y = 0f;
             timesJumped = 0;
+            jumpHeight = jumpheightOrig;
         }
+        if(jetpack)
+        {
+            numjumps = 2;
+            if(timesJumped==2)
+            {
+                jumpHeight = jumpHeight *2;
+
+
+            }
+
+
+
+        }
+         
+
+
     }
     void Sprint()
     {
@@ -138,7 +281,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void GiveHP(int health)
     {
-        if((health + HP) > HPOrig)
+        if ((health + HP) > HPOrig)
         {
             HP = HPOrig;
         }
@@ -180,13 +323,45 @@ public class playerController : MonoBehaviour, IDamageable
     {
         gamemanager.instance.ShieldBar.fillAmount = (float)shield.shieldCurrentHp / (float)shield.shieldHp;
     }
+    private void Sliding()
+    {
+        Collider.height = reducedCapsHeight;
+        controller.height = reducedCapsHeight;
+        playerSpeed = playerSpeedOrig / 2;
+        gamemanager.instance.cameraScript.crouch();
+        rigid.AddForce(transform.forward * slidespeed, ForceMode.VelocityChange);
+    }
 
+    private void GoUp()
+    {
+        playerSpeed = playerSpeedOrig;
+        Collider.height = origCapsuleHeight;
+        controller.height = origCapsuleHeight;
+        gamemanager.instance.cameraScript.goUP();
+    }
+
+    bool CanWallRun()
+    {
+        //Debug.Log("CanWall");
+        return !Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, minimumJumpHeight);
+    }
+    void CheckForWall()
+    {
+        _wallLeft = Physics.Raycast(transform.position, -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
+        _wallRight = Physics.Raycast(transform.position, orientation.right, out _rightWallHit, distanceOfWall, whatwall);
+    }
+
+
+    #endregion
+
+    #region IEnums
     IEnumerator damageFlash()
     {
         gamemanager.instance.playerDamageFlash.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         gamemanager.instance.playerDamageFlash.SetActive(false);
     }
+
 
     // Slows the player for a certain amount time by a certain percentage
     public IEnumerator slowPlayer(int time, float slowMultiplier = 0)
@@ -221,11 +396,10 @@ public class playerController : MonoBehaviour, IDamageable
 
             if (isSprinting)
                 yield return new WaitForSeconds(0.3f);
-            else if (slowed)
-                yield return new WaitForSeconds(0.5f);
             else
                 yield return new WaitForSeconds(0.4f);
             footstepplaying = false;
         }
     }
+    #endregion
 }
