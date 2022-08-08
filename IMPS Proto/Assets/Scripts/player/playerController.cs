@@ -34,11 +34,11 @@ public class playerController : MonoBehaviour, IDamageable
     public Transform orientation;
     [SerializeField] Rigidbody rigid;
     CapsuleCollider Collider;
-    public float minimumJumpHeight = 0.5f;
-    public float slidespeed = 5f;
-    public float distanceOfWall = 0.5f;
-    public float RunUp = 2f;
-    public float WallJumpForce=6f;
+    [SerializeField] float minimumJumpHeight = 1.5f;
+    [SerializeField] float slidespeed = 10f;
+    [SerializeField] float distanceOfWall = 0.3f;
+    [SerializeField] float RunUp = 10f;
+    [SerializeField] float WallJumpForce;
     [SerializeField] float camTiltAngle;
     [SerializeField] float tiltTime;
 
@@ -91,7 +91,6 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Start()
     {
-        audi = AudioManager.instance.sfx;
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -338,12 +337,20 @@ public class playerController : MonoBehaviour, IDamageable
         pushback = Vector3.zero;
     }
 
+
     public void takeDamage(int dmg)
     {
-        HP -= dmg;
-        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-        updatePlayerHp();
-        StartCoroutine(damageFlash());
+        if (shield != null && shield.isActive)
+        {
+            shield.takeDamage(dmg);
+        }
+        else
+        {
+            HP -= dmg;
+            audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
+            updatePlayerHp();
+            StartCoroutine(damageFlash());
+        }
         if (HP <= 0)
         {
             gamemanager.instance.playerDead();
