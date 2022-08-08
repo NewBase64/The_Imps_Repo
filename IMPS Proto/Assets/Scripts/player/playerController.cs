@@ -9,12 +9,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [Header("----Player Attributes----")]
-    [Range(1, 200)] [SerializeField] public int HP;
-    [Range(1, 50)] [SerializeField] float playerSpeed;
-    [Range(-10, 10)] [SerializeField] float sprintMult;
-    [Range(1, 50)] [SerializeField] float jumpHeight;
-    [Range(1, 100)] [SerializeField] float gravityValue;
-    [Range(1, 10)] [SerializeField] int numjumps;
+    [Range(1, 200)][SerializeField] public int HP;
+    [Range(1, 50)][SerializeField] float playerSpeed;
+    [Range(-10, 10)][SerializeField] float sprintMult;
+    [Range(1, 50)][SerializeField] float jumpHeight;
+    [Range(1, 100)][SerializeField] float gravityValue;
+    [Range(1, 10)][SerializeField] int numjumps;
 
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
@@ -23,22 +23,22 @@ public class playerController : MonoBehaviour, IDamageable
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] footsep;
-    [Range(0, 1)] [SerializeField] float footstepVolume;
+    [Range(0, 1)][SerializeField] float footstepVolume;
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
-    [Range(0, 1)] [SerializeField] float PlayerhurtVol;
+    [Range(0, 1)][SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
-    [Range(0, 1)] [SerializeField] float jumpVol;
+    [Range(0, 1)][SerializeField] float jumpVol;
 
     [Header("----Crouch and Wall Running----")]
     public Transform orientation;
     [SerializeField] Rigidbody rigid;
     CapsuleCollider Collider;
-    [SerializeField] float minimumJumpHeight = 1.5f;
-    [SerializeField] float slidespeed = 10f;
-    [SerializeField] float distanceOfWall = 0.3f;
-    [SerializeField] float RunUp = 10f;
-    [SerializeField] float WallJumpForce;
+    public float minimumJumpHeight = 0.5f;
+    public float slidespeed = 5f;
+    public float distanceOfWall = 0.5f;
+    public float RunUp = 2f;
+    public float WallJumpForce=6f;
     [SerializeField] float camTiltAngle;
     [SerializeField] float tiltTime;
 
@@ -73,9 +73,9 @@ public class playerController : MonoBehaviour, IDamageable
     Vector3 move;
     public bool slowed = false;
     public bool takingDamage = false;
-    private bool _wallLeft, _wallRight;
+    private bool _wallLeft, _wallRight, _wallFront,_wallBack;
 
-    private RaycastHit _leftWallHit, _rightWallHit;
+    private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
     public Shield shield;
     public GameObject cam;
 
@@ -92,7 +92,6 @@ public class playerController : MonoBehaviour, IDamageable
     void Start()
     {
         audi = AudioManager.instance.sfx;
-
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -120,7 +119,7 @@ public class playerController : MonoBehaviour, IDamageable
             GoUp();
         CheckForWall();
 
-
+        if (jetpack) { 
         if (CanWallRun())
         {
 
@@ -132,6 +131,16 @@ public class playerController : MonoBehaviour, IDamageable
             else if (_wallRight)
             {
                 //Debug.Log(_wallRight);
+                StartWall();
+
+            }
+            else if(_wallFront)
+            {
+                StartWall();
+
+            }
+            else if(_wallBack)
+            {
                 StartWall();
 
             }
@@ -147,7 +156,7 @@ public class playerController : MonoBehaviour, IDamageable
             StopWall();
         }
 
-
+}
     }
 
     void StartWall()
@@ -157,7 +166,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (_wallLeft)
         {
 
-            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
+            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime *100);
             cam.transform.Rotate(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -165,7 +174,7 @@ public class playerController : MonoBehaviour, IDamageable
 
         else if (_wallRight)
         {
-            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
+            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime *100);
             cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -176,20 +185,44 @@ public class playerController : MonoBehaviour, IDamageable
             if (_wallLeft)
             {
                 Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
-                rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
-                rigid.AddForce(wallJumpDirect * WallJumpForce * 70, ForceMode.Force);
+                //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
+                //rigid.AddForce(wallJumpDirect * WallJumpForce * 70, ForceMode.Force);
+                playerVelocity = wallJumpDirect * WallJumpForce;
+               
+
             }
-            else if (_wallRight)
+            if (_wallRight)
             {
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
-                rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
-                rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
+                //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
+                //rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
+                playerVelocity = wallRunJumpDirection * WallJumpForce;
+                
+            }
+            if (_wallFront)
+            {
+                Vector3 wallRunJumpDirection =transform.up * RunUp + _wallFrontHit.normal;
+                playerVelocity=wallRunJumpDirection * WallJumpForce;
+
+
+            }
+            if (_wallBack)
+            {
+                Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
+                playerVelocity = wallRunJumpDirection * WallJumpForce;
+
 
             }
         }
     }
     void StopWall()
     {
+        if (controller.isGrounded)
+        {
+            playerVelocity.x = 0;
+            playerVelocity.z= 0;
+
+        }
         Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
         cam.transform.Rotate(0, 0, Tilt);
     }
@@ -241,12 +274,12 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped = 0;
             jumpHeight = jumpheightOrig;
         }
-        if (jetpack)
+        if(jetpack)
         {
             numjumps = 2;
-            if (timesJumped == 2)
+            if(timesJumped==2)
             {
-                jumpHeight = jumpHeight * 2;
+                jumpHeight = jumpHeight *2;
 
 
             }
@@ -254,7 +287,7 @@ public class playerController : MonoBehaviour, IDamageable
 
 
         }
-
+         
 
 
     }
@@ -307,17 +340,10 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void takeDamage(int dmg)
     {
-        if (shield != null && shield.isActive)
-        {
-            shield.takeDamage(dmg);
-        }
-        else
-        {
-            HP -= dmg;
-            audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-            updatePlayerHp();
-            StartCoroutine(damageFlash());
-        }
+        HP -= dmg;
+        audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
+        updatePlayerHp();
+        StartCoroutine(damageFlash());
         if (HP <= 0)
         {
             gamemanager.instance.playerDead();
@@ -352,12 +378,21 @@ public class playerController : MonoBehaviour, IDamageable
     bool CanWallRun()
     {
         //Debug.Log("CanWall");
-        return !Physics.Raycast(transform.position + new Vector3(0, 1, 0), Vector3.down, minimumJumpHeight);
+        return !Physics.Raycast(transform.position , Vector3.down, minimumJumpHeight);
     }
     void CheckForWall()
     {
-        _wallLeft = Physics.Raycast(transform.position, -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
-        _wallRight = Physics.Raycast(transform.position, orientation.right, out _rightWallHit, distanceOfWall, whatwall);
+        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), orientation.forward);
+        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.forward);
+        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), orientation.right);
+        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.right);
+
+
+        _wallLeft = Physics.Raycast(transform.position+ new Vector3(0,1,0), -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
+        _wallRight = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.right, out _rightWallHit, distanceOfWall, whatwall);
+        _wallFront = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.forward, out _wallFrontHit, distanceOfWall, whatwall);
+        _wallBack = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.forward, out _wallBackHit, distanceOfWall, whatwall);
+        
     }
 
 
