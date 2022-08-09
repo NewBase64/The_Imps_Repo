@@ -143,6 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   hp: 1
-  rb: {fileID: 0}
+  rb: {fileID: 1586658797690673297}
   destroyTime: 10
   explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}

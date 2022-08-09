@@ -66,6 +66,7 @@ public class gamemanager : MonoBehaviour
         cameraScript = Camera.main.GetComponent<playerCamera>();
 
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
+        currCrosshiar = noCrosshiar;
     }
 
     // Update is called once per frame
@@ -170,7 +171,7 @@ public class gamemanager : MonoBehaviour
 
     public weapon RandomWeapon()
     {
-        int index = Random.Range(1, weapons.Count);
+        int index = Random.Range(0, weapons.Count);
         return weapons[index];
     }
 
@@ -210,6 +211,12 @@ public class gamemanager : MonoBehaviour
                 menuCurrentlyOpen = winGameMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
+                break;
+            case 6:
+                Instantiate(weaponHandler.wepPickup, mainCam.transform.position+mainCam.transform.forward ,transform.rotation);
+
+
+
                 break;
             default:
                 break;

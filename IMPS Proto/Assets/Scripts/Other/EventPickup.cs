@@ -7,7 +7,7 @@ public class EventPickup : MonoBehaviour
     [SerializeField] GameObject prompt;
     [SerializeField] int causedEvent;
     bool Picky;
-
+    bool destory;
     void Update()
     {
         if (Picky)
@@ -15,6 +15,7 @@ public class EventPickup : MonoBehaviour
             if (Input.GetButtonDown("Pickup"))
             {
                 gamemanager.instance.CauseEvent(causedEvent);
+               if(destory)
                 Destroy(gameObject);
             }
         }

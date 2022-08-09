@@ -7,6 +7,6 @@ public class facePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(gamemanager.instance.player.transform.position);
+        transform.LookAt(gamemanager.instance.mainCam.transform.position);
     }
 }

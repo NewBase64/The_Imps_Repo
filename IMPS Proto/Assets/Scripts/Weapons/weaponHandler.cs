@@ -279,7 +279,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int grenades;
     [SerializeField] int maxGrenades;
     [SerializeField] GameObject playerGrenade;
-    [SerializeField] GameObject nonGrenade = null;
+    
 
     [Header("----Audio----")]
     [SerializeField] AudioSource audi;
@@ -296,7 +296,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] bool unlimitedGrenades;
 
     [Header("----Weapon Drop stuff----")]
-    [SerializeField] GameObject wepPickup;
+    [SerializeField] public GameObject wepPickup;
 
     [Header("----Flash Vars----")]
     [HideInInspector] public bool catchMe = false;
@@ -381,16 +381,16 @@ public class weaponHandler : MonoBehaviour
                 if (grenades != 0)
                 {
                     grenades--;
-                    nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                    grenade gren = nonGrenade.GetComponent<grenade>();
-                    gren.direction = true;
+                    Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
+                    
+                    
                 }
             }
             else
             {
-                nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                grenade gren = nonGrenade.GetComponent<grenade>();
-                gren.direction = true;
+                Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
+              
+               
             }
         }
     }
@@ -467,7 +467,9 @@ public class weaponHandler : MonoBehaviour
         gunshot = primary.gunshot;
         reloadSound = primary.reloadSound;
         outofAmmo = primary.outofAmmo;
-        projectile = primary.projectile;
+        if(primary.projectile !=null)
+            projectile = primary.projectile;
+        
         //CurrCrosshair.SetActive(false);
         CurrCrosshair = primary.Crosshair;
         //CurrCrosshair.SetActive(true);
