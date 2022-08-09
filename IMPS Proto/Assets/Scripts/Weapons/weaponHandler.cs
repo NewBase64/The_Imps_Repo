@@ -321,6 +321,7 @@ public class weaponHandler : MonoBehaviour
     {
         // Set defaults so no null references
         CurrCrosshair = NoCrosshair;
+        audi = AudioManager.instance.sfx;
     }
 
     // Update is called once per frame
@@ -334,7 +335,7 @@ public class weaponHandler : MonoBehaviour
             // Reload
             if (Input.GetButtonDown("Reload") && !reloading)
             {
-                audi.PlayOneShot(reloadSound[Random.Range(0, gunshot.Count)], reloadVol);
+                audi.PlayOneShot(reloadSound[Random.Range(0, gunshot.Count)]);
                 StartCoroutine(Reload());
             }
 
@@ -465,9 +466,10 @@ public class weaponHandler : MonoBehaviour
         gunshot = primary.gunshot;
         reloadSound = primary.reloadSound;
         outofAmmo = primary.outofAmmo;
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = primary.Crosshair;
-        CurrCrosshair.SetActive(true);
+        //CurrCrosshair.SetActive(false);
+        //CurrCrosshair = primary.Crosshair;
+        //CurrCrosshair.SetActive(true);
+        gamemanager.instance.changeCrosshair();
         gamemanager.instance.updateAmmoCount();
     }
     #endregion
@@ -594,7 +596,7 @@ public class weaponHandler : MonoBehaviour
                 gamemanager.instance.updateAmmoCount();
             }
             // play gunshot          
-            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)], gunShotVol);
+            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)]);
 
             //
             if (shootType == weapon.ShootType.Hitscan)
@@ -654,7 +656,7 @@ public class weaponHandler : MonoBehaviour
             if (!oOAmmo) // if the sound is not playing already
             {              // play the sound
                 oOAmmo = true;
-                audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)], outofammoVol);
+                audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)]);
                 yield return new WaitForSeconds(fireRate);
                 oOAmmo = false;
             }

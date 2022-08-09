@@ -32,6 +32,13 @@ public class gamemanager : MonoBehaviour
     [Header("----Numbers----")]
     public int enemyKillGoal;
     int enemiesKilled;
+    [Header("----Crosshairs----")]
+    public GameObject currCrosshiar;
+    public GameObject noCrosshiar;
+    public GameObject Crosshiar1;
+    public GameObject Crosshiar2;
+    public GameObject Crosshiar3;
+    public GameObject Crosshiar4;
 
     [HideInInspector] public bool paused = false;
     [HideInInspector] public GameObject menuCurrentlyOpen;
@@ -70,6 +77,12 @@ public class gamemanager : MonoBehaviour
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
+            }
+            else if (menuCurrentlyOpen == settingsMenu)
+            {
+                menuCurrentlyOpen.SetActive(false);
+                menuCurrentlyOpen = pauseMenu;
+                menuCurrentlyOpen.SetActive(true);
             }
             else
             {
@@ -162,5 +175,12 @@ public class gamemanager : MonoBehaviour
     {
         ammo.text = weaponHandler.GetAmmo().ToString();
         ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
+    }
+
+    public void changeCrosshair()
+    {
+        currCrosshiar.SetActive(false);
+        currCrosshiar = weaponHandler.CurrCrosshair;
+        currCrosshiar.SetActive(true);
     }
 }

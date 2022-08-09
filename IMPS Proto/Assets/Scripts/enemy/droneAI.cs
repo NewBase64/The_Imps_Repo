@@ -121,8 +121,7 @@ public class droneAI : MonoBehaviour, IDamageable
         playerInRange = true;
         if (hp <= 0)
         {
-            //took it off so my game doesnt complete when I kill this cutie 
-            //gamemanager.instance.checkEnemyKills();
+            RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
             agent.enabled = false;
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);

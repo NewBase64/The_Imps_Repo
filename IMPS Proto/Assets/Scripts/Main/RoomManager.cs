@@ -28,7 +28,7 @@ public class RoomManager : MonoBehaviour
 
     public void openDoor()
     {
-        if (GameObject.Find("Door" + playerRoom))
+        if (GameObject.Find("Door" + playerRoom) && rooms != 0)
         {
             GameObject door = GameObject.Find("Door" + playerRoom);
             door.SetActive(false);

@@ -3434,6 +3434,12 @@ MonoBehaviour:
   ammo: {fileID: 8452094690964379717}
   ammoReserve: {fileID: 8452094692287102368}
   enemyKillGoal: 0
+  currCrosshiar: {fileID: 0}
+  noCrosshiar: {fileID: 0}
+  Crosshiar1: {fileID: 3041861206432983073, guid: 2d731a4602f782747867c490c2006d00, type: 3}
+  Crosshiar2: {fileID: 2970880744124937611, guid: 74e8b62ee79cc824dbae06f24b596a97, type: 3}
+  Crosshiar3: {fileID: 891171137142701797, guid: 21dd2c97d4843164dbf96af6bd5207ed, type: 3}
+  Crosshiar4: {fileID: 6343804671921266003, guid: c3bdb1c6486100647843c76951010196, type: 3}
   paused: 0
   menuCurrentlyOpen: {fileID: 0}
   gameOver: 0

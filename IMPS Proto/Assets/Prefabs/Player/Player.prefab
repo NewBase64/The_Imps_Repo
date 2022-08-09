@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 7035693046405280995}
   - component: {fileID: 5214179446554610899}
   - component: {fileID: 1829785736646668173}
-  - component: {fileID: 1829785736646667384}
+  - component: {fileID: 2009172896}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -230,7 +230,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035693046405281023}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7035693046405281020}
-  HP: 25
+  HP: 100
   playerSpeed: 5
   sprintMult: 1.68
   jumpHeight: 8
@@ -261,7 +261,7 @@ MonoBehaviour:
   numjumps: 1
   pushback: {x: 0, y: 0, z: 0}
   pushResolve: 0
-  audi: {fileID: 1829785736646667384}
+  audi: {fileID: 0}
   footsep:
   - {fileID: 8300000, guid: b49e00408863b9a46ae0db2ece0bd0ee, type: 3}
   - {fileID: 8300000, guid: 01a7bdd7fd3f15b41866bbbb3f475663, type: 3}
@@ -293,10 +293,10 @@ MonoBehaviour:
     m_Bits: 1
   HPOrig: 0
   reducedCapsHeight: 1
-  jetpack: 0
+  jetpack: 1
   slowed: 0
   takingDamage: 0
-  shield: {fileID: 0}
+  shield: {fileID: 2009172896}
   cam: {fileID: 7035693046745403747}
 --- !u!143 &7035693046405281020
 CharacterController:
@@ -342,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf62adbf5cde2a4cbc13928dc083b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  primary: {fileID: 0}
   ammo: 0
   ammoReserve: 0
   magCap: 0
@@ -349,35 +350,48 @@ MonoBehaviour:
   damage: 0
   fireRate: 0
   reloadTime: 0
+  shootAction: 0
   shootType: 0
-  semiTautoF: 0
-  InfiniteAmmo: 0
-  bottomlessClip: 0
-  noModel: {fileID: 0}
-  model: {fileID: 0}
-  wepEffect: {fileID: 0}
-  wepSpawn: {fileID: 0}
-  CurrCrosshair: {fileID: 0}
-  NoCrosshair: {fileID: 0}
-  Crosshair1: {fileID: 0}
-  Crosshair2: {fileID: 0}
-  Crosshair3: {fileID: 0}
-  catchMe: 0
-  primary: {fileID: 0}
+  spreadshots: 0
+  spreadangle: 0
+  canShoot: 1
+  reloading: 0
+  oOAmmo: 0
   secondary: {fileID: 0}
-  pubHolder: {fileID: 0}
   secammo: 0
   secammoRes: 0
-  pubammo: 0
-  pubammoRes: 0
-  audi: {fileID: 1829785736646667384}
-  gunshot: {fileID: 0}
+  wepEffect: {fileID: 0}
+  tempHolder: {fileID: 0}
+  holdammo: 0
+  holdammoRes: 0
+  grenades: 0
+  maxGrenades: 0
+  playerGrenade: {fileID: 0}
+  nonGrenade: {fileID: 0}
+  audi: {fileID: 0}
+  gunshot:
+  - {fileID: 0}
   gunShotVol: 0
   outofAmmo: []
   outofammoVol: 0
   reloadSound: []
   reloadVol: 0
+  InfiniteAmmo: 0
+  bottomlessClip: 0
+  unlimitedGrenades: 0
   wepPickup: {fileID: 1656715085191226204, guid: 5fc8f1d4a78ef664abbf946abe497f1e, type: 3}
+  catchMe: 0
+  pubammo: 0
+  pubammoRes: 0
+  pubHolder: {fileID: 0}
+  CurrCrosshair: {fileID: 0}
+  NoCrosshair: {fileID: 0}
+  weaponsbool: 0
+  grenadesbool: 0
+  soundsbool: 0
+  devbool: 0
+  dropbool: 0
+  flashbool: 0
 --- !u!54 &1829785736646668173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -394,102 +408,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!82 &1829785736646667384
-AudioSource:
+--- !u!114 &2009172896
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035693046405281023}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf48cb897bda82545a990493eeab8fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldHp: 10
+  shieldCurrentHp: 0
+  regenTimer: 2
+  delayTimer: 3
+  isActive: 1
+  regenning: 0
+  canRegen: 1
 --- !u!1 &7035693046506694407
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-//CREATED
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,13 +15,25 @@ public class AudioSettings : MonoBehaviour
         mixer = AudioManager.instance.mixer;
         if (gameObject.transform.parent.name == "Sound Effects")
         {
-            gameObject.GetComponent<Slider>().value = AudioManager.instance.userSettings.SFXVolume;
-            volume.text = Mathf.RoundToInt(AudioManager.instance.userSettings.SFXVolume * 100) + "%";
+            gameObject.GetComponent<Slider>().value = PlayerPrefs.GetFloat(AudioManager.sfxSettings, 1f);
+            volume.text = Mathf.RoundToInt(PlayerPrefs.GetFloat(AudioManager.sfxSettings, 1f) * 100) + "%";
         }
         else
         {
-            gameObject.GetComponent<Slider>().value = AudioManager.instance.userSettings.MusicVolume;
-            volume.text = Mathf.RoundToInt(AudioManager.instance.userSettings.MusicVolume * 100) + "%";
+            gameObject.GetComponent<Slider>().value = PlayerPrefs.GetFloat(AudioManager.musicSettings, 1f);
+            volume.text = Mathf.RoundToInt(PlayerPrefs.GetFloat(AudioManager.musicSettings, 1f) * 100) + "%";
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (gameObject.transform.parent.name == "Sound Effects")
+        {
+            PlayerPrefs.SetFloat(AudioManager.sfxSettings, gameObject.GetComponent<Slider>().value);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(AudioManager.musicSettings, gameObject.GetComponent<Slider>().value);
         }
     }
 
@@ -31,13 +41,11 @@ public class AudioSettings : MonoBehaviour
     {
         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         volume.text = Mathf.RoundToInt(sliderValue * 100) + "%";
-        AudioManager.instance.userSettings.MusicVolume = sliderValue;
     }
 
     public void SetSFXVolume(float sliderValue)
     {
         mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
         volume.text = Mathf.RoundToInt(sliderValue * 100) + "%";
-        AudioManager.instance.userSettings.SFXVolume = sliderValue;
     }
 }

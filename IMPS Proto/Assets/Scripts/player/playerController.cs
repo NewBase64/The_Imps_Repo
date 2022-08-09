@@ -91,6 +91,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Start()
     {
+        audi = AudioManager.instance.sfx;
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -331,7 +332,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP = HPOrig;
         controller.enabled = false;
-        transform.position = playerSpawnPosition;
+        transform.position = RoomManager.instance.checkpoint.transform.position;
         controller.enabled = true;
         updatePlayerHp();
         pushback = Vector3.zero;
