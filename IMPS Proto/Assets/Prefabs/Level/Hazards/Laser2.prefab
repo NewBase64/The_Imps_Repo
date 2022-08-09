@@ -181,7 +181,7 @@ MonoBehaviour:
   laserStart: {fileID: 2651153294149098489}
   laserEnd: {fileID: 2651153292943851330}
   dmg: 3
-  disableTimer: 1
+  disableTimer: 0
   delayBetweenDisables: 3
   isActive: 1
 --- !u!65 &2651153293777026995

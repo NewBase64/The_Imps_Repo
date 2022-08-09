@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830016904505109108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.019063, y: 2.3445985, z: 7.8265295}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5057,8 +5057,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserStart: {fileID: 830016905324771211}
   laserEnd: {fileID: 830016904908821296}
-  hp: 10
   dmg: 3
+  disableTimer: 0
+  delayBetweenDisables: 0
+  isActive: 1
 --- !u!65 &830016906021901249
 BoxCollider:
   m_ObjectHideFlags: 0
