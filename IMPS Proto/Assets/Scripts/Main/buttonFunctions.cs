@@ -37,16 +37,14 @@ public class buttonFunctions : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         gamemanager.instance.restart();
     }
-
     public void StartGame(LevelLoader levelLoader)
     {
         MainMenu.instance.startButton.SetTrigger("Start");
         AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.confirm);
         AudioManager.instance.music.Stop();
         AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.startGame);
-        levelLoader.StartCoroutine(levelLoader.Load(1));
+        levelLoader.StartCoroutine(levelLoader.Load(2));
     }
-
     public void CauseEvent(int causedEvent)
     {
         gamemanager.instance.CauseEvent(causedEvent);

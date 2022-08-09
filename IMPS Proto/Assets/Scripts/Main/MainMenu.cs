@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         AudioManager.instance.music.PlayOneShot(AudioManager.instance.mainMenuMusic);
     }
     void Update()

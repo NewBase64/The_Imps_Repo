@@ -257,6 +257,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] weapon.ShootType shootType;
     [SerializeField] int spreadshots;
     [SerializeField] float spreadangle;
+    [SerializeField] GameObject projectile;
 
     [SerializeField] bool canShoot = true;
     [SerializeField] bool reloading = false;
@@ -466,6 +467,7 @@ public class weaponHandler : MonoBehaviour
         gunshot = primary.gunshot;
         reloadSound = primary.reloadSound;
         outofAmmo = primary.outofAmmo;
+        projectile = primary.projectile;
         //CurrCrosshair.SetActive(false);
         CurrCrosshair = primary.Crosshair;
         //CurrCrosshair.SetActive(true);
@@ -643,7 +645,7 @@ public class weaponHandler : MonoBehaviour
             }
             else if (shootType == weapon.ShootType.Projectile)
             {
-
+                Instantiate(projectile, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
             }
 
             //StartCoroutine(Flash());

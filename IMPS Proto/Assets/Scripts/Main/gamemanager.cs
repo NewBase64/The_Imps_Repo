@@ -204,6 +204,13 @@ public class gamemanager : MonoBehaviour
                 restart();
                 levelLoader.StartCoroutine(levelLoader.Load(5));
                 break;
+            case 5:
+                paused = true;
+                weaponHandler.CurrCrosshair.SetActive(false);
+                menuCurrentlyOpen = winGameMenu;
+                menuCurrentlyOpen.SetActive(true);
+                ConLockCursor();
+                break;
             default:
                 break;
         }
