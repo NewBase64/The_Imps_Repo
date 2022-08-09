@@ -8,10 +8,10 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] Animator transition;
     [SerializeField] int transitionTimer;
 
-    public IEnumerator Load()
+    public IEnumerator Load(int scene)
     {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTimer);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(scene);
     }
 }

@@ -467,7 +467,7 @@ public class weaponHandler : MonoBehaviour
         reloadSound = primary.reloadSound;
         outofAmmo = primary.outofAmmo;
         //CurrCrosshair.SetActive(false);
-        //CurrCrosshair = primary.Crosshair;
+        CurrCrosshair = primary.Crosshair;
         //CurrCrosshair.SetActive(true);
         gamemanager.instance.changeCrosshair();
         gamemanager.instance.updateAmmoCount();

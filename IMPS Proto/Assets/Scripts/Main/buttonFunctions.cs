@@ -44,7 +44,17 @@ public class buttonFunctions : MonoBehaviour
         AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.confirm);
         AudioManager.instance.music.Stop();
         AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.startGame);
-        levelLoader.StartCoroutine(levelLoader.Load());
+        levelLoader.StartCoroutine(levelLoader.Load(1));
+    }
+
+    public void CauseEvent(int causedEvent)
+    {
+        gamemanager.instance.CauseEvent(causedEvent);
+    }
+
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 
     public void SettingsMenu()

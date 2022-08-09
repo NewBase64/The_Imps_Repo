@@ -91,6 +91,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Start()
     {
+        audi = AudioManager.instance.sfx;
+
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -343,6 +345,8 @@ public class playerController : MonoBehaviour, IDamageable
         transform.position = playerSpawnPosition;
         controller.enabled = true;
         updatePlayerHp();
+        gamemanager.instance.weaponHandler.GiveAmmo(0);
+        gamemanager.instance.updateAmmoCount();
         pushback = Vector3.zero;
     }
 

@@ -3435,11 +3435,12 @@ MonoBehaviour:
   ammoReserve: {fileID: 8452094692287102368}
   enemyKillGoal: 0
   currCrosshiar: {fileID: 0}
-  noCrosshiar: {fileID: 0}
+  noCrosshiar: {fileID: 5885816491229310056}
   Crosshiar1: {fileID: 3041861206432983073, guid: 2d731a4602f782747867c490c2006d00, type: 3}
   Crosshiar2: {fileID: 2970880744124937611, guid: 74e8b62ee79cc824dbae06f24b596a97, type: 3}
   Crosshiar3: {fileID: 891171137142701797, guid: 21dd2c97d4843164dbf96af6bd5207ed, type: 3}
   Crosshiar4: {fileID: 6343804671921266003, guid: c3bdb1c6486100647843c76951010196, type: 3}
+  levelLoader: {fileID: 0}
   paused: 0
   menuCurrentlyOpen: {fileID: 0}
   gameOver: 0
@@ -7314,5 +7315,10 @@ PrefabInstance:
 --- !u!224 &2244538385436505749 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6996684478488679613, guid: 021af903bb4ce9a4d82b8ba4118fc486, type: 3}
+  m_PrefabInstance: {fileID: 9096994936697741864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5885816491229310056 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3427690496195989056, guid: 021af903bb4ce9a4d82b8ba4118fc486, type: 3}
   m_PrefabInstance: {fileID: 9096994936697741864}
   m_PrefabAsset: {fileID: 0}

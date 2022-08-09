@@ -40,6 +40,7 @@ public class gamemanager : MonoBehaviour
     public GameObject Crosshiar3;
     public GameObject Crosshiar4;
 
+    [HideInInspector] public LevelLoader levelLoader;
     [HideInInspector] public bool paused = false;
     [HideInInspector] public GameObject menuCurrentlyOpen;
     [HideInInspector] public bool gameOver;
@@ -63,6 +64,8 @@ public class gamemanager : MonoBehaviour
 
         // Set the camera Script from the main camera
         cameraScript = Camera.main.GetComponent<playerCamera>();
+
+        levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
     }
 
     // Update is called once per frame
@@ -182,5 +185,27 @@ public class gamemanager : MonoBehaviour
         currCrosshiar.SetActive(false);
         currCrosshiar = weaponHandler.CurrCrosshair;
         currCrosshiar.SetActive(true);
+    }
+
+    public void CauseEvent(int causedEvent)
+    {
+        switch (causedEvent)
+        {
+            case 1:
+               levelLoader.StartCoroutine(levelLoader.Load(2));
+                break;
+            case 2:
+                levelLoader.StartCoroutine(levelLoader.Load(3));
+                break;
+            case 3:
+                levelLoader.StartCoroutine(levelLoader.Load(4));
+                break;
+            case 4:
+                restart();
+                levelLoader.StartCoroutine(levelLoader.Load(5));
+                break;
+            default:
+                break;
+        }
     }
 }
