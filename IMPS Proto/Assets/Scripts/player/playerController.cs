@@ -32,10 +32,10 @@ public class playerController : MonoBehaviour, IDamageable
 
     [Header("----Crouch and Wall Running----")]
     public Transform orientation;
-    [SerializeField] Rigidbody rigid;
+    
     CapsuleCollider Collider;
     [SerializeField] float minimumJumpHeight = 1.5f;
-    [SerializeField] float slidespeed = 10f;
+    public float slidespeed = 10f;
     [SerializeField] float distanceOfWall = 0.3f;
     [SerializeField] float RunUp = 10f;
     [SerializeField] float WallJumpForce;
@@ -74,7 +74,7 @@ public class playerController : MonoBehaviour, IDamageable
     public bool slowed = false;
     public bool takingDamage = false;
     private bool _wallLeft, _wallRight, _wallFront,_wallBack;
-
+    private bool _wallLefta=true, _wallRighta=true, _wallFronta=true, _wallBacka = true;
     private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
     public Shield shield;
     public GameObject cam;
@@ -91,7 +91,6 @@ public class playerController : MonoBehaviour, IDamageable
 
     void Start()
     {
-        audi = AudioManager.instance.sfx;
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
         playerSpawnPosition = transform.position;
@@ -100,7 +99,7 @@ public class playerController : MonoBehaviour, IDamageable
 
         origCapsuleHeight = Collider.height;
         jumpheightOrig = jumpHeight;
-        rigid = GetComponent<Rigidbody>();
+        
 
     }
     #region Player_Functions
@@ -119,7 +118,7 @@ public class playerController : MonoBehaviour, IDamageable
             GoUp();
         CheckForWall();
 
-        if (jetpack) { 
+        if (jetpack &&!isSliding) { 
         if (CanWallRun())
         {
 
@@ -162,7 +161,7 @@ public class playerController : MonoBehaviour, IDamageable
     void StartWall()
     {
         //Debug.Log("StartWall hit");
-        rigid.AddForce(orientation.forward * wallRunSpeed, ForceMode.Acceleration);
+        
         if (_wallLeft)
         {
 
@@ -182,35 +181,44 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (Input.GetButton("Jump"))
         {
-            if (_wallLeft)
-            {
+            if (_wallLeft&&_wallLefta)
+            { 
+                _wallLefta = false;
                 Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
                 //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
                 //rigid.AddForce(wallJumpDirect * WallJumpForce * 70, ForceMode.Force);
                 playerVelocity = wallJumpDirect * WallJumpForce;
-               
 
+                _wallRighta = true;
+                _wallFronta = true;
+                _wallBacka = true;
             }
-            if (_wallRight)
-            {
+            if (_wallRight&&_wallRighta)
+            { _wallRighta = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
                 //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
                 //rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
-                
+                _wallLefta = true;
+                _wallFronta = true;
+                _wallBacka = true;
             }
-            if (_wallFront)
-            {
+            if (_wallFront&&_wallFronta)
+            { _wallFronta = false;
                 Vector3 wallRunJumpDirection =transform.up * RunUp + _wallFrontHit.normal;
                 playerVelocity=wallRunJumpDirection * WallJumpForce;
 
-
+                _wallRighta = true;
+                _wallLefta = true;
+                _wallBacka = true;
             }
-            if (_wallBack)
-            {
+            if (_wallBack&&_wallBacka)
+            { _wallBacka = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
-
+                _wallRighta = true;
+                _wallFronta = true;
+                _wallLefta = true;
 
             }
         }
@@ -294,7 +302,7 @@ public class playerController : MonoBehaviour, IDamageable
     void Sprint()
     {
         // Change move speed while sprinting
-        if (Input.GetButtonDown("Sprint"))
+        if (Input.GetButtonDown("Sprint") )
         {
             isSprinting = true;
             playerSpeed = playerSpeed * sprintMult;
@@ -332,7 +340,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP = HPOrig;
         controller.enabled = false;
-        transform.position = RoomManager.instance.checkpoint.transform.position;
+        transform.position = playerSpawnPosition;
         controller.enabled = true;
         updatePlayerHp();
         pushback = Vector3.zero;
@@ -371,8 +379,9 @@ public class playerController : MonoBehaviour, IDamageable
         Collider.height = reducedCapsHeight;
         controller.height = reducedCapsHeight;
         playerSpeed = playerSpeedOrig / 2;
+        
         gamemanager.instance.cameraScript.crouch();
-        rigid.AddForce(transform.forward * slidespeed, ForceMode.VelocityChange);
+        
     }
 
     private void GoUp()
@@ -381,6 +390,7 @@ public class playerController : MonoBehaviour, IDamageable
         Collider.height = origCapsuleHeight;
         controller.height = origCapsuleHeight;
         gamemanager.instance.cameraScript.goUP();
+        
     }
 
     bool CanWallRun()
