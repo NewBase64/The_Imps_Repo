@@ -344,7 +344,6 @@ public class weaponHandler : MonoBehaviour
             if (Input.mouseScrollDelta != Vector2.zero)
             {
                 SwitchWeapon();
-                updateGunStats();
             }
 
             // aim
@@ -439,7 +438,7 @@ public class weaponHandler : MonoBehaviour
             secammo = holdammo;
             secammoRes = holdammoRes;
             tempHolder = null;
-
+            updateGunStats();
         }
     }
     void updateGunStats()
