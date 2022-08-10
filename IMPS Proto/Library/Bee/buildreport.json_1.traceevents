@@ -1,0 +1,658 @@
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "BeeDriver" } },
+{ "pid": 0, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-2" } },
+{ "pid": 0, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 0, "tid": 1, "ts": 1660091980102163, "dur": 7044106, "ph": "X", "name": "Build ScriptAssemblies", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660091980103347, "dur": 23321, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660091980126879, "dur": 42767, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660091980169669, "dur": 295990, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660091980465660, "dur": 6670630, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660091987136308, "dur": 9960, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092023437712, "dur": 1710464, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092023437922, "dur": 3523, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092023441450, "dur": 46824, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092023488275, "dur": 568340, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092024056617, "dur": 1082015, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092025138634, "dur": 9540, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092078791484, "dur": 216615, "ph": "X", "name": "Build ScriptAssemblies", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092078791509, "dur": 20649, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092078812159, "dur": 185826, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092078997987, "dur": 10112, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092085517688, "dur": 1134230, "ph": "X", "name": "Build Player", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092085517707, "dur": 11776, "ph": "X", "name": "WriteBuildProgramData", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092085529487, "dur": 31427, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092085560916, "dur": 214852, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092085775770, "dur": 862775, "ph": "X", "name": "Run Backend", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092086638546, "dur": 13370, "ph": "X", "name": "Finish", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092086652489, "dur": 31, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "netcorerun.dll" } },
+{ "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
+{ "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 35942, "tid": 1, "ts": 1660092085660097, "dur": 95142, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085660972, "dur": 37115, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085741146, "dur": 4393, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085745542, "dur": 9689, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085746153, "dur": 8267, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085760067, "dur": 1136, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1660092085759289, "dur": 1942, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092086652578, "dur": 172, "ph": "X", "name": "buildprogram0.traceevents", "args": {} },
+{ "cat":"", "pid":12345, "tid":0, "ts":0, "ph":"M", "name":"process_name", "args": { "name":"bee_backend" } }
+,{ "pid":12345, "tid":0, "ts":1660092085818304, "dur":1305, "ph":"X", "name": "DriverInitData",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092085819615, "dur":85, "ph":"X", "name": "Tundra",  "args": { "detail":"RemoveStaleOutputs" }}
+,{ "pid":12345, "tid":0, "ts":1660092085819740, "dur":20, "ph":"X", "name": "Tundra",  "args": { "detail":"PrepareNodes" }}
+,{ "pid":12345, "tid":0, "ts":1660092085819761, "dur":590, "ph":"X", "name": "Tundra",  "args": { "detail":"BuildQueueInit" }}
+,{ "pid":12345, "tid":0, "ts":1660092085820390, "dur":493, "ph":"X", "name": "EnqueueRequestedNodes",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092085820883, "dur":1, "ph":"X", "name": "SortWorkingStack",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629600, "dur":299, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629899, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629908, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629910, "dur":7, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629917, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629919, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629927, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629928, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629934, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629935, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629941, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629943, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629948, "dur":3, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629951, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629957, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629959, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629964, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629966, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629971, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629973, "dur":9, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629982, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629984, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629990, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629991, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629996, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086629998, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630003, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630005, "dur":5, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630010, "dur":1, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630011, "dur":6, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630017, "dur":2, "ph":"X", "name": "JoinBuildThread",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630019, "dur":8, "ph":"X", "name": "ThreadStateDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630027, "dur":0, "ph":"X", "name": "SharedResourceDestroy",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630035, "dur":2, "ph":"X", "name": "BuildQueueDestroyTail",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086630051, "dur":1976, "ph":"X", "name": "Tundra",  "args": { "detail":"Write AllBuiltNodes" }}
+,{ "pid":12345, "tid":1, "ts":1660092085820694, "dur":244, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092085820938, "dur":5728, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092085826667, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1660092085826742, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092085933146, "dur":1460, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/machine.config" }}
+,{ "pid":12345, "tid":1, "ts":1660092085934662, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092085934717, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092085934722, "dur":110146, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UNETModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086044923, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086044996, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092086045003, "dur":48390, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.Physics2DModule.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086095156, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086095215, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092086095221, "dur":56786, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086152060, "dur":78813, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086230878, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092086230888, "dur":3228, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Timeline.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086234198, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086234269, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092086234274, "dur":89236, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Numerics.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086323564, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086323623, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":1, "ts":1660092086323630, "dur":122486, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Core.dll" }}
+,{ "pid":12345, "tid":1, "ts":1660092086446183, "dur":183424, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085821182, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085821182, "dur":5426, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085826610, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1660092085826714, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085831199, "dur":2842, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/machine.config" }}
+,{ "pid":12345, "tid":2, "ts":1660092085834106, "dur":118, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092085834227, "dur":77, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085834717, "dur":85722, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.WindModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092085920507, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092085920574, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092085920583, "dur":51574, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VFXModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092085972210, "dur":122496, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086094709, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086094716, "dur":4020, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UI.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086098781, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086098849, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086098857, "dur":32913, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.CrashReportingModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086131839, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086131911, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086131919, "dur":45696, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AccessibilityModule.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086177661, "dur":5810, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086183476, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086183484, "dur":954, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Networking.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086184481, "dur":74145, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086258632, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086258643, "dur":1378, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Internal.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086260070, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086260117, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086260124, "dur":62516, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.EnterpriseServices.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086322691, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086322742, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":2, "ts":1660092086322746, "dur":168468, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Data.dll" }}
+,{ "pid":12345, "tid":2, "ts":1660092086491287, "dur":138337, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085820914, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085820914, "dur":5598, "ph":"X", "name": "CheckDagSignatures",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085826529, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info" }}
+,{ "pid":12345, "tid":3, "ts":1660092085826531, "dur":182, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085826720, "dur":2, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/app.info" }}
+,{ "pid":12345, "tid":3, "ts":1660092085826724, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085921052, "dur":1371, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/app.info" }}
+,{ "pid":12345, "tid":3, "ts":1660092085922426, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092085922497, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092085922504, "dur":122883, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086045441, "dur":468, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086045913, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086045922, "dur":33086, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.PerformanceReportingModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086079057, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086079103, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086079112, "dur":34267, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ImageConversionModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086113440, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086113506, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086113514, "dur":45734, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClusterInputModule.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086159298, "dur":4951, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086164253, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086164262, "dur":1094, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Threading.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086165405, "dur":59852, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086225261, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086225267, "dur":1900, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Registration.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086227225, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086227284, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086227297, "dur":96777, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Xml.Linq.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086324142, "dur":94, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086324239, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086324244, "dur":52696, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/netstandard.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086376992, "dur":96029, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086473050, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":3, "ts":1660092086473060, "dur":1043, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Assembly-CSharp.dll" }}
+,{ "pid":12345, "tid":3, "ts":1660092086474145, "dur":155463, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092085820802, "dur":169, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092085820971, "dur":5690, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092085826663, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1660092085826733, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092085932734, "dur":1488, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/settings.map" }}
+,{ "pid":12345, "tid":4, "ts":1660092085934292, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092085934355, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092085934366, "dur":100775, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityAnalyticsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086035200, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086035261, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086035269, "dur":56959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SharedInternalsModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086092288, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086092346, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086092387, "dur":66327, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GameCenterModule.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086158763, "dur":2663, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.TerrainTools.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086161431, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086161441, "dur":1610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.TerrainTools.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086163098, "dur":58033, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086221139, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086221149, "dur":1903, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Scheduler.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086223117, "dur":60494, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Csg.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086283616, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086283643, "dur":2025, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Csg.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086285717, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086285764, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":4, "ts":1660092086285771, "dur":161159, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Drawing.dll" }}
+,{ "pid":12345, "tid":4, "ts":1660092086446991, "dur":182620, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085821058, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085821059, "dur":5598, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085826659, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1660092085826729, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085921402, "dur":1476, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/web.config" }}
+,{ "pid":12345, "tid":5, "ts":1660092085922935, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092085922991, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085922996, "dur":60923, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092085983977, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092085984036, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092085984046, "dur":152906, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086137029, "dur":91336, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086228368, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092086228374, "dur":1330, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Flow.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086229747, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086229812, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092086229819, "dur":93506, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Transactions.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086323377, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086323439, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092086323446, "dur":50419, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Data.DataSetExtensions.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086373914, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086373985, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":5, "ts":1660092086373992, "dur":185475, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Mono.Security.dll" }}
+,{ "pid":12345, "tid":5, "ts":1660092086559513, "dur":70085, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085821128, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085821129, "dur":5487, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085826618, "dur":83, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1660092085826718, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085920539, "dur":975, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":6, "ts":1660092085921600, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092085921662, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085921670, "dur":45300, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092085967028, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092085967080, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092085967087, "dur":124203, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIElementsModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086091353, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086091411, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092086091425, "dur":28892, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GIModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086120384, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086120443, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092086120452, "dur":41930, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AssetBundleModule.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086162432, "dur":59898, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086222334, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092086222343, "dur":3131, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Telemetry.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086225566, "dur":74171, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Polybrush.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086299744, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092086299755, "dur":24131, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Polybrush.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086324423, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086324477, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":6, "ts":1660092086324482, "dur":305038, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/mscorlib.dll" }}
+,{ "pid":12345, "tid":6, "ts":1660092086629557, "dur":1, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"Player" }}
+,{ "pid":12345, "tid":6, "ts":1660092086629558, "dur":1, "ph":"X", "name": "OutputFilesMissingFor",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092085821247, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092085821247, "dur":5365, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092085826614, "dur":63, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1660092085826716, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092085831608, "dur":2427, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":7, "ts":1660092085834096, "dur":59, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092085834157, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092085834699, "dur":166879, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.XRModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086001630, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086001684, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086001690, "dur":48888, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TerrainModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086050627, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086050676, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086050683, "dur":43368, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.NVIDIAModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086094112, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086094187, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086094198, "dur":34224, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.DSPGraphModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086128705, "dur":751, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086129461, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086129470, "dur":61318, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AIModule.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086190835, "dur":3036, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086193876, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086193886, "dur":956, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Analytics.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086194890, "dur":62780, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Poly2Tri.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086257678, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086257691, "dur":1068, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Poly2Tri.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086258804, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086258854, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086258861, "dur":115520, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.IO.Compression.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086374429, "dur":1100, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/FbxBuildTestAssets.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086375554, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086375563, "dur":1154, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/FbxBuildTestAssets.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086376767, "dur":916, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Autodesk.Fbx.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086377687, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086377694, "dur":880, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Autodesk.Fbx.dll" }}
+,{ "pid":12345, "tid":7, "ts":1660092086378623, "dur":164, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":7, "ts":1660092086378790, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086379165, "dur":714, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/StreamingAssets/UnityServicesProjectConfiguration.json" }}
+,{ "pid":12345, "tid":7, "ts":1660092086379940, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":7, "ts":1660092086379995, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086380041, "dur":1008, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Resources/unity_builtin_extra" }}
+,{ "pid":12345, "tid":7, "ts":1660092086381093, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086381138, "dur":5, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086381148, "dur":817, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets5.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086382006, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086382049, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086382054, "dur":1128, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets4.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086383260, "dur":54, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086383317, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086383323, "dur":806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets3.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086384171, "dur":39, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086384212, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086384218, "dur":724, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets2.assets" }}
+,{ "pid":12345, "tid":7, "ts":1660092086384984, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.resource" }}
+,{ "pid":12345, "tid":7, "ts":1660092086385031, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086385036, "dur":827, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.resource" }}
+,{ "pid":12345, "tid":7, "ts":1660092086385905, "dur":41, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":7, "ts":1660092086385949, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":7, "ts":1660092086385954, "dur":224904, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.assets.resS" }}
+,{ "pid":12345, "tid":7, "ts":1660092086610913, "dur":18687, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085821311, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085821311, "dur":5291, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085826604, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1660092085826670, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085830376, "dur":3151, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/settings.map" }}
+,{ "pid":12345, "tid":8, "ts":1660092085833590, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":8, "ts":1660092085833679, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085833685, "dur":87337, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/browscap.ini" }}
+,{ "pid":12345, "tid":8, "ts":1660092085921091, "dur":68, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092085921162, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085921168, "dur":39240, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VehiclesModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092085960456, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092085960510, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085960519, "dur":29794, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UmbraModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092085990364, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092085990420, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092085990428, "dur":53548, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086044147, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086044211, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092086044222, "dur":29554, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ProfilerModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086073823, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086073868, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092086073874, "dur":116410, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.IMGUIModule.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086190341, "dur":37831, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086228176, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092086228184, "dur":1007, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Configuration.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086229261, "dur":60, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086229324, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":8, "ts":1660092086229330, "dur":222305, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Xml.dll" }}
+,{ "pid":12345, "tid":8, "ts":1660092086451694, "dur":177922, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085821406, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085821407, "dur":5173, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085826582, "dur":87, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":9, "ts":1660092085826672, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085830749, "dur":2799, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/web.config" }}
+,{ "pid":12345, "tid":9, "ts":1660092085833610, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092085833696, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085833945, "dur":88995, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092085923005, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092085923064, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092085923069, "dur":105668, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityTestProtocolModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086028793, "dur":53, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086028849, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086028857, "dur":43952, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SpriteMaskModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086072849, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086072897, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086072905, "dur":44441, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.InputLegacyModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086117404, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086117454, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086117461, "dur":80518, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AudioModule.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086198042, "dur":32842, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.KdTree.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086230886, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086230891, "dur":4257, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.KdTree.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086235190, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086235238, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086235244, "dur":88651, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.IO.Compression.FileSystem.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086323954, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086324014, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":9, "ts":1660092086324019, "dur":111849, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.ComponentModel.Composition.dll" }}
+,{ "pid":12345, "tid":9, "ts":1660092086435919, "dur":193691, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085821441, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085821441, "dur":5126, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085826569, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":10, "ts":1660092085826639, "dur":6, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085829060, "dur":4547, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":10, "ts":1660092085833680, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1660092085833740, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085833744, "dur":87653, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/UnityCrashHandler64.exe" }}
+,{ "pid":12345, "tid":10, "ts":1660092085921452, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092085921518, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085921526, "dur":56745, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092085978334, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092085978394, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092085978402, "dur":37993, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TLSModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086016445, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086016496, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086016504, "dur":40404, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SubstanceModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086056975, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086057033, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086057040, "dur":42743, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.LocalizationModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086099837, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086099939, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086099946, "dur":134311, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.CoreModule.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086234310, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086234357, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086234362, "dur":89286, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Net.Http.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086323698, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086323887, "dur":11, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086323903, "dur":90580, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Configuration.dll" }}
+,{ "pid":12345, "tid":10, "ts":1660092086414532, "dur":43, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086414577, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086414585, "dur":1172, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086415802, "dur":121, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":10, "ts":1660092086415927, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086415934, "dur":824, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/ScriptingAssemblies.json" }}
+,{ "pid":12345, "tid":10, "ts":1660092086416803, "dur":1284, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":10, "ts":1660092086418093, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086418102, "dur":1022, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/RuntimeInitializeOnLoads.json" }}
+,{ "pid":12345, "tid":10, "ts":1660092086419182, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":10, "ts":1660092086419244, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086419252, "dur":4178, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/resources.assets.resS" }}
+,{ "pid":12345, "tid":10, "ts":1660092086423477, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/resources.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086423524, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086423531, "dur":1622, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/resources.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086425206, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level5" }}
+,{ "pid":12345, "tid":10, "ts":1660092086425265, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086425271, "dur":1520, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level5" }}
+,{ "pid":12345, "tid":10, "ts":1660092086426843, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level4" }}
+,{ "pid":12345, "tid":10, "ts":1660092086426897, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086426902, "dur":1273, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level4" }}
+,{ "pid":12345, "tid":10, "ts":1660092086428249, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level3" }}
+,{ "pid":12345, "tid":10, "ts":1660092086428313, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086428319, "dur":1034, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level3" }}
+,{ "pid":12345, "tid":10, "ts":1660092086429408, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level2" }}
+,{ "pid":12345, "tid":10, "ts":1660092086429487, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086429492, "dur":927, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level2" }}
+,{ "pid":12345, "tid":10, "ts":1660092086430465, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level0.resS" }}
+,{ "pid":12345, "tid":10, "ts":1660092086430514, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086430518, "dur":1137, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level0.resS" }}
+,{ "pid":12345, "tid":10, "ts":1660092086431713, "dur":62, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086431778, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":10, "ts":1660092086431784, "dur":1309, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/globalgamemanagers.assets" }}
+,{ "pid":12345, "tid":10, "ts":1660092086433137, "dur":196462, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085821558, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085821559, "dur":4991, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085826553, "dur":101, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1660092085826657, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085829052, "dur":4616, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/settings.map" }}
+,{ "pid":12345, "tid":11, "ts":1660092085833728, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto.exe" }}
+,{ "pid":12345, "tid":11, "ts":1660092085833818, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085833823, "dur":89102, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto.exe" }}
+,{ "pid":12345, "tid":11, "ts":1660092085922977, "dur":56, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092085923035, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085923041, "dur":72587, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092085995716, "dur":315, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092085996034, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092085996041, "dur":25752, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TerrainPhysicsModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086021845, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086021900, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092086021908, "dur":35401, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.StreamingModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086057362, "dur":115, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086057480, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092086057486, "dur":57472, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.JSONSerializeModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086115015, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086115070, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092086115076, "dur":30952, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClothModule.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086146079, "dur":115425, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086261508, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092086261516, "dur":60793, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Core.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086322369, "dur":51, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086322424, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":11, "ts":1660092086322434, "dur":190392, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.dll" }}
+,{ "pid":12345, "tid":11, "ts":1660092086512868, "dur":116729, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085821640, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085821640, "dur":4922, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085826564, "dur":82, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1660092085826649, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085829018, "dur":4557, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":12, "ts":1660092085833737, "dur":76, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":12, "ts":1660092085833819, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085834325, "dur":90411, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Resources/unity default resources" }}
+,{ "pid":12345, "tid":12, "ts":1660092085924796, "dur":64, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092085924863, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085924872, "dur":54600, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityCurlModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092085979527, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092085979582, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092085979590, "dur":55630, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TextRenderingModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086035409, "dur":67, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086035479, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086035484, "dur":43959, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ScreenCaptureModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086080016, "dur":66, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086080085, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086080092, "dur":40259, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.HotReloadModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086120405, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086120457, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086120463, "dur":37855, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ARModule.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086158375, "dur":242232, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086400612, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086400621, "dur":1515, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.TextMeshPro.dll" }}
+,{ "pid":12345, "tid":12, "ts":1660092086402185, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":12, "ts":1660092086402235, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086402241, "dur":5384, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets1.assets" }}
+,{ "pid":12345, "tid":12, "ts":1660092086407673, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.resource" }}
+,{ "pid":12345, "tid":12, "ts":1660092086407721, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086407730, "dur":2897, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.resource" }}
+,{ "pid":12345, "tid":12, "ts":1660092086410684, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086410734, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086410743, "dur":14196, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/sharedassets0.assets.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086424995, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level5.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086425081, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086425089, "dur":1250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level5.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086426394, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level4.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086426443, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086426451, "dur":1684, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level4.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086428187, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level3.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086428241, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086428248, "dur":1388, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level3.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086429682, "dur":255, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level1.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086429940, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086429944, "dur":1117, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level1.resS" }}
+,{ "pid":12345, "tid":12, "ts":1660092086431105, "dur":44, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level0" }}
+,{ "pid":12345, "tid":12, "ts":1660092086431151, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086431156, "dur":836, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level0" }}
+,{ "pid":12345, "tid":12, "ts":1660092086432038, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":12, "ts":1660092086432087, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":12, "ts":1660092086432092, "dur":1031, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/globalgamemanagers" }}
+,{ "pid":12345, "tid":12, "ts":1660092086433170, "dur":196425, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085821687, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085821687, "dur":4870, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085826560, "dur":97, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":13, "ts":1660092085826660, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085829474, "dur":3969, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/machine.config" }}
+,{ "pid":12345, "tid":13, "ts":1660092085833563, "dur":86, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":13, "ts":1660092085833654, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085833921, "dur":1135, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx" }}
+,{ "pid":12345, "tid":13, "ts":1660092085835114, "dur":84604, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092085919723, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085919855, "dur":58487, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VRModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092085978444, "dur":78, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092085978525, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092085978531, "dur":65712, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.TilemapModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086044309, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086044387, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086044397, "dur":53531, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.PhysicsModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086097981, "dur":47, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086098031, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086098039, "dur":38844, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.DirectorModule.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086136934, "dur":50434, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086187371, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086187379, "dur":2509, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.State.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086189950, "dur":1447, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086191401, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086191412, "dur":1992, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Device.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086193458, "dur":31434, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Stl.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086224901, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086224916, "dur":2098, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.Stl.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086227077, "dur":3799, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Formats.Fbx.Runtime.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086230879, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086230888, "dur":1031, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Formats.Fbx.Runtime.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086231974, "dur":48, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086232024, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086232030, "dur":91993, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.ServiceModel.Internals.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086324077, "dur":61, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086324141, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086324146, "dur":104806, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Newtonsoft.Json.dll" }}
+,{ "pid":12345, "tid":13, "ts":1660092086429121, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level2.resS" }}
+,{ "pid":12345, "tid":13, "ts":1660092086429219, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086429225, "dur":1075, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level2.resS" }}
+,{ "pid":12345, "tid":13, "ts":1660092086430352, "dur":46, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level1" }}
+,{ "pid":12345, "tid":13, "ts":1660092086430400, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086430405, "dur":1813, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/level1" }}
+,{ "pid":12345, "tid":13, "ts":1660092086432266, "dur":133, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/boot.config" }}
+,{ "pid":12345, "tid":13, "ts":1660092086432421, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":13, "ts":1660092086432427, "dur":832, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/boot.config" }}
+,{ "pid":12345, "tid":13, "ts":1660092086433299, "dur":196295, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085821739, "dur":1, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085821740, "dur":4800, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085826543, "dur":95, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":14, "ts":1660092085826643, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085828332, "dur":5221, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/web.config" }}
+,{ "pid":12345, "tid":14, "ts":1660092085833618, "dur":69, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092085833689, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085833936, "dur":92649, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092085926638, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092085926698, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085926707, "dur":36351, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UnityConnectModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092085963108, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092085963161, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092085963168, "dur":39451, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086003585, "dur":79, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086003668, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086003678, "dur":45610, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SubsystemsModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086049362, "dur":85, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086049451, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086049459, "dur":73808, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ParticleSystemModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086123325, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086123378, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086123387, "dur":61701, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AnimationModule.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086185135, "dur":1129, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086186271, "dur":3, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086186283, "dur":1058, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Environments.Internal.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086187389, "dur":813, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086188207, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086188213, "dur":1648, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.Environments.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086189919, "dur":41304, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086231226, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086231231, "dur":1341, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.Services.Core.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086232616, "dur":42, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086232660, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":14, "ts":1660092086232666, "dur":215883, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Security.dll" }}
+,{ "pid":12345, "tid":14, "ts":1660092086448607, "dur":181018, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085821867, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085821867, "dur":4667, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085826536, "dur":99, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":15, "ts":1660092085826640, "dur":5, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085829047, "dur":4551, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser" }}
+,{ "pid":12345, "tid":15, "ts":1660092085833664, "dur":58, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092085833726, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085833731, "dur":86585, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/UnityPlayer.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092085920414, "dur":74, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092085920518, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085920527, "dur":44448, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VideoModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092085965046, "dur":108, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092085965157, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092085965165, "dur":70816, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.UIElementsNativeModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086036032, "dur":55, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086036090, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092086036096, "dur":53464, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086089618, "dur":57, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086089678, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092086089686, "dur":33626, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.GridModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086123364, "dur":52, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086123418, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092086123423, "dur":110376, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.AndroidJNIModule.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086233847, "dur":135, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086233985, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":15, "ts":1660092086233993, "dur":206070, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/System.Runtime.Serialization.dll" }}
+,{ "pid":12345, "tid":15, "ts":1660092086440122, "dur":189484, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085821923, "dur":0, "ph":"X", "name": "FirstLock",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085821923, "dur":4605, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085826530, "dur":129, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":16, "ts":1660092085826662, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085830073, "dur":3444, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/mconfig/config.xml" }}
+,{ "pid":12345, "tid":16, "ts":1660092085833580, "dur":73, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":16, "ts":1660092085833655, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085833662, "dur":86018, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/MonoBleedingEdge/etc/mono/config" }}
+,{ "pid":12345, "tid":16, "ts":1660092085919818, "dur":72, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092085919893, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092085919899, "dur":104996, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.VirtualTexturingModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086024949, "dur":50, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086025002, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092086025011, "dur":47729, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.SpriteShapeModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086072789, "dur":45, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086072839, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092086072848, "dur":36797, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.InputModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086109768, "dur":71, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086109842, "dur":1, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092086109853, "dur":40755, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/UnityEngine.ClusterRendererModule.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086150659, "dur":49, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086150712, "dur":0, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092086150719, "dur":71307, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086222078, "dur":214515, "ph":"X", "name": "CheckInputSignature",  "args": { "detail":"CopyFiles C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086436596, "dur":2, "ph":"X", "name": "StoreTimestampsOfNonGeneratedInputFiles",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":16, "ts":1660092086436605, "dur":1250, "ph":"X", "name": "CopyFiles",  "args": { "detail":"C:/Users/Rathalos/Desktop/TheImpsInSpace_Alpha_Build/IMPS Proto_Data/Managed/Unity.ProBuilder.dll" }}
+,{ "pid":12345, "tid":16, "ts":1660092086438233, "dur":191384, "ph":"X", "name": "WaitingForWork", "cname":"thread_state_sleeping",  "args": { "detail":"" }}
+,{ "pid":12345, "tid":0, "ts":1660092086633596, "dur":1653, "ph":"X", "name": "ProfilerWriteOutput" }
+,{ "pid": 0, "tid": 1, "ts": 1660092086652806, "dur": 638, "ph": "X", "name": "backend_profiler1.traceevents", "args": {} },
+{ "pid": 0, "tid": 1, "ts": 1660092086652478, "dur": 981, "ph": "X", "name": "Write chrome-trace events", "args": {} },
