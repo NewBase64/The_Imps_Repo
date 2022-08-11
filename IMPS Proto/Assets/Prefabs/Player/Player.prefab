@@ -279,7 +279,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7769ad2bca7cf0446a7f8d3d159643d1, type: 3}
   jumpVol: 0.122
   orientation: {fileID: 7035693046405281022}
-  rigid: {fileID: 1829785736646668173}
   minimumJumpHeight: 0.5
   slidespeed: 5
   distanceOfWall: 0.5
@@ -354,6 +353,7 @@ MonoBehaviour:
   shootType: 0
   spreadshots: 0
   spreadangle: 0
+  projectile: {fileID: 0}
   canShoot: 1
   reloading: 0
   oOAmmo: 0
@@ -367,7 +367,6 @@ MonoBehaviour:
   grenades: 0
   maxGrenades: 0
   playerGrenade: {fileID: 0}
-  nonGrenade: {fileID: 0}
   audi: {fileID: 0}
   gunshot:
   - {fileID: 0}
@@ -378,7 +377,7 @@ MonoBehaviour:
   reloadVol: 0
   InfiniteAmmo: 0
   bottomlessClip: 0
-  unlimitedGrenades: 0
+  unlimitedGrenades: 1
   wepPickup: {fileID: 1656715085191226204, guid: 5fc8f1d4a78ef664abbf946abe497f1e, type: 3}
   catchMe: 0
   pubammo: 0

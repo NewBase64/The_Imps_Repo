@@ -6,8 +6,10 @@ public class fallingPlatform : MonoBehaviour
 {
 
 
-    [SerializeField] float floorDropTime;
-    [SerializeField] Rigidbody rigi;
+    [SerializeField] float floorTimerToDeActivate;
+    [SerializeField] float floorTimerToReActiivate;
+    [SerializeField] GameObject platform;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,20 @@ public class fallingPlatform : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("stepped on me");
-            StartCoroutine(FloorDropTime());
+            StartCoroutine(FloorDisAppearTime());
+            StartCoroutine(FloorReAppearTime());
         }
     }
-    IEnumerator FloorDropTime()
+    IEnumerator FloorDisAppearTime()
     {
-        yield return new WaitForSeconds(floorDropTime);
-        rigi.useGravity = true;
+        yield return new WaitForSeconds(floorTimerToDeActivate);
+        platform.SetActive(false);
+
+    }
+    IEnumerator FloorReAppearTime()
+    {
+        yield return new WaitForSeconds(floorTimerToReActiivate);
+        platform.SetActive(true);
 
     }
 }

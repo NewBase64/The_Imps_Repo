@@ -49,9 +49,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2368537291949553098}
+  rend: {fileID: 662965484055534580}
   speed: 10
   timer: 5
   explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}
+  startColor: {r: 0, g: 1, b: 0, a: 1}
+  endColor: {r: 1, g: 0, b: 0, a: 1}
+  flashSpeed: 0.5
+  direction: 0
 --- !u!33 &4567238183827902819
 MeshFilter:
   m_ObjectHideFlags: 0
