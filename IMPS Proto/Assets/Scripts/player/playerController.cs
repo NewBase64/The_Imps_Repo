@@ -29,6 +29,9 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)][SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
     [Range(0, 1)][SerializeField] float jumpVol;
+    [Range(0, 1)][SerializeField] AudioClip[] JetBoots;
+    [Range(0, 1)][SerializeField] float JetBootsVolume;
+    bool JetBootsPlaying;
 
     [Header("----Crouch and Wall Running----")]
     public Transform orientation;
@@ -201,6 +204,7 @@ public class playerController : MonoBehaviour, IDamageable
                 //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
                 //rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallLefta = true;
                 _wallFronta = true;
                 _wallBacka = true;
@@ -209,7 +213,7 @@ public class playerController : MonoBehaviour, IDamageable
             { _wallFronta = false;
                 Vector3 wallRunJumpDirection =transform.up * RunUp + _wallFrontHit.normal;
                 playerVelocity=wallRunJumpDirection * WallJumpForce;
-
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallLefta = true;
                 _wallBacka = true;
@@ -218,6 +222,7 @@ public class playerController : MonoBehaviour, IDamageable
             { _wallBacka = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallFronta = true;
                 _wallLefta = true;
@@ -387,10 +392,10 @@ public class playerController : MonoBehaviour, IDamageable
     }
     private void Sliding()
     {
-        Collider.height = reducedCapsHeight;
-        controller.height = reducedCapsHeight;
+        Collider.height = Mathf.Lerp(Collider.height, reducedCapsHeight, 2);
+        controller.height = Mathf.Lerp(controller.height, reducedCapsHeight, 2);
         playerSpeed = playerSpeedOrig / 2;
-        
+
         gamemanager.instance.cameraScript.crouch();
         
     }
@@ -398,10 +403,9 @@ public class playerController : MonoBehaviour, IDamageable
     private void GoUp()
     {
         playerSpeed = playerSpeedOrig;
-        Collider.height = origCapsuleHeight;
-        controller.height = origCapsuleHeight;
+        Collider.height = Mathf.Lerp(Collider.height, origCapsuleHeight, 1);
+        controller.height = Mathf.Lerp(-controller.height, origCapsuleHeight, 1);
         gamemanager.instance.cameraScript.goUP();
-        
     }
 
     bool CanWallRun()

@@ -6108,6 +6108,18 @@ PrefabInstance:
       propertyPath: audi
       value: 
       objectReference: {fileID: 283879068}
+    - target: {fileID: 7035693046405281021, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: JetBootsVolume
+      value: 0.107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035693046405281021, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: JetBoots.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7035693046405281021, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: JetBoots.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 47544bfeeff00844280535c0d06253d8, type: 3}
     - target: {fileID: 7035693046405281022, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: m_RootOrder
       value: 13
