@@ -350,6 +350,13 @@ public class playerController : MonoBehaviour, IDamageable
         pushback = Vector3.zero;
     }
 
+    public void Teleport()
+    {
+        controller.enabled = false;
+        transform.position = playerSpawnPosition;
+        controller.enabled = true;
+        pushback = Vector3.zero;
+    }
 
     public void takeDamage(int dmg)
     {
