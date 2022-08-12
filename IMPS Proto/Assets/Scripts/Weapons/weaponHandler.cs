@@ -381,8 +381,8 @@ public class weaponHandler : MonoBehaviour
                 {
                     grenades--;
                     Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                    
-                    
+
+                    gamemanager.instance.updateGrenadeCount();
                 }
             }
             else
@@ -722,6 +722,14 @@ public class weaponHandler : MonoBehaviour
     public weapon GetSecondary()
     {
         return secondary;
+    }
+    public int GetGrenades()
+    {
+        return grenades;
+    }
+    public int GetMaxGrenades()
+    {
+        return maxGrenades;
     }
     #endregion
 }

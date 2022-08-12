@@ -9,12 +9,12 @@ public class playerController : MonoBehaviour, IDamageable
     [SerializeField] CharacterController controller;
 
     [Header("----Player Attributes----")]
-    [Range(1, 200)][SerializeField] public int HP;
-    [Range(1, 50)][SerializeField] float playerSpeed;
-    [Range(-10, 10)][SerializeField] float sprintMult;
-    [Range(1, 50)][SerializeField] float jumpHeight;
-    [Range(1, 100)][SerializeField] float gravityValue;
-    [Range(1, 10)][SerializeField] int numjumps;
+    [Range(1, 200)] [SerializeField] public int HP;
+    [Range(1, 50)] [SerializeField] float playerSpeed;
+    [Range(-10, 10)] [SerializeField] float sprintMult;
+    [Range(1, 50)] [SerializeField] float jumpHeight;
+    [Range(1, 100)] [SerializeField] float gravityValue;
+    [Range(1, 10)] [SerializeField] int numjumps;
 
     [Header("----Physics----")]
     public Vector3 pushback = Vector3.zero;
@@ -23,19 +23,19 @@ public class playerController : MonoBehaviour, IDamageable
     [Header("----Audio----")]
     public AudioSource audi;
     [SerializeField] AudioClip[] footsep;
-    [Range(0, 1)][SerializeField] float footstepVolume;
+    [Range(0, 1)] [SerializeField] float footstepVolume;
     bool footstepplaying = false;
     [SerializeField] AudioClip[] playerHurt;
-    [Range(0, 1)][SerializeField] float PlayerhurtVol;
+    [Range(0, 1)] [SerializeField] float PlayerhurtVol;
     [SerializeField] AudioClip[] jumpsound;
-    [Range(0, 1)][SerializeField] float jumpVol;
-    [Range(0, 1)][SerializeField] AudioClip[] JetBoots;
-    [Range(0, 1)][SerializeField] float JetBootsVolume;
+    [Range(0, 1)] [SerializeField] float jumpVol;
+    [Range(0, 1)] [SerializeField] AudioClip[] JetBoots;
+    [Range(0, 1)] [SerializeField] float JetBootsVolume;
     bool JetBootsPlaying;
 
     [Header("----Crouch and Wall Running----")]
     public Transform orientation;
-    
+
     CapsuleCollider Collider;
     [SerializeField] float minimumJumpHeight = 1.5f;
     public float slidespeed = 10f;
@@ -62,6 +62,7 @@ public class playerController : MonoBehaviour, IDamageable
     #region non_serialized_values_
     float playerSpeedOrig;
     public int HPOrig;
+    float lerpHp;
     Vector3 playerSpawnPosition;
     float origCapsuleHeight;
     public float reducedCapsHeight;
@@ -76,11 +77,13 @@ public class playerController : MonoBehaviour, IDamageable
     Vector3 move;
     public bool slowed = false;
     public bool takingDamage = false;
-    private bool _wallLeft, _wallRight, _wallFront,_wallBack;
-    private bool _wallLefta=true, _wallRighta=true, _wallFronta=true, _wallBacka = true;
+    private bool _wallLeft, _wallRight, _wallFront, _wallBack;
+    private bool _wallLefta = true, _wallRighta = true, _wallFronta = true, _wallBacka = true;
     private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
     public Shield shield;
     public GameObject cam;
+    float t = 0;
+    [SerializeField] float lerpSpeed;
 
 
 
@@ -98,13 +101,14 @@ public class playerController : MonoBehaviour, IDamageable
 
         playerSpeedOrig = playerSpeed;
         HPOrig = HP;
+        lerpHp = HP;
         playerSpawnPosition = transform.position;
 
         Collider = GetComponent<CapsuleCollider>();
 
         origCapsuleHeight = Collider.height;
         jumpheightOrig = jumpHeight;
-        
+
 
     }
     #region Player_Functions
@@ -123,54 +127,57 @@ public class playerController : MonoBehaviour, IDamageable
             GoUp();
         CheckForWall();
 
-        if (jetpack &&!isSliding) { 
-        if (CanWallRun())
+        if (jetpack && !isSliding)
         {
-
-            if (_wallLeft)
+            if (CanWallRun())
             {
-                //Debug.Log(_wallLeft);
-                StartWall();
-            }
-            else if (_wallRight)
-            {
-                //Debug.Log(_wallRight);
-                StartWall();
 
-            }
-            else if(_wallFront)
-            {
-                StartWall();
+                if (_wallLeft)
+                {
+                    //Debug.Log(_wallLeft);
+                    StartWall();
+                }
+                else if (_wallRight)
+                {
+                    //Debug.Log(_wallRight);
+                    StartWall();
 
-            }
-            else if(_wallBack)
-            {
-                StartWall();
+                }
+                else if (_wallFront)
+                {
+                    StartWall();
 
+                }
+                else if (_wallBack)
+                {
+                    StartWall();
+
+                }
+                else
+                {
+
+                    StopWall();
+
+                }
             }
             else
             {
-
                 StopWall();
-
             }
-        }
-        else
-        {
-            StopWall();
+
         }
 
-}
+        updatePlayerHp();
     }
 
     void StartWall()
     {
         //Debug.Log("StartWall hit");
-        
+
         if (_wallLeft)
         {
 
-            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime *100);
+            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.Rotate(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -178,7 +185,7 @@ public class playerController : MonoBehaviour, IDamageable
 
         else if (_wallRight)
         {
-            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime *100);
+            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
             //Debug.Log(Tilt);
             //Debug.Log(cam.transform.rotation);
@@ -186,8 +193,8 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (Input.GetButton("Jump"))
         {
-            if (_wallLeft&&_wallLefta)
-            { 
+            if (_wallLeft && _wallLefta)
+            {
                 _wallLefta = false;
                 Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
                 //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
@@ -198,8 +205,9 @@ public class playerController : MonoBehaviour, IDamageable
                 _wallFronta = true;
                 _wallBacka = true;
             }
-            if (_wallRight&&_wallRighta)
-            { _wallRighta = false;
+            if (_wallRight && _wallRighta)
+            {
+                _wallRighta = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
                 //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
                 //rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
@@ -209,17 +217,19 @@ public class playerController : MonoBehaviour, IDamageable
                 _wallFronta = true;
                 _wallBacka = true;
             }
-            if (_wallFront&&_wallFronta)
-            { _wallFronta = false;
-                Vector3 wallRunJumpDirection =transform.up * RunUp + _wallFrontHit.normal;
-                playerVelocity=wallRunJumpDirection * WallJumpForce;
+            if (_wallFront && _wallFronta)
+            {
+                _wallFronta = false;
+                Vector3 wallRunJumpDirection = transform.up * RunUp + _wallFrontHit.normal;
+                playerVelocity = wallRunJumpDirection * WallJumpForce;
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallLefta = true;
                 _wallBacka = true;
             }
-            if (_wallBack&&_wallBacka)
-            { _wallBacka = false;
+            if (_wallBack && _wallBacka)
+            {
+                _wallBacka = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
@@ -235,7 +245,7 @@ public class playerController : MonoBehaviour, IDamageable
         if (controller.isGrounded)
         {
             playerVelocity.x = 0;
-            playerVelocity.z= 0;
+            playerVelocity.z = 0;
 
         }
         Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
@@ -289,12 +299,12 @@ public class playerController : MonoBehaviour, IDamageable
             timesJumped = 0;
             jumpHeight = jumpheightOrig;
         }
-        if(jetpack)
+        if (jetpack)
         {
             numjumps = 2;
-            if(timesJumped==2)
+            if (timesJumped == 2)
             {
-                jumpHeight = jumpHeight *2;
+                jumpHeight = jumpHeight * 2;
 
 
             }
@@ -302,14 +312,14 @@ public class playerController : MonoBehaviour, IDamageable
 
 
         }
-         
+
 
 
     }
     void Sprint()
     {
         // Change move speed while sprinting
-        if (Input.GetButtonDown("Sprint") )
+        if (Input.GetButtonDown("Sprint"))
         {
             isSprinting = true;
             playerSpeed = playerSpeed * sprintMult;
@@ -347,7 +357,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         HP = HPOrig;
         controller.enabled = false;
-        transform.position = playerSpawnPosition;
+        transform.position = RoomManager.instance.checkpoint.transform.position;
         controller.enabled = true;
         updatePlayerHp();
         gamemanager.instance.weaponHandler.GiveAmmo(0);
@@ -373,7 +383,8 @@ public class playerController : MonoBehaviour, IDamageable
         {
             HP -= dmg;
             audi.PlayOneShot(playerHurt[Random.Range(0, playerHurt.Length)], PlayerhurtVol);
-            updatePlayerHp();
+            //updatePlayerHp();
+            t = 0;
             StartCoroutine(damageFlash());
         }
         if (HP <= 0)
@@ -383,12 +394,25 @@ public class playerController : MonoBehaviour, IDamageable
     }
     public void updatePlayerHp()
     {
-        gamemanager.instance.HPBar.fillAmount = (float)HP / (float)HPOrig;
+        if (lerpHp != HP)
+        {
+            lerpHp = Mathf.Lerp(lerpHp, HP, t);
+            t += lerpSpeed * Time.deltaTime;
+        }
+
+        gamemanager.instance.HPBar.fillAmount = lerpHp / HPOrig;
+        //gamemanager.instance.HPBar.fillAmount = (float)HP / (float)HPOrig;
     }
 
     public void updateShieldHp()
     {
-        gamemanager.instance.ShieldBar.fillAmount = (float)shield.shieldCurrentHp / (float)shield.shieldHp;
+        if(shield.shieldLerpHp != shield.shieldCurrentHp)
+        {
+            shield.shieldLerpHp = Mathf.Lerp(shield.shieldLerpHp, shield.shieldCurrentHp, shield.t);
+            shield.t += shield.lerpSpeed * Time.deltaTime;
+        }
+        gamemanager.instance.ShieldBar.fillAmount = shield.shieldLerpHp / shield.shieldHp;
+        //gamemanager.instance.ShieldBar.fillAmount = (float)shield.shieldCurrentHp / (float)shield.shieldHp;
     }
     private void Sliding()
     {
@@ -397,7 +421,7 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeed = playerSpeedOrig / 2;
 
         gamemanager.instance.cameraScript.crouch();
-        
+
     }
 
     private void GoUp()
@@ -411,7 +435,7 @@ public class playerController : MonoBehaviour, IDamageable
     bool CanWallRun()
     {
         //Debug.Log("CanWall");
-        return !Physics.Raycast(transform.position , Vector3.down, minimumJumpHeight);
+        return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
     }
     void CheckForWall()
     {
@@ -421,11 +445,11 @@ public class playerController : MonoBehaviour, IDamageable
         Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.right);
 
 
-        _wallLeft = Physics.Raycast(transform.position+ new Vector3(0,1,0), -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
+        _wallLeft = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
         _wallRight = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.right, out _rightWallHit, distanceOfWall, whatwall);
         _wallFront = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.forward, out _wallFrontHit, distanceOfWall, whatwall);
         _wallBack = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.forward, out _wallBackHit, distanceOfWall, whatwall);
-        
+
     }
 
 

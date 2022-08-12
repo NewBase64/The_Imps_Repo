@@ -24,14 +24,19 @@ public class MainMenu : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P))
         {
             if (settingsMenu.activeSelf)
             {
-                AudioManager.instance.sfx.Stop();
-                AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.confirm);
-                settingsMenu.SetActive(false);
+                closeSettings();
             }
         }
+    }
+
+    public void closeSettings()
+    {
+        AudioManager.instance.sfx.Stop();
+        AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.confirm);
+        settingsMenu.SetActive(false);
     }
 }

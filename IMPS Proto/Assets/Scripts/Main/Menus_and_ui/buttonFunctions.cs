@@ -66,4 +66,9 @@ public class buttonFunctions : MonoBehaviour
         AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.confirm);
         MainMenu.instance.settingsMenu.SetActive(true);
     }
+
+    public void CloseSettingsMenu()
+    {
+        MainMenu.instance.closeSettings();
+    }
 }

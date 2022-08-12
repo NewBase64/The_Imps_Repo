@@ -9,11 +9,15 @@ public class Shield : MonoBehaviour
 {
     public int shieldHp;
     public int shieldCurrentHp;
+    public float shieldLerpHp;
     [SerializeField] int regenTimer;
     [SerializeField] int delayTimer = 3;
     public bool isActive = true;
     public bool regenning = false;
     public bool canRegen = true;
+    [HideInInspector] public float t = 0;
+    public float lerpSpeed = 1;
+
 
     private void Start()
     {
@@ -27,6 +31,7 @@ public class Shield : MonoBehaviour
             regenning = true;
             StartCoroutine(HpRegen());
         }
+        gamemanager.instance.playerScript.updateShieldHp();
     }
 
     public void takeDamage(int dmg)
@@ -51,13 +56,14 @@ public class Shield : MonoBehaviour
                 gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
             }
 
-            gamemanager.instance.playerScript.updateShieldHp();
+            //gamemanager.instance.playerScript.updateShieldHp();
         }
+        t = 0;
         StopAllCoroutines();
         canRegen = false;
         regenning = false;
         StartCoroutine(delay());
-        
+
     }
 
     IEnumerator delay()
@@ -83,9 +89,9 @@ public class Shield : MonoBehaviour
                 gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
             }
             yield return new WaitForSeconds(regenTimer);
-            shieldCurrentHp++;
+            takeDamage(-1);
 
-            gamemanager.instance.playerScript.updateShieldHp();
+            //gamemanager.instance.playerScript.updateShieldHp();
         }
         regenning = false;
     }
