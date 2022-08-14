@@ -278,6 +278,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b15121eff33d7a64195724687f8bad41, type: 3}
   - {fileID: 8300000, guid: 7769ad2bca7cf0446a7f8d3d159643d1, type: 3}
   jumpVol: 0.122
+  JetBoots: []
+  JetBootsVolume: 0
   orientation: {fileID: 7035693046405281022}
   minimumJumpHeight: 0.5
   slidespeed: 5
@@ -297,6 +299,7 @@ MonoBehaviour:
   takingDamage: 0
   shield: {fileID: 2009172896}
   cam: {fileID: 7035693046745403747}
+  lerpSpeed: 1
 --- !u!143 &7035693046405281020
 CharacterController:
   m_ObjectHideFlags: 0
@@ -421,11 +424,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldHp: 10
   shieldCurrentHp: 0
+  shieldLerpHp: 0
   regenTimer: 2
   delayTimer: 3
   isActive: 1
   regenning: 0
   canRegen: 1
+  t: 0
+  lerpSpeed: 1
 --- !u!1 &7035693046506694407
 GameObject:
   m_ObjectHideFlags: 0

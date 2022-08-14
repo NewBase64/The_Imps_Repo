@@ -279,7 +279,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int grenades;
     [SerializeField] int maxGrenades;
     [SerializeField] GameObject playerGrenade;
-    
+
 
     [Header("----Audio----")]
     [SerializeField] AudioSource audi;
@@ -309,12 +309,12 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] GameObject NoCrosshair;
 
     //[Header("----Editor Bools----")]
-    [HideInInspector][SerializeField] bool weaponsbool;
-    [HideInInspector][SerializeField] bool grenadesbool;
-    [HideInInspector][SerializeField] bool soundsbool;
-    [HideInInspector][SerializeField] bool devbool;
-    [HideInInspector][SerializeField] bool dropbool;
-    [HideInInspector][SerializeField] bool flashbool;
+    [HideInInspector] [SerializeField] bool weaponsbool;
+    [HideInInspector] [SerializeField] bool grenadesbool;
+    [HideInInspector] [SerializeField] bool soundsbool;
+    [HideInInspector] [SerializeField] bool devbool;
+    [HideInInspector] [SerializeField] bool dropbool;
+    [HideInInspector] [SerializeField] bool flashbool;
     #endregion
 
     // Start is called before the first frame update
@@ -381,15 +381,15 @@ public class weaponHandler : MonoBehaviour
                 {
                     grenades--;
                     Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-
                     gamemanager.instance.updateGrenadeCount();
+
                 }
             }
             else
             {
                 Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-              
-               
+
+
             }
         }
     }
@@ -466,9 +466,9 @@ public class weaponHandler : MonoBehaviour
         gunshot = primary.gunshot;
         reloadSound = primary.reloadSound;
         outofAmmo = primary.outofAmmo;
-        if(primary.projectile !=null)
+        if (primary.projectile != null)
             projectile = primary.projectile;
-        
+
         //CurrCrosshair.SetActive(false);
         CurrCrosshair = primary.Crosshair;
         //CurrCrosshair.SetActive(true);

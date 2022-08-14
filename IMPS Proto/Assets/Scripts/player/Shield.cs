@@ -65,6 +65,11 @@ public class Shield : MonoBehaviour
         StartCoroutine(delay());
 
     }
+    public void disableShield(int disableTimer)
+    {
+        StopAllCoroutines();
+        StartCoroutine(disable(disableTimer));
+    }
 
     IEnumerator delay()
     {
@@ -101,5 +106,20 @@ public class Shield : MonoBehaviour
         isActive = true;
         takeDamage(-shieldHp);
         gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 1);
+    }
+
+    IEnumerator disable(int disableTimer)
+    {
+        isActive = false;
+        canRegen = false;
+        regenning = false;
+        gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
+        yield return new WaitForSeconds(disableTimer);
+        if (shieldCurrentHp > 0)
+        {
+            gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 1);
+        }
+        isActive = true;
+        canRegen = true;
     }
 }

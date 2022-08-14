@@ -353,7 +353,7 @@ public class playerController : MonoBehaviour, IDamageable
             HP += health;
         }
 
-        updatePlayerHp();
+        //updatePlayerHp();
     }
 
     public void respawn()
@@ -380,6 +380,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         if (shield != null && shield.isActive)
         {
+            audi.PlayOneShot(AudioManager.instance.shieldDink);
             shield.takeDamage(dmg);
         }
         else
