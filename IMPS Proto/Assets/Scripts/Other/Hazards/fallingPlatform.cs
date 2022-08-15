@@ -22,7 +22,6 @@ public class fallingPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("stepped on me");
             StartCoroutine(FloorDisAppearTime());
             StartCoroutine(FloorReAppearTime());
         }
