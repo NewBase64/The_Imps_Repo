@@ -20,7 +20,7 @@ public class ammoPickup : MonoBehaviour
                 {
                     gamemanager.instance.weaponHandler.FillAmmo();
                 }
-                else
+                else 
                 {
                     if (player.GetAmmoReserve() != primary.ammoMax)
                     {
@@ -35,6 +35,7 @@ public class ammoPickup : MonoBehaviour
                             Destroy(gameObject);
                         }
                     }
+                    gamemanager.instance.weaponHandler.GiveGrenade(2);
                 }
             }
         }

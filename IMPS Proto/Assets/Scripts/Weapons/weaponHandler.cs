@@ -84,7 +84,7 @@ public class weaponHandler : MonoBehaviour
             wepHand.ammoReserve = EditorGUILayout.IntField("Ammo Reserve", wepHand.ammoReserve);
             wepHand.ammoMax = EditorGUILayout.IntField("Ammo Max", wepHand.ammoMax);
             EditorGUILayout.EndHorizontal();
-
+            
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Can Shoot", GUILayout.Width(127));
             wepHand.canShoot = EditorGUILayout.Toggle(wepHand.canShoot, GUILayout.Width(20));
@@ -244,7 +244,7 @@ public class weaponHandler : MonoBehaviour
 #endif
     #endregion
     #region Declarations
-    [Header("----Weapons----")]
+    [Header("----Weapons----")]    
     [SerializeField] weapon primary;
     [SerializeField] int ammo;
     [SerializeField] int ammoReserve;
@@ -258,6 +258,8 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int spreadshots;
     [SerializeField] float spreadangle;
     [SerializeField] GameObject projectile;
+
+    [SerializeField] LayerMask layerMask;
 
     [SerializeField] bool canShoot = true;
     [SerializeField] bool reloading = false;
@@ -279,16 +281,16 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int grenades;
     [SerializeField] int maxGrenades;
     [SerializeField] GameObject playerGrenade;
-
+    [SerializeField] GameObject nonGrenade = null;
 
     [Header("----Audio----")]
-    [SerializeField] AudioSource audi;
-    [SerializeField] List<AudioClip> gunshot;
-    [SerializeField] float gunShotVol;
-    [SerializeField] List<AudioClip> outofAmmo;
-    [SerializeField] float outofammoVol;
-    [SerializeField] List<AudioClip> reloadSound;
-    [SerializeField] float reloadVol;
+    [SerializeField] public AudioSource audi;
+    [SerializeField] public List<AudioClip> gunshot;
+    [SerializeField] public float gunShotVol;
+    [SerializeField] public List<AudioClip> outofAmmo;
+    [SerializeField] public float outofammoVol;
+    [SerializeField] public List<AudioClip> reloadSound;
+    [SerializeField] public float reloadVol;
 
     [Header("----Dev----")]
     [SerializeField] bool InfiniteAmmo;
@@ -304,25 +306,31 @@ public class weaponHandler : MonoBehaviour
     [HideInInspector] public int pubammoRes;
     [HideInInspector] public weapon pubHolder;
 
-    [Header("----Crosshairs----")]
-    [SerializeField] public GameObject CurrCrosshair;
-    [SerializeField] GameObject NoCrosshair;
+    //[Header("----Crosshairs----")]
+    //[SerializeField] public GameObject CurrCrosshair;
+    //[SerializeField] GameObject NoCrosshair;
 
     //[Header("----Editor Bools----")]
-    [HideInInspector] [SerializeField] bool weaponsbool;
-    [HideInInspector] [SerializeField] bool grenadesbool;
-    [HideInInspector] [SerializeField] bool soundsbool;
-    [HideInInspector] [SerializeField] bool devbool;
-    [HideInInspector] [SerializeField] bool dropbool;
-    [HideInInspector] [SerializeField] bool flashbool;
+    [HideInInspector][SerializeField] bool weaponsbool;
+    [HideInInspector][SerializeField] bool grenadesbool;
+    [HideInInspector][SerializeField] bool soundsbool;
+    [HideInInspector][SerializeField] bool devbool;
+    [HideInInspector][SerializeField] bool dropbool;
+    [HideInInspector][SerializeField] bool flashbool;
+
+    weaponHolder wepHold;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
         // Set defaults so no null references
-        CurrCrosshair = NoCrosshair;
-        audi = AudioManager.instance.sfx;
+        //CurrCrosshair = NoCrosshair;
+
+        // Sets up the layermask for the raycasts when shooting
+        layerMask = (9 << 1);
+
+        wepHold = gamemanager.instance.player.GetComponentInChildren<weaponHolder>();
     }
 
     // Update is called once per frame
@@ -334,20 +342,18 @@ public class weaponHandler : MonoBehaviour
             Shooting();
 
             // Reload
-            if (Input.GetButtonDown("Reload") && !reloading)
+            if (Input.GetButtonDown("Reload") && !reloading && canShoot && ammoReserve != 0)
             {
-                audi.PlayOneShot(reloadSound[Random.Range(0, gunshot.Count)]);
                 StartCoroutine(Reload());
+                wepHold.Reloadstart();
             }
 
             // switch weapon
-            if (Input.mouseScrollDelta != Vector2.zero)
-            {
-                SwitchWeapon();
-            }
+            if (Input.mouseScrollDelta != Vector2.zero)            
+                SwitchWeapon();            
 
             // aim
-            aim();
+            aim(); 
             //grenade
             Grenade();
         }
@@ -380,16 +386,16 @@ public class weaponHandler : MonoBehaviour
                 if (grenades != 0)
                 {
                     grenades--;
-                    Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                    gamemanager.instance.updateGrenadeCount();
-
+                    nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
+                    grenade gren = nonGrenade.GetComponent<grenade>();
+                    gren.direction = true;
                 }
             }
             else
             {
-                Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-
-
+                nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
+                grenade gren = nonGrenade.GetComponent<grenade>();
+                gren.direction = true;
             }
         }
     }
@@ -470,10 +476,10 @@ public class weaponHandler : MonoBehaviour
             projectile = primary.projectile;
 
         //CurrCrosshair.SetActive(false);
-        CurrCrosshair = primary.Crosshair;
+        //CurrCrosshair = primary.Crosshair;
         //CurrCrosshair.SetActive(true);
-        gamemanager.instance.changeCrosshair();
         gamemanager.instance.updateAmmoCount();
+        wepHold.GiveWeapon(primary);
     }
     #endregion
 
@@ -483,34 +489,34 @@ public class weaponHandler : MonoBehaviour
         int ammoback = 0;
         // If not adding a specific amount of ammo
         if (addammo == 0)
-        {
+        {            
             if (primsec == 1) // If adding to the primary weapon
             {
-                if ((magCap * 2 + ammoReserve) > ammoMax)
-                    ammoReserve = ammoMax;
-                else
-                    ammoReserve += magCap * 2;
+                if ((magCap * 2 + ammoReserve) > ammoMax)                
+                    ammoReserve = ammoMax;                
+                else                
+                    ammoReserve += magCap * 2;               
             }
             else if (primsec == 2) // If adding to the secondary weapon
             {
-                if ((magCap * 2 + secammoRes) > secondary.ammoMax)
-                    secammoRes = secondary.ammoMax;
-                else
-                    secammoRes += magCap * 2;
+                if ((magCap * 2 + secammoRes) > secondary.ammoMax)                
+                    secammoRes = secondary.ammoMax;               
+                else               
+                    secammoRes += magCap * 2;                
             }
             else // Add to both
             {
-                if ((magCap * 2 + ammoReserve) > ammoMax)
-                    ammoReserve = ammoMax;
-                else
+                if ((magCap * 2 + ammoReserve) > ammoMax)                
+                    ammoReserve = ammoMax;                
+                else                
                     ammoReserve += magCap * 2;
-
-                if ((magCap * 2 + secammoRes) > secondary.ammoMax)
-                    secammoRes = secondary.ammoMax;
-                else
-                    secammoRes += magCap * 2;
+                
+                if ((magCap * 2 + secammoRes) > secondary.ammoMax)                
+                    secammoRes = secondary.ammoMax;                
+                else                
+                    secammoRes += magCap * 2;                
             }
-
+            
         }
         else // If adding a specific amount of ammo
         {
@@ -521,7 +527,7 @@ public class weaponHandler : MonoBehaviour
                     ammoback = ammoMax - ammoReserve; // get the amount of ammo needed to fill up 
                     ammoReserve = ammoMax; // set ammo to max                    
                 }
-                else
+                else                
                     ammoReserve += addammo; // add ammo to primary                                   
             }
             else // Giving to the secondary
@@ -532,15 +538,34 @@ public class weaponHandler : MonoBehaviour
                     secammoRes = secondary.ammoMax;
                     return ammoback;
                 }
-                else
-                    secammoRes += addammo;
+                else                
+                    secammoRes += addammo;                
             }
         }
-        if (ammoback != 0)
+        if(ammoback != 0)
         {
             return ammoback;
         }
         return 0;
+    }
+    public int GiveGrenade(int gren)
+    {
+        if (grenades == maxGrenades)
+        {
+            return gren;
+        }
+        else if ((grenades + gren) > maxGrenades)
+        {
+            gren = maxGrenades - grenades;
+            grenades = maxGrenades;
+            return gren;
+        }
+        else
+        {
+            grenades += gren;
+            return 0;
+        }
+
     }
     public void AddGun(weapon stats, int addammo, int addammoRes)
     {
@@ -581,15 +606,16 @@ public class weaponHandler : MonoBehaviour
     {
         primary = null;
         secondary = null;
-        CurrCrosshair.SetActive(false);
-        CurrCrosshair = NoCrosshair;
-        CurrCrosshair.SetActive(true);
+        //CurrCrosshair.SetActive(false);
+        //CurrCrosshair = NoCrosshair;
+        //CurrCrosshair.SetActive(true);
     }
     #endregion
 
     #region IEnumerators
     IEnumerator Shoot()
     {
+        //Debug.Log(layerMask.ToString());
         if (ammo > 0 && !reloading) // if the player has ammo and is not currently reloading
         {
             canShoot = false; // don't let this code get called untill the weapon can shoot again
@@ -599,12 +625,13 @@ public class weaponHandler : MonoBehaviour
                 gamemanager.instance.updateAmmoCount();
             }
             // play gunshot          
-            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)]);
+            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)], gunShotVol);
 
-            //
+            wepHold.Shooting();
+
             if (shootType == weapon.ShootType.Hitscan)
             {
-                RaycastHit hit;
+                RaycastHit hit;                                                                          //
                 if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit))//
                 {                                                                                        //
                     Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                     //
@@ -621,7 +648,7 @@ public class weaponHandler : MonoBehaviour
             }                                                                                            //
             else if (shootType == weapon.ShootType.HitscanSpread)
             {
-                RaycastHit hit;
+                RaycastHit hit;                                                                          //
                 for (int i = 0; i < spreadshots; i++)                                                    //
                 {                                                                                        //
                     float angle = spreadangle / 10;                                                      //
@@ -631,11 +658,11 @@ public class weaponHandler : MonoBehaviour
                     float y = Random.Range(min, max);                                                    //
                     if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(x, y, 0)), out hit))  //
                     {                                                                                    //
-                        Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                 //
+                        Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                 //  Shotgun weapons
                                                                                                          //
                         if (hit.collider.GetComponent<IDamageable>() != null)                            //
                         {                                                                                //
-                            IDamageable damageable = hit.collider.GetComponent<IDamageable>();           //  Shotgun weapons
+                            IDamageable damageable = hit.collider.GetComponent<IDamageable>();           //  
                             if (hit.collider is SphereCollider)                                          //
                                 damageable.takeDamage(damage * 100);                                     //
                             else                                                                         //
@@ -643,7 +670,7 @@ public class weaponHandler : MonoBehaviour
                         }                                                                                //
                     }                                                                                    //
                 }
-            }
+            }  
             else if (shootType == weapon.ShootType.Projectile)
             {
                 Instantiate(projectile, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
@@ -656,10 +683,10 @@ public class weaponHandler : MonoBehaviour
         }
         else if (primary != null) // if the player has a weapon
         {
-            if (!oOAmmo) // if the sound is not playing already
+            if (!oOAmmo && !reloading) // if the sound is not playing already
             {              // play the sound
                 oOAmmo = true;
-                audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)]);
+                audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)], outofammoVol);
                 yield return new WaitForSeconds(fireRate);
                 oOAmmo = false;
             }
@@ -699,37 +726,13 @@ public class weaponHandler : MonoBehaviour
     #endregion
 
     #region Getters
-    public int GetAmmo()
-    {
-        return ammo;
-    }
-    public int GetSecondaryAmmo()
-    {
-        return secammo;
-    }
-    public int GetAmmoReserve()
-    {
-        return ammoReserve;
-    }
-    public int GetSecondaryAmmoReserve()
-    {
-        return secammoRes;
-    }
-    public weapon GetPrimary()
-    {
-        return primary;
-    }
-    public weapon GetSecondary()
-    {
-        return secondary;
-    }
-    public int GetGrenades()
-    {
-        return grenades;
-    }
-    public int GetMaxGrenades()
-    {
-        return maxGrenades;
-    }
+    public int GetAmmo() {return ammo;}
+    public int GetSecondaryAmmo() {return secammo;}
+    public int GetAmmoReserve() {return ammoReserve;}
+    public int GetSecondaryAmmoReserve() {return secammoRes;}
+    public weapon GetPrimary() {return primary;}
+    public weapon GetSecondary() {return secondary;}
+    public int GetGrenades() {return grenades;}
+    public int GetMaxGrenades() {return maxGrenades;}
     #endregion
 }

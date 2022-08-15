@@ -47,18 +47,8 @@ public class playerController : MonoBehaviour, IDamageable
 
     [SerializeField] public float wallRunSpeed;
     [SerializeField] public float Tilt { get; private set; }
-    [SerializeField] public LayerMask whatwall;
-
-
-
-
-
+    //[SerializeField] public LayerMask whatwall;
     #endregion
-
-
-
-
-
     #region non_serialized_values_
     float playerSpeedOrig;
     public int HPOrig;
@@ -77,6 +67,8 @@ public class playerController : MonoBehaviour, IDamageable
     Vector3 move;
     public bool slowed = false;
     public bool takingDamage = false;
+    bool walljumping = true;
+    public float walljumpdelay;
     private bool _wallLeft, _wallRight, _wallFront, _wallBack;
     private bool _wallLefta = true, _wallRighta = true, _wallFronta = true, _wallBacka = true;
     private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
@@ -84,16 +76,7 @@ public class playerController : MonoBehaviour, IDamageable
     public GameObject cam;
     float t = 0;
     [SerializeField] float lerpSpeed;
-
-
-
-
-
-
     #endregion
-
-
-
 
     void Start()
     {
@@ -109,15 +92,14 @@ public class playerController : MonoBehaviour, IDamageable
         origCapsuleHeight = Collider.height;
         jumpheightOrig = jumpHeight;
 
-
+        cam = gamemanager.instance.mainCam;
     }
     #region Player_Functions
     void Update()
-    {
+    {      
         if (!gamemanager.instance.paused)
         {
             pushback = Vector3.Lerp(pushback, Vector3.zero, Time.deltaTime * pushResolve);
-
             movePlayer();
         }
 
@@ -129,66 +111,37 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (jetpack && !isSliding)
         {
-            if (CanWallRun())
+            if (CanWallRun() && walljumping)
             {
-
-                if (_wallLeft)
-                {
-                    //Debug.Log(_wallLeft);
-                    StartWall();
-                }
-                else if (_wallRight)
-                {
-                    //Debug.Log(_wallRight);
-                    StartWall();
-
-                }
-                else if (_wallFront)
-                {
-                    StartWall();
-
-                }
-                else if (_wallBack)
-                {
-                    StartWall();
-
-                }
-                else
-                {
-
-                    StopWall();
-
-                }
+                if (_wallLeft)                
+                    StartWall();                
+                else if (_wallRight)                
+                    StartWall();                
+                else if (_wallFront)                
+                    StartWall();                
+                else if (_wallBack)                
+                    StartWall();                
+                else                
+                    StopWall();                
             }
-            else
-            {
+            else           
                 StopWall();
-            }
-
         }
-
         updatePlayerHp();
     }
 
     void StartWall()
     {
-        //Debug.Log("StartWall hit");
-
         if (_wallLeft)
         {
-
             Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.Rotate(0, 0, Tilt);
-            //Debug.Log(Tilt);
-            //Debug.Log(cam.transform.rotation);
         }
 
         else if (_wallRight)
         {
             Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
             cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
-            //Debug.Log(Tilt);
-            //Debug.Log(cam.transform.rotation);
         }
 
         if (Input.GetButton("Jump"))
@@ -197,26 +150,25 @@ public class playerController : MonoBehaviour, IDamageable
             {
                 _wallLefta = false;
                 Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
-                //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
-                //rigid.AddForce(wallJumpDirect * WallJumpForce * 70, ForceMode.Force);
                 playerVelocity = wallJumpDirect * WallJumpForce;
 
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallFronta = true;
                 _wallBacka = true;
+                StartCoroutine(WallJumpDelay());
             }
             if (_wallRight && _wallRighta)
             {
                 _wallRighta = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
-                //rigid.velocity = new Vector3(rigid.velocity.x, 0, rigid.velocity.z);
-                //rigid.AddForce(wallRunJumpDirection * WallJumpForce * 70, ForceMode.Force);
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
-                //audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallLefta = true;
                 _wallFronta = true;
                 _wallBacka = true;
+                StartCoroutine(WallJumpDelay());
             }
             if (_wallFront && _wallFronta)
             {
@@ -224,10 +176,11 @@ public class playerController : MonoBehaviour, IDamageable
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallFrontHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
-                //audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallLefta = true;
                 _wallBacka = true;
+                StartCoroutine(WallJumpDelay());
             }
             if (_wallBack && _wallBacka)
             {
@@ -235,21 +188,24 @@ public class playerController : MonoBehaviour, IDamageable
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
-                //audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
+                audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
                 _wallRighta = true;
                 _wallFronta = true;
                 _wallLefta = true;
-
+                StartCoroutine(WallJumpDelay());
             }
         }
     }
     void StopWall()
     {
+        // if player hit's thier head
+        if ((controller.collisionFlags & CollisionFlags.Above) != 0)
+            playerVelocity.y = 0;
+     
         if (controller.isGrounded)
         {
             playerVelocity.x = 0;
             playerVelocity.z = 0;
-
         }
         Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
         cam.transform.Rotate(0, 0, Tilt);
@@ -265,59 +221,53 @@ public class playerController : MonoBehaviour, IDamageable
         // play footstep audio
         StartCoroutine(playFootsteps());
 
+
         // Jump if needed
         Jump();
 
         // Sprint if needed
         Sprint();
         pushback = Vector3.zero;
-
     }
     void Jump()
     {
-        // Add gravity
-        playerVelocity.y -= gravityValue * Time.deltaTime;
-        controller.Move((playerVelocity + pushback) * Time.deltaTime);
+        if (!controller.isGrounded)
+        {
+            // Add gravity
+            playerVelocity.y -= gravityValue * Time.deltaTime;
+            controller.Move((playerVelocity + pushback) * Time.deltaTime);
+        }
 
         // Change the height position of the player
         if (Input.GetButtonDown("Jump") && (timesJumped < numjumps))
         {
-            if (timesJumped == 0)
-            { audi.PlayOneShot(jumpsound[Random.Range(0, jumpsound.Length)], jumpVol); }
+            if (timesJumped == 0) // players first jump
+               audi.PlayOneShot(jumpsound[Random.Range(0, jumpsound.Length)], jumpVol); 
 
-            playerVelocity.y += jumpHeight;
-            timesJumped++;
+            playerVelocity.y = 0;            // turn off gravity
+            playerVelocity.y += jumpHeight;  // jump
+            timesJumped++;                   // increment times jumped
         }
 
         // If the player jumps and hit's their head, they will bounce off the surface
-        if ((controller.collisionFlags & CollisionFlags.Above) != 0)
+        if ((controller.collisionFlags & CollisionFlags.Above) != 0)        
+            playerVelocity.y = 0;
+        
+        // If the player touches the ground, reset teh velocity and jump counter
+        if (controller.isGrounded && playerVelocity.y < 0)
         {
-            playerVelocity.y -= jumpHeight;
+            playerVelocity.y = 0f;         // turn off gravity
+            timesJumped = 0;               // reset number of jumps
+            jumpHeight = jumpheightOrig;   // reset jump height
         }
 
-        // If the player touches the ground, reset teh velocity and jump counter
-        if (controller.isGrounded && CompareTag("Floor"))
-        {
-            playerVelocity.y = 0f;
-            timesJumped = 0;
-            jumpHeight = jumpheightOrig;
-        }
+        // JETPACK
         if (jetpack)
         {
             numjumps = 2;
-            if (timesJumped == 2)
-            {
-                jumpHeight = jumpHeight * 2;
-
-
-            }
-
-
-
+            //if (timesJumped == 2)           
+            //    jumpHeight = jumpHeight * 2;           
         }
-
-
-
     }
     void Sprint()
     {
@@ -344,16 +294,11 @@ public class playerController : MonoBehaviour, IDamageable
 
     public void GiveHP(int health)
     {
-        if ((health + HP) > HPOrig)
-        {
-            HP = HPOrig;
-        }
-        else
-        {
+        if ((health + HP) > HPOrig)        
+            HP = HPOrig;        
+        else        
             HP += health;
-        }
-
-        //updatePlayerHp();
+        updatePlayerHp();
     }
 
     public void respawn()
@@ -391,10 +336,8 @@ public class playerController : MonoBehaviour, IDamageable
             t = 0;
             StartCoroutine(damageFlash());
         }
-        if (HP <= 0)
-        {
-            gamemanager.instance.playerDead();
-        }
+        if (HP <= 0)       
+            gamemanager.instance.playerDead();        
     }
     public void updatePlayerHp()
     {
@@ -420,16 +363,17 @@ public class playerController : MonoBehaviour, IDamageable
     }
     private void Sliding()
     {
+        isSliding = true;
         Collider.height = Mathf.Lerp(Collider.height, reducedCapsHeight, 2);
         controller.height = Mathf.Lerp(controller.height, reducedCapsHeight, 2);
         playerSpeed = playerSpeedOrig / 2;
 
         gamemanager.instance.cameraScript.crouch();
-
     }
 
     private void GoUp()
     {
+        isSliding = false;
         playerSpeed = playerSpeedOrig;
         Collider.height = Mathf.Lerp(Collider.height, origCapsuleHeight, 1);
         controller.height = Mathf.Lerp(-controller.height, origCapsuleHeight, 1);
@@ -438,7 +382,6 @@ public class playerController : MonoBehaviour, IDamageable
 
     bool CanWallRun()
     {
-        //Debug.Log("CanWall");
         return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
     }
     void CheckForWall()
@@ -447,16 +390,11 @@ public class playerController : MonoBehaviour, IDamageable
         Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.forward);
         Debug.DrawRay(transform.position + new Vector3(0, 1, 0), orientation.right);
         Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.right);
-
-
-        _wallLeft = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.right, out _leftWallHit, distanceOfWall, whatwall);
-        _wallRight = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.right, out _rightWallHit, distanceOfWall, whatwall);
-        _wallFront = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.forward, out _wallFrontHit, distanceOfWall, whatwall);
-        _wallBack = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.forward, out _wallBackHit, distanceOfWall, whatwall);
-
+        _wallLeft = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.right, out _leftWallHit, distanceOfWall);
+        _wallRight = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.right, out _rightWallHit, distanceOfWall);
+        _wallFront = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.forward, out _wallFrontHit, distanceOfWall);
+        _wallBack = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.forward, out _wallBackHit, distanceOfWall);
     }
-
-
     #endregion
 
     #region IEnums
@@ -466,7 +404,6 @@ public class playerController : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(0.1f);
         gamemanager.instance.playerDamageFlash.SetActive(false);
     }
-
 
     // Slows the player for a certain amount time by a certain percentage
     public IEnumerator slowPlayer(int time, float slowMultiplier = 0)
@@ -489,7 +426,6 @@ public class playerController : MonoBehaviour, IDamageable
         playerSpeedOrig = playerSpeedOrig2;
         playerSpeed = playerSpeedOrig;
         slowed = false;
-
     }
 
     IEnumerator playFootsteps()
@@ -505,6 +441,13 @@ public class playerController : MonoBehaviour, IDamageable
                 yield return new WaitForSeconds(0.4f);
             footstepplaying = false;
         }
+    }
+
+    IEnumerator WallJumpDelay()
+    {
+        walljumping = false;
+        yield return new WaitForSeconds(walljumpdelay);
+        walljumping = true;
     }
     #endregion
 }

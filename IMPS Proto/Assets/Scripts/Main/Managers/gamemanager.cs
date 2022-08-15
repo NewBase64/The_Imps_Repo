@@ -78,7 +78,7 @@ public class gamemanager : MonoBehaviour
             if (!paused && !menuCurrentlyOpen)
             {
                 paused = true;
-                weaponHandler.CurrCrosshair.SetActive(false);
+                //weaponHandler.CurrCrosshair.SetActive(false);
                 menuCurrentlyOpen = pauseMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
@@ -98,7 +98,7 @@ public class gamemanager : MonoBehaviour
 
     public void resume()
     {
-        weaponHandler.CurrCrosshair.SetActive(true);
+        //weaponHandler.CurrCrosshair.SetActive(true);
         paused = false;
         menuCurrentlyOpen.SetActive(false);
         menuCurrentlyOpen = null;
@@ -117,7 +117,7 @@ public class gamemanager : MonoBehaviour
     public void playerDead()
     {
         gameOver = true;
-        weaponHandler.CurrCrosshair.SetActive(false);
+        //weaponHandler.CurrCrosshair.SetActive(false);
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         ConLockCursor();
@@ -188,12 +188,12 @@ public class gamemanager : MonoBehaviour
         maxGrenades.text = weaponHandler.GetMaxGrenades().ToString();
     }
 
-    public void changeCrosshair()
-    {
-        currCrosshiar.SetActive(false);
-        currCrosshiar = weaponHandler.CurrCrosshair;
-        currCrosshiar.SetActive(true);
-    }
+    //public void changeCrosshair()
+    //{
+    //    currCrosshiar.SetActive(false);
+    //    currCrosshiar = weaponHandler.CurrCrosshair;
+    //    currCrosshiar.SetActive(true);
+    //}
 
     public void CauseEvent(int causedEvent)
     {
@@ -214,7 +214,7 @@ public class gamemanager : MonoBehaviour
                 break;
             case 5:
                 paused = true;
-                weaponHandler.CurrCrosshair.SetActive(false);
+                //weaponHandler.CurrCrosshair.SetActive(false);
                 menuCurrentlyOpen = winGameMenu;
                 menuCurrentlyOpen.SetActive(true);
                 ConLockCursor();
