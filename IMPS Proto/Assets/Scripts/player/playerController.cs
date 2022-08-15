@@ -296,7 +296,7 @@ public class playerController : MonoBehaviour, IDamageable
         }
 
         // If the player touches the ground, reset teh velocity and jump counter
-        if (controller.isGrounded && playerVelocity.y < 0)
+        if (controller.isGrounded && CompareTag("Floor"))
         {
             playerVelocity.y = 0f;
             timesJumped = 0;

@@ -283,7 +283,7 @@ MonoBehaviour:
   orientation: {fileID: 7035693046405281022}
   minimumJumpHeight: 0.5
   slidespeed: 5
-  distanceOfWall: 0.5
+  distanceOfWall: 0.75
   RunUp: 2
   WallJumpForce: 6
   camTiltAngle: 100
@@ -311,8 +311,8 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.5
-  m_Radius: 0.25
+  m_Height: 2
+  m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.2
   m_SkinWidth: 0.08
