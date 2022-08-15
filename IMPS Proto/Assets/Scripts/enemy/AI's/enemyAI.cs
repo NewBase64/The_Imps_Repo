@@ -23,6 +23,11 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject shootPos;
     [Header("---------------------------------------------------------------")]
+    [Header("Audio")]
+    public AudioSource aud;
+    [SerializeField] AudioClip[] playerDetected;
+    [SerializeField] AudioClip[] gunShotNoises;
+    [Header("---------------------------------------------------------------")]
     [Header("Grenades Stats")]
     [SerializeField] bool grenadesActive;
     [SerializeField] float grenadeTossRate;
@@ -92,19 +97,31 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     void canSeePlayer()
     {
-
+        RaycastHit hit;
         float angle = Vector3.Angle(playerDir, transform.forward);
+
         //Debug.Log(angle);
 
-        RaycastHit hit;
         if (Physics.Raycast(transform.position, playerDir, out hit))
         {
+            aud.PlayOneShot(playerDetected[Random.Range(0, playerDetected.Length)], 1);
+                if (hit.collider.CompareTag("Player"))
+                {
+                    anim.SetBool("Shooting", true);
+                }
+                else
+                {
+                    anim.SetBool("Shooting", false);
+                }
             Debug.DrawRay(transform.position, gamemanager.instance.player.transform.position - transform.position);
             //timer for the Grenades, this sets a cooldown so he cant infinite throw grenades while shooting
             if (hit.collider.CompareTag("Player") && canShoot && angle <= viewAngle)
                 StartCoroutine(shoot());
+
             if (grenade == true)
             {
+                anim.SetTrigger("Grenade");
+
                 if (Time.time > grenadeTossRate)
                 {
                     StartCoroutine(TossFirstGrenade());
@@ -161,10 +178,10 @@ public class enemyAI : MonoBehaviour, IDamageable
 
     IEnumerator shoot()
     {
+        anim.SetTrigger("Shoot");
         if (canShoot)
         {
             canShoot = false;
-            anim.SetTrigger("Shoot");
             Instantiate(bullet, shootPos.transform.position, bullet.transform.rotation);
             yield return new WaitForSeconds(shootRate);
             canShoot = true;
@@ -174,6 +191,8 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         if (canThrowGrenade)
         {
+            aud.PlayOneShot(gunShotNoises[Random.Range(0, playerDetected.Length)], 1);
+
             canThrowGrenade = false;
             //anim.SetTrigger("Grenade");
             Instantiate(grenade, shootPos.transform.position, grenade.transform.rotation);
