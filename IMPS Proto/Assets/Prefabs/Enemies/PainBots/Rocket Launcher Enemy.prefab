@@ -370,6 +370,7 @@ MonoBehaviour:
   shootRate: 3.5
   bullet: {fileID: 7280421206675279168, guid: 836f2bb5e8fcd6e42b088993c5bb3cda, type: 3}
   shootPos: {fileID: 8707612327235874893}
+  weaponAmmoDrop: {fileID: 1656715085191226204, guid: b6f595b816a540445997b7e632b4b15a, type: 3}
   aud: {fileID: 8099602298216820747}
   grenadesActive: 0
   grenadeTossRate: 0

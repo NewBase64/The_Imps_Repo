@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6240834580256208991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.41784, y: 0.41355002, z: 0.40362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6240834581268628905}
@@ -104,11 +104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6240834580256208989}
   explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}
-  hp: 3
+  hp: 50
   viewAngle: 90
-  playerFaceSpeed: 10
+  playerFaceSpeed: 25
   roamRadius: 6
-  shootRate: 3.5
+  shootRate: 2
   bullet: {fileID: 7280421206675279168, guid: 836f2bb5e8fcd6e42b088993c5bb3cda, type: 3}
   shootPosition: {fileID: 6240834580613651134}
   assignedRoom: 0

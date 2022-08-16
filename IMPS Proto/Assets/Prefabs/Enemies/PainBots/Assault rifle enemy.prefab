@@ -77,10 +77,11 @@ MonoBehaviour:
   HP: 10
   viewAngle: 90
   playerFaceSpeed: 20
-  roamRadius: 5
+  roamRadius: 20
   shootRate: 0.8
   bullet: {fileID: 6141390098514373550, guid: e35aa1655dfdee249b1681756c06e83f, type: 3}
   shootPos: {fileID: 7722982274384482604}
+  weaponAmmoDrop: {fileID: 1656715085191226204, guid: cdc53380d0e29bb4b98df4c2267fa0f8, type: 3}
   aud: {fileID: 7178101547002302826}
   grenadesActive: 0
   grenadeTossRate: 0
@@ -113,8 +114,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.17
-  m_Center: {x: 0, y: 1.8, z: 0}
+  m_Radius: 0.11
+  m_Center: {x: 0, y: 1.5, z: 0.2}
 --- !u!135 &65658909456134092
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -143,10 +144,10 @@ NavMeshAgent:
   avoidancePriority: 50
   m_AngularSpeed: 60
   m_StoppingDistance: 8
-  m_AutoTraverseOffMeshLink: 1
+  m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 0
-  m_AutoRepath: 1
-  m_Height: 2
+  m_AutoRepath: 0
+  m_Height: 3
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -2578,7 +2579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286616788694818315, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
       propertyPath: m_VersionIndex
-      value: 5147
+      value: 5150
       objectReference: {fileID: 0}
     - target: {fileID: 7286616788694818315, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
       propertyPath: m_Tangents.Array.data[0].y

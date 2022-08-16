@@ -23,6 +23,10 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject shootPos;
     [Header("---------------------------------------------------------------")]
+    [Header("Weapon drop")]
+    [Header("---------------------------------------------------------------")]
+    [SerializeField] GameObject weaponAmmoDrop;
+
     [Header("Audio")]
     public AudioSource aud;
     //[SerializeField] AudioClip[] playerDetected;
@@ -74,6 +78,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     public void roam()
     {
         agent.stoppingDistance = 0;
+
         Vector3 randomDir = Random.insideUnitSphere * roamRadius;
         randomDir += startignPos;
 
@@ -160,6 +165,8 @@ public class enemyAI : MonoBehaviour, IDamageable
         //StartCoroutine(flashColor());
         if (HP <= 0)
         {
+            Instantiate(weaponAmmoDrop, transform.position, weaponAmmoDrop.transform.rotation);
+
             RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
             agent.enabled = false;
             anim.SetBool("Dead", true);
