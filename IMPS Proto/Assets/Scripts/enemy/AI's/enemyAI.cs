@@ -25,8 +25,8 @@ public class enemyAI : MonoBehaviour, IDamageable
     [Header("---------------------------------------------------------------")]
     [Header("Audio")]
     public AudioSource aud;
-    [SerializeField] AudioClip[] playerDetected;
-    [SerializeField] AudioClip[] gunShotNoises;
+    //[SerializeField] AudioClip[] playerDetected;
+    //[SerializeField] AudioClip[] gunShotNoises;
     [Header("---------------------------------------------------------------")]
     [Header("Grenades Stats")]
     [SerializeField] bool grenadesActive;
@@ -104,7 +104,7 @@ public class enemyAI : MonoBehaviour, IDamageable
 
         if (Physics.Raycast(transform.position, playerDir, out hit))
         {
-            aud.PlayOneShot(playerDetected[Random.Range(0, playerDetected.Length)], 1);
+            //aud.PlayOneShot(playerDetected[Random.Range(0, playerDetected.Length)], 1);
                 if (hit.collider.CompareTag("Player"))
                 {
                     anim.SetBool("Shooting", true);
@@ -191,7 +191,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         if (canThrowGrenade)
         {
-            aud.PlayOneShot(gunShotNoises[Random.Range(0, playerDetected.Length)], 1);
+            //aud.PlayOneShot(gunShotNoises[Random.Range(0, playerDetected.Length)], 1);
 
             canThrowGrenade = false;
             //anim.SetTrigger("Grenade");
