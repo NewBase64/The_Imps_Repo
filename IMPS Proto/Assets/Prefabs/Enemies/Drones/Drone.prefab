@@ -109,7 +109,7 @@ MonoBehaviour:
   playerFaceSpeed: 25
   roamRadius: 6
   shootRate: 2
-  bullet: {fileID: 7280421206675279168, guid: 836f2bb5e8fcd6e42b088993c5bb3cda, type: 3}
+  bullet: {fileID: 8707471308024263180, guid: 8ac3d65888227204e9e03cc930155b08, type: 3}
   shootPosition: {fileID: 6240834580613651134}
   assignedRoom: 0
 --- !u!54 &6240834580256208931
@@ -160,7 +160,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 7
+  m_BaseOffset: 5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!136 &6648943463065557979
@@ -269,7 +269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 594d10e454fbe5348a94597b58bf720f, type: 2}
+  - {fileID: 2100000, guid: 0fa40ddb3f0872141b54282d1d5721a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

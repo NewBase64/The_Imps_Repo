@@ -859,8 +859,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 8703058816639673490}
   HP: 25
-  playerSpeed: 2.8
-  sprintMult: 1.25
+  playerSpeed: 6.4
+  sprintMult: 2
   jumpHeight: 6
   gravityValue: 20
   numjumps: 1
@@ -887,14 +887,12 @@ MonoBehaviour:
   camTiltAngle: 0
   tiltTime: 0
   wallRunSpeed: 0
-  whatwall:
-    serializedVersion: 2
-    m_Bits: 0
   HPOrig: 0
   reducedCapsHeight: 0
   jetpack: 0
   slowed: 0
   takingDamage: 0
+  walljumpdelay: 0
   shield: {fileID: 814245382596655100}
   cam: {fileID: 0}
   lerpSpeed: 0

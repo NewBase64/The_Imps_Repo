@@ -11,6 +11,8 @@ public class enemyAI : MonoBehaviour, IDamageable
     [SerializeField] NavMeshAgent agent;
     //[SerializeField] Renderer rend;
     [SerializeField] Animator anim;
+    [SerializeField] GameObject deathExplosion;
+
     [Header("---------------------------------------------------------------")]
     [Header("Enemy Attributes")]
     [SerializeField] int HP;
@@ -26,6 +28,7 @@ public class enemyAI : MonoBehaviour, IDamageable
     [Header("Weapon drop")]
     [Header("---------------------------------------------------------------")]
     [SerializeField] GameObject weaponAmmoDrop;
+    [SerializeField] GameObject grenadeAmmoDrop;
 
     [Header("Audio")]
     public AudioSource aud;
@@ -166,12 +169,17 @@ public class enemyAI : MonoBehaviour, IDamageable
         if (HP <= 0)
         {
             Instantiate(weaponAmmoDrop, transform.position, weaponAmmoDrop.transform.rotation);
+            if (grenadesActive)
+            {
+                Instantiate(grenadeAmmoDrop, transform.position, grenadeAmmoDrop.transform.rotation);
 
+            }
             RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
             agent.enabled = false;
             anim.SetBool("Dead", true);
             foreach (Collider col in GetComponents<Collider>())
                 col.enabled = false;
+            StartCoroutine(explosionTime());
         }
     }
 
@@ -211,6 +219,12 @@ public class enemyAI : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(grenadeFirstToss);
 
+    }
+    IEnumerator explosionTime()
+    {
+        yield return new WaitForSeconds(.1f);
+        Instantiate(deathExplosion, transform.position, deathExplosion.transform.rotation);
+        Destroy(gameObject);
     }
 
 }

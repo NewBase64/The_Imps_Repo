@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1374557060718349998}
   anim: {fileID: 5672446618118573679}
+  deathExplosion: {fileID: 3809519118320257199, guid: 358183350e60b3a4ab12f3e012497fad, type: 3}
   HP: 10
   viewAngle: 90
   playerFaceSpeed: 20
@@ -371,6 +372,7 @@ MonoBehaviour:
   bullet: {fileID: 7280421206675279168, guid: 836f2bb5e8fcd6e42b088993c5bb3cda, type: 3}
   shootPos: {fileID: 8707612327235874893}
   weaponAmmoDrop: {fileID: 1656715085191226204, guid: b6f595b816a540445997b7e632b4b15a, type: 3}
+  grenadeAmmoDrop: {fileID: 5059707908831839518, guid: 605a8a08caea1d245aa0e6eba60fd371, type: 3}
   aud: {fileID: 8099602298216820747}
   grenadesActive: 0
   grenadeTossRate: 0

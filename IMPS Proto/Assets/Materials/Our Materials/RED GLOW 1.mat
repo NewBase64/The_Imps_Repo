@@ -9,7 +9,10 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: RED GLOW 1
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHAPREMULTIPLY_ON
+  - _EMISSION
+  - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -76,6 +79,6 @@ Material:
     - _UVSec: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.5, g: 0.06367925, b: 0.06367925, a: 1}
-    - _EmissionColor: {r: 0.4433962, g: 0.03137237, b: 0.03137237, a: 1}
+    - _Color: {r: 0.95129585, g: 1, b: 0, a: 1}
+    - _EmissionColor: {r: 0.031372536, g: 0.44313726, b: 0.057223577, a: 1}
   m_BuildTextureStacks: []

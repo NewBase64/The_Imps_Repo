@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac15fe61cde3428488e7e36d82b81598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 1
-  enemyDamage: 5
-  explosionPushBack: 6
+  playerDamage: 0
+  enemyDamage: 10
+  explosionPushBack: 10
 --- !u!54 &3809519118320257194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!199 &7763499756354414389
 ParticleSystemRenderer:
