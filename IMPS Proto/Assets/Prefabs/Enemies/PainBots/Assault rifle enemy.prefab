@@ -90,7 +90,7 @@ MonoBehaviour:
   grenadeFirstToss: 3
   grenadeCooldownTime: 4
   grenade: {fileID: 2094192647477228935, guid: 046baa045daf60d44b4ad2a598eb1810, type: 3}
-  assignedRoom: 0
+  assignedRoom: 1
 --- !u!136 &65658909456134082
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -101,10 +101,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.27
-  m_Height: 1.4
+  m_Radius: 0.4
+  m_Height: 2.3
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!135 &65658909456134093
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -116,7 +116,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.11
+  m_Radius: 0.3
   m_Center: {x: 0, y: 1.5, z: 0.2}
 --- !u!135 &65658909456134092
 SphereCollider:
@@ -140,7 +140,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 65658909456134094}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -149,7 +149,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 0
   m_AutoBraking: 0
   m_AutoRepath: 0
-  m_Height: 3
+  m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -2581,7 +2581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286616788694818315, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
       propertyPath: m_VersionIndex
-      value: 5150
+      value: 5177
       objectReference: {fileID: 0}
     - target: {fileID: 7286616788694818315, guid: a624a712dc5cf8a44acb68683b9440e3, type: 3}
       propertyPath: m_Tangents.Array.data[0].y

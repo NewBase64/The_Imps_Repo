@@ -72,10 +72,10 @@ public class weaponHolder : MonoBehaviour
     public void GiveWeapon(weapon wep)
     {
         shootCurr = 0;
-        if(CurrWep != null)        
-            CurrWep.SetActive(false);        
+        if (CurrWep != null)
+            CurrWep.SetActive(false);
 
-        if(wep == wepPistol)
+        if (wep == wepPistol)
         {
             CurrWep = Pistol;
             CurrWep.SetActive(true);
@@ -100,34 +100,34 @@ public class weaponHolder : MonoBehaviour
     public void Shooting()
     {
         shootCurr = 1;
-           
+
         if (CurrWep == Pistol)
             StartCoroutine(PistolShot());
-                
+
         if (CurrWep == Rifle)
             StartCoroutine(RifleShot());
-        
+
         if (CurrWep == Shotgun)
             StartCoroutine(ShotgunShot());
-        
+
         if (CurrWep == Rocket)
-            StartCoroutine(RocketShot());                            
+            StartCoroutine(RocketShot());
     }
 
     IEnumerator PistolShot()
     {
         shot = true;
-        while(shot)
+        while (shot)
         {
-            if (shootCurr == 0 && shot)                           
+            if (shootCurr == 0 && shot)
                 shot = false;
-            
+
             float tim = wepPistol.fireRate;
             Lerperator(Pistol, PistolOrig, PistolShoot, shootCurr);
             shootCurr = Mathf.MoveTowards(shootCurr, shootTarget, (tim / (tim * tim)) * Time.deltaTime);
 
             yield return null;
-        }       
+        }
     }
     IEnumerator RifleShot()
     {
@@ -146,7 +146,7 @@ public class weaponHolder : MonoBehaviour
         }
     }
     IEnumerator ShotgunShot()
-    {        
+    {
         shot = true;
         shootCurr = 0;
         shootTarget = 1;
@@ -177,7 +177,7 @@ public class weaponHolder : MonoBehaviour
             Lerperator(Shotgun, ShotgunOrig, ShotgunShoot, shootCurr);
             shootCurr = Mathf.MoveTowards(shootCurr, shootTarget, (tim / (tim * tim)) * Time.deltaTime);
 
-            yield return null;            
+            yield return null;
         }
     }
     IEnumerator ShotgunPumper()
@@ -186,7 +186,7 @@ public class weaponHolder : MonoBehaviour
         float pumpcurr = 0, pumptarg = 1;
         while (pumping)
         {
-            if(pumpcurr == 1)
+            if (pumpcurr == 1)
                 pumptarg = 0;
             float tim = wepShotgun.fireRate / 4;
             Lerperator(shotgunPump, ShotgunPumpOrig, ShotgunPumpPumped, pumpcurr);
@@ -245,7 +245,7 @@ public class weaponHolder : MonoBehaviour
                 reloadTarget = 0;
                 gamemanager.instance.weaponHandler.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
             }
-            
+
             float tim = wepPistol.reloadTime / 2;
             Lerperator(Pistol, PistolOrig, PistolReloadPoint, reloadCurr);
             reloadCurr = Mathf.MoveTowards(reloadCurr, reloadTarget, (tim / (tim * tim)) * Time.deltaTime);

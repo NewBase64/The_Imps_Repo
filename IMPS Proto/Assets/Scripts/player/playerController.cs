@@ -103,10 +103,10 @@ public class playerController : MonoBehaviour, IDamageable
             movePlayer();
         }
 
-        if (Input.GetButtonDown("Crouch"))
-            Sliding();
-        else if (Input.GetButtonUp("Crouch"))
-            GoUp();
+        //if (Input.GetButtonDown("Crouch"))
+            //Sliding();
+        //else if (Input.GetButtonUp("Crouch"))
+            //GoUp();
         CheckForWall();
 
         if (jetpack && !isSliding)

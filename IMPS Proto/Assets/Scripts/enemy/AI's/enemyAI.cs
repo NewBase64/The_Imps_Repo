@@ -169,11 +169,10 @@ public class enemyAI : MonoBehaviour, IDamageable
         if (HP <= 0)
         {
             Instantiate(weaponAmmoDrop, transform.position, weaponAmmoDrop.transform.rotation);
-            if (grenadesActive)
-            {
+            //if (grenadesActive)
+            //{
                 Instantiate(grenadeAmmoDrop, transform.position, grenadeAmmoDrop.transform.rotation);
-
-            }
+            //}
             RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
             agent.enabled = false;
             anim.SetBool("Dead", true);

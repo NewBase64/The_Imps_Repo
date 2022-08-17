@@ -21,6 +21,7 @@ public class droneAI : MonoBehaviour, IDamageable
     [SerializeField] float shootRate;
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject shootPosition;
+    [SerializeField] GameObject grenadeAmmoDrop;
     bool canShoot = true;
     bool playerInRange;
     Vector3 playerDir;
@@ -123,6 +124,7 @@ public class droneAI : MonoBehaviour, IDamageable
         {
             RoomManager.instance.checkEnemiesKilledOnRoom(assignedRoom);
             agent.enabled = false;
+            Instantiate(grenadeAmmoDrop, transform.position, grenadeAmmoDrop.transform.rotation);
             Instantiate(explosion, transform.position, explosion.transform.rotation);
             Destroy(gameObject);
         }

@@ -26,6 +26,7 @@ MonoBehaviour:
   shootType: 0
   spreadshots: 0
   spreadangle: 0
+  projectile: {fileID: 0}
   gunshot:
   - {fileID: 8300000, guid: 604bcb260f7baaa4c8eea5f53c3b9d16, type: 3}
   outofAmmo:

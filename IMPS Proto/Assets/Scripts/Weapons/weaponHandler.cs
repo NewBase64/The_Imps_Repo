@@ -328,7 +328,7 @@ public class weaponHandler : MonoBehaviour
         //CurrCrosshair = NoCrosshair;
 
         // Sets up the layermask for the raycasts when shooting
-        layerMask = (9 << 1);
+        //layerMask = (9 << 1);
 
         wepHold = gamemanager.instance.player.GetComponentInChildren<weaponHolder>();
     }
@@ -536,6 +536,7 @@ public class weaponHandler : MonoBehaviour
                 {
                     ammoback = secondary.ammoMax - secammoRes;
                     secammoRes = secondary.ammoMax;
+                    updateGunStats();
                     return ammoback;
                 }
                 else                
@@ -544,28 +545,33 @@ public class weaponHandler : MonoBehaviour
         }
         if(ammoback != 0)
         {
+            updateGunStats();
             return ammoback;
         }
+        updateGunStats();
         return 0;
+        
     }
     public int GiveGrenade(int gren)
     {
         if (grenades == maxGrenades)
         {
+            updateGunStats();
             return gren;
         }
         else if ((grenades + gren) > maxGrenades)
         {
             gren = maxGrenades - grenades;
             grenades = maxGrenades;
+            updateGunStats();
             return gren;
         }
         else
         {
             grenades += gren;
+            updateGunStats();
             return 0;
         }
-
     }
     public void AddGun(weapon stats, int addammo, int addammoRes)
     {
@@ -664,7 +670,7 @@ public class weaponHandler : MonoBehaviour
                         {                                                                                //
                             IDamageable damageable = hit.collider.GetComponent<IDamageable>();           //  
                             if (hit.collider is SphereCollider)                                          //
-                                damageable.takeDamage(damage * 100);                                     //
+                                damageable.takeDamage(damage * 10);                                      //
                             else                                                                         //
                                 damageable.takeDamage(damage);                                           //
                         }                                                                                //

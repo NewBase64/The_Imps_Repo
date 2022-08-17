@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
   m_Name: Shotgun
   m_EditorClassIdentifier: 
-  model: {fileID: 154868483340486660, guid: e97adba056f504e4bb9605613d81b2be, type: 3}
+  model: {fileID: 6328455087953914981, guid: d7e686bf3b026254cbd98ec4a7776dde, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 96d5150d24ffb1549881b041e4e11f78, type: 3}
   Crosshair: {fileID: 6343804671921266003, guid: c3bdb1c6486100647843c76951010196, type: 3}
   ammo: 6
@@ -26,6 +26,7 @@ MonoBehaviour:
   shootType: 1
   spreadshots: 15
   spreadangle: 0.5
+  projectile: {fileID: 0}
   gunshot:
   - {fileID: 8300000, guid: 8a2a3ec91d9a51b4d94101f914b74420, type: 3}
   outofAmmo:

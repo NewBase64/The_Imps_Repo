@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c18a2e8286b28c45b3bd20001dc4bfb, type: 3}
   m_Name: Rocket Launcher
   m_EditorClassIdentifier: 
-  model: {fileID: 3623933414003541785, guid: 6c8b1ff50dd894d4e9f47ee4292d59ef, type: 3}
+  model: {fileID: 8721484063546510910, guid: c450ad30c684d814c83cefced8c3687f, type: 3}
   wepEffect: {fileID: 964930514814309113, guid: 6e69f310db6e7e14688d261db2d0ec23, type: 3}
   Crosshair: {fileID: 891171137142701797, guid: 21dd2c97d4843164dbf96af6bd5207ed, type: 3}
   ammo: 1

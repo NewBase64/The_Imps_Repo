@@ -385,14 +385,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2875515814533281204}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.21000004, y: -0.18700004, z: 0.262}
+  m_LocalRotation: {x: -0.068718664, y: 0.068718664, z: 0.7037598, w: 0.7037598}
+  m_LocalPosition: {x: 0.21, y: -0.485, z: 0.119}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1527242707110942770}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -11.154, y: 0, z: 90}
 --- !u!1 &4430487409403051583
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,14 +447,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4510396618342395247}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.228, y: -0.14199996, z: 0.22400004}
+  m_LocalRotation: {x: -0.16547565, y: 0.16547565, z: 0.68747205, w: 0.68747205}
+  m_LocalPosition: {x: 0.228, y: -0.371, z: 0.087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8513017711010612647}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -27.067, y: 0, z: 90}
 --- !u!1 &5217730393878796185
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,14 +545,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5886794262821607503}
-  m_LocalRotation: {x: -0.49861237, y: 0.50138384, z: 0.50138384, w: 0.49861237}
-  m_LocalPosition: {x: 0.3, y: -0.059, z: 0.265}
+  m_LocalRotation: {x: -0.5312433, y: 0.53419626, z: 0.46626815, w: 0.46369052}
+  m_LocalPosition: {x: 0.3, y: -0.023, z: 0.306}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1774244174603824706}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -97.768, y: 0, z: 90.318}
 --- !u!1 &6836692102843577946
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,8 +860,8 @@ MonoBehaviour:
   controller: {fileID: 8703058816639673490}
   HP: 25
   playerSpeed: 6.4
-  sprintMult: 2
-  jumpHeight: 6
+  sprintMult: 1.5
+  jumpHeight: 10
   gravityValue: 20
   numjumps: 1
   pushback: {x: 0, y: 0, z: 0}
@@ -883,8 +883,8 @@ MonoBehaviour:
   minimumJumpHeight: 0.5
   slidespeed: 10
   distanceOfWall: 1
-  RunUp: 5
-  WallJumpForce: 1
+  RunUp: 2
+  WallJumpForce: 5
   camTiltAngle: 0
   tiltTime: 0
   wallRunSpeed: 0
@@ -893,7 +893,7 @@ MonoBehaviour:
   jetpack: 0
   slowed: 0
   takingDamage: 0
-  walljumpdelay: 0
+  walljumpdelay: 0.75
   shield: {fileID: 814245382596655100}
   cam: {fileID: 0}
   lerpSpeed: 1
@@ -1151,7 +1151,7 @@ MonoBehaviour:
   shieldHp: 10
   shieldCurrentHp: 0
   shieldLerpHp: 0
-  regenTimer: 0
+  regenTimer: 1
   delayTimer: 3
   isActive: 1
   regenning: 0

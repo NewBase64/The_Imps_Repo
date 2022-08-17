@@ -27,7 +27,7 @@ public class playerCamera : MonoBehaviour
         Camera.main.fieldOfView = fov;
     }
 
-    void LateUpdate()
+    void Update()
     {
         // Get mouse input
         float mouseX = Input.GetAxis("Mouse X") * sensVert * Time.deltaTime;

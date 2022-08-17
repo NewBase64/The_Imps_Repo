@@ -104,13 +104,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6240834580256208989}
   explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}
-  hp: 50
+  hp: 5
   viewAngle: 90
   playerFaceSpeed: 25
   roamRadius: 6
   shootRate: 2
   bullet: {fileID: 8707471308024263180, guid: 8ac3d65888227204e9e03cc930155b08, type: 3}
   shootPosition: {fileID: 6240834580613651134}
+  grenadeAmmoDrop: {fileID: 1656715085191226204, guid: cf5a956971252804b8791ff122800634, type: 3}
   assignedRoom: 0
 --- !u!54 &6240834580256208931
 Rigidbody:
