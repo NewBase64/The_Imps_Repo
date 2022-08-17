@@ -274,7 +274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -276}
+  m_AnchoredPosition: {x: 10, y: -600}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035987356
@@ -297,75 +297,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<align=center><size=100>Credits</size></align>
-
-
-    Lorem ipsum dolor
-    sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-    et dolore magna aliqua. Morbi non arcu risus quis. Aliquam faucibus purus in
-    massa tempor. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing.
-    Vulputate ut pharetra sit amet aliquam id diam maecenas ultricies. Aenean pharetra
-    magna ac placerat vestibulum lectus mauris ultrices. Lorem dolor sed viverra
-    ipsum. Nunc sed velit dignissim sodales ut. Malesuada proin libero nunc consequat
-    interdum varius sit amet. Euismod nisi porta lorem mollis aliquam ut porttitor
-    leo a. Viverra orci sagittis eu volutpat. Tellus rutrum tellus pellentesque eu
-    tincidunt tortor aliquam. Vulputate ut pharetra sit amet aliquam id. Etiam tempor
-    orci eu lobortis elementum nibh. Ac ut consequat semper viverra nam libero.
-
-
-
-    Vitae
-    ultricies leo integer malesuada nunc vel risus. Ut lectus arcu bibendum at. Fringilla
-    ut morbi tincidunt augue interdum velit euismod in pellentesque. Senectus et
-    netus et malesuada fames ac turpis egestas. Dis parturient montes nascetur ridiculus.
-    Egestas diam in arcu cursus euismod quis viverra. Sed felis eget velit aliquet
-    sagittis. Nunc id cursus metus aliquam eleifend mi in nulla posuere. Purus gravida
-    quis blandit turpis. Commodo viverra maecenas accumsan lacus vel facilisis. Pharetra
-    pharetra massa massa ultricies. Eget egestas purus viverra accumsan in nisl nisi
-    scelerisque. Orci dapibus ultrices in iaculis nunc sed. Posuere urna nec tincidunt
-    praesent semper feugiat. Cras semper auctor neque vitae. Purus viverra accumsan
-    in nisl nisi. Purus in massa tempor nec. Gravida neque convallis a cras semper
-    auctor neque vitae tempus. Ac auctor augue mauris augue.
-
-
-
-    Adipiscing at
-    in tellus integer feugiat scelerisque. Rhoncus dolor purus non enim praesent
-    elementum facilisis. In arcu cursus euismod quis. Ultrices sagittis orci a scelerisque
-    purus semper eget. Lectus magna fringilla urna porttitor rhoncus dolor purus
-    non enim. Malesuada pellentesque elit eget gravida cum sociis natoque penatibus.
-    Porttitor rhoncus dolor purus non. At tellus at urna condimentum mattis. Vel
-    elit scelerisque mauris pellentesque. Enim lobortis scelerisque fermentum dui
-    faucibus in ornare quam viverra. Amet volutpat consequat mauris nunc congue nisi.
-    Imperdiet proin fermentum leo vel orci porta non pulvinar neque. Vel facilisis
-    volutpat est velit egestas. Vulputate mi sit amet mauris commodo quis imperdiet
-    massa tincidunt. Morbi enim nunc faucibus a pellentesque sit amet.
-
-
-
-    Nisl
-    tincidunt eget nullam non nisi est. Amet mattis vulputate enim nulla. Quam nulla
-    porttitor massa id neque. Suspendisse sed nisi lacus sed viverra. Volutpat lacus
-    laoreet non curabitur gravida arcu. Pharetra diam sit amet nisl suscipit. Etiam
-    sit amet nisl purus in mollis. In cursus turpis massa tincidunt dui ut ornare
-    lectus. Urna molestie at elementum eu. Leo vel orci porta non pulvinar neque
-    laoreet suspendisse. Mi in nulla posuere sollicitudin aliquam. Viverra vitae
-    congue eu consequat ac felis donec. In cursus turpis massa tincidunt dui ut.
-    Vestibulum lectus mauris ultrices eros in.
-
-
-
-    Consectetur adipiscing elit
-    pellentesque habitant morbi. Nulla pellentesque dignissim enim sit amet. Faucibus
-    a pellentesque sit amet porttitor eget dolor. At auctor urna nunc id cursus metus.
-    Auctor eu augue ut lectus arcu bibendum. Nulla facilisi cras fermentum odio eu
-    feugiat pretium. Tempor commodo ullamcorper a lacus. Augue mauris augue neque
-    gravida in fermentum et sollicitudin ac. Consectetur adipiscing elit duis tristique
-    sollicitudin nibh sit. Amet nisl purus in mollis nunc sed. Natoque penatibus
-    et magnis dis parturient montes nascetur. Vel turpis nunc eget lorem dolor sed
-    viverra ipsum. Id nibh tortor id aliquet lectus. Ac placerat vestibulum lectus
-    mauris ultrices eros in cursus turpis. Adipiscing elit pellentesque habitant
-    morbi tristique.'
+  m_text: "<align=center><size=100>Credits</size></align>\n\r\nDevelopers:\r\n\r\nTJ
+    Forest\t\tWeapon Systems\t\r\nMatthew Acevedo\tPlayer Movement\r\nGuilherme Silva\t\tEnemies\r\nGabriel
+    Alvarez\t\tMenu UI\r\n\r\nModel Resources:\r\n\r\nEnemy Models\tMixamo\r\nEnemy
+    Animations\tMixamo\r\n\r\nUI Resources:\r\n\r\nStar Vectors from Vecteezy\nsource:
+    https://www.vecteezy.com/free-vector/star \r\n\n\"Capture It\" font from dafont\nsource:
+    https://www.dafont.com/capture-it.font\r\n\n\"Origin Tech\" font from dafont\nsource:
+    https://www.dafont.com/origin-tech.font\r\n\n\"Ignotum\" font from dafont\nsource:
+    https://www.dafont.com/ignotum.font\r\n\n\"Neuropool\" font from dafont\nsource:
+    https://www.dafont.com/neuropol.font\r\n\nammo from Noun Project\nsource: https://thenounproject.com/icon/ammo-2067180/\r\n\nBomb
+    Grenade icon from uxwing\nsource: https://uxwing.com/bomb-grenade-icon/\r\n\nSmiling
+    Imp, from KindPNG\nsource: https://www.kindpng.com/imgv/hRoiTbR_smiling-imp-png-download-devil-emoji-discord-transparent/\r\n\nGlow
+    Transparent from FreePNGimg\nsource: https://freepngimg.com/png/35622-glow-transparent-image\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}
   m_sharedMaterial: {fileID: 8158222409198706254, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}

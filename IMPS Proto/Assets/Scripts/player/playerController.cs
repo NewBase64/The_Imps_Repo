@@ -58,7 +58,6 @@ public class playerController : MonoBehaviour, IDamageable
     public float reducedCapsHeight;
     bool isSliding;
     bool isSprinting = false;
-    //private bool isWallRunning=false;
     bool invulnerable = false;
     [SerializeField] public bool jetpack;
     float jumpheightOrig;
@@ -76,6 +75,7 @@ public class playerController : MonoBehaviour, IDamageable
     public GameObject cam;
     float t = 0;
     [SerializeField] float lerpSpeed;
+    [SerializeField] Gradient hpGradient;
     #endregion
 
     void Start()
@@ -348,7 +348,7 @@ public class playerController : MonoBehaviour, IDamageable
         }
 
         gamemanager.instance.HPBar.fillAmount = lerpHp / HPOrig;
-        //gamemanager.instance.HPBar.fillAmount = (float)HP / (float)HPOrig;
+        gamemanager.instance.HPBar.color = hpGradient.Evaluate(gamemanager.instance.HPBar.fillAmount);
     }
 
     public void updateShieldHp()
@@ -359,7 +359,6 @@ public class playerController : MonoBehaviour, IDamageable
             shield.t += shield.lerpSpeed * Time.deltaTime;
         }
         gamemanager.instance.ShieldBar.fillAmount = shield.shieldLerpHp / shield.shieldHp;
-        //gamemanager.instance.ShieldBar.fillAmount = (float)shield.shieldCurrentHp / (float)shield.shieldHp;
     }
     private void Sliding()
     {
@@ -386,10 +385,6 @@ public class playerController : MonoBehaviour, IDamageable
     }
     void CheckForWall()
     {
-        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), orientation.forward);
-        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.forward);
-        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), orientation.right);
-        Debug.DrawRay(transform.position + new Vector3(0, 1, 0), -orientation.right);
         _wallLeft = Physics.Raycast(transform.position + new Vector3(0, 1, 0), -orientation.right, out _leftWallHit, distanceOfWall);
         _wallRight = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.right, out _rightWallHit, distanceOfWall);
         _wallFront = Physics.Raycast(transform.position + new Vector3(0, 1, 0), orientation.forward, out _wallFrontHit, distanceOfWall);

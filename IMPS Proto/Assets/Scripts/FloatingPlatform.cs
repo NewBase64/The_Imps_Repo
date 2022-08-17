@@ -7,15 +7,46 @@ public class FloatingPlatform : MonoBehaviour
 
     //[SerializeField] Animator transition;
     [SerializeField] GameObject platform;
+    Vector3 origPosition;
+    //[SerializeField] GameObject enemy;
+    //bool canSpawn = true;
+    //List<GameObject> enemies;
+
+    private void Start()
+    {
+        origPosition = platform.transform.position;
+    }
     public void OnTriggerStay()
     {
-        //gamemanager.instance.player.transform.parent = transform;
-        platform.transform.position += platform.transform.up * Time.deltaTime;
+        platform.transform.position += platform.transform.up * Time.deltaTime * 10;
+        //if (canSpawn)
+        //{
+        //    StartCoroutine(spawnEnemy());
+        //}
     }
 
-    //private void Start()
+    //IEnumerator spawnEnemy()
     //{
-    //    transition.SetTrigger("Start");
+    //    canSpawn = false;
+    //    GameObject spawnedEnemy = Instantiate(enemy, transform.position, enemy.transform.rotation);
+    //    enemies.Add(spawnedEnemy);
+    //    spawnedEnemy.transform.SetParent(platform.transform);
+    //    spawnedEnemy.GetComponent<enemyAI>().assignedRoom = 12;
+    //    yield return new WaitForSeconds(5);
+    //    canSpawn = true;
     //}
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            platform.transform.position = origPosition;
+        }
+        //for(int i = 0; i < enemies.Count; i++)
+        //{
+        //    Destroy(enemies[i]);
+        //    enemies.RemoveAt(i);
+        //}
+    }
 
 }

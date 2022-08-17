@@ -10,7 +10,7 @@ public class Credits : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if(Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P))
         {
             SceneManager.LoadScene(0);
         }
