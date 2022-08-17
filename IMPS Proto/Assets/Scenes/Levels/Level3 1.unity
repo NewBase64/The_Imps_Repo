@@ -8475,7 +8475,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownCanvas: {fileID: 1301873879}
   roomText: {fileID: 1156176306}
-  winningObject: {fileID: 0}
 --- !u!4 &238861720 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1511069564224666305, guid: db96fed3b7de39142a2141d2a94dcaf0, type: 3}
@@ -25930,7 +25929,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh27202
+  m_Name: pb_Mesh452616
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27734,7 +27733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4714888200195160935, guid: d1eefa26333a7994bb38e12a3a14c0fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1eefa26333a7994bb38e12a3a14c0fe, type: 3}
@@ -54926,6 +54925,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 814245382596655100, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: shieldHp
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5852648692532141245, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: layerMask.m_Bits
       value: 1975
@@ -54979,8 +54982,20 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8703058816639673491, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: RunUp
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703058816639673491, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
       propertyPath: jetpack
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703058816639673491, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: WallJumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8703058816639673491, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}
+      propertyPath: walljumpdelay
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2c5aa67fefc00d42b222f66db31a5cd, type: 3}

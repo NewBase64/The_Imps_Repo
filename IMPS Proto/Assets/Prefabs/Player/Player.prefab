@@ -878,7 +878,7 @@ MonoBehaviour:
   jumpVol: 0.277
   JetBoots:
   - {fileID: 8300000, guid: 47544bfeeff00844280535c0d06253d8, type: 3}
-  JetBootsVolume: 0
+  JetBootsVolume: 0.162
   orientation: {fileID: 8703058816639673488}
   minimumJumpHeight: 0.5
   slidespeed: 10
@@ -953,7 +953,7 @@ MonoBehaviour:
   projectile: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1975
   canShoot: 1
   reloading: 0
   oOAmmo: 0
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf48cb897bda82545a990493eeab8fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHp: 0
+  shieldHp: 10
   shieldCurrentHp: 0
   shieldLerpHp: 0
   regenTimer: 0

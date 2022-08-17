@@ -53,10 +53,10 @@ public class RoomManager : MonoBehaviour
 
         if (rooms == 0 && !LastLevel)
         {
-            gamemanager.instance.menuCurrentlyOpen = gamemanager.instance.winGameMenu;
-            gamemanager.instance.menuCurrentlyOpen.SetActive(true);
-            gamemanager.instance.gameOver = true;
-            gamemanager.instance.ConLockCursor();
+            //gamemanager.instance.menuCurrentlyOpen = gamemanager.instance.winGameMenu;
+            //gamemanager.instance.menuCurrentlyOpen.SetActive(true);
+            //gamemanager.instance.gameOver = true;
+            //gamemanager.instance.ConLockCursor();
         }
         else if (rooms == 0 && LastLevel)
         {

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac15fe61cde3428488e7e36d82b81598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 10
+  playerDamage: 2
   enemyDamage: 2
   explosionPushBack: 8
 --- !u!54 &3809519118320257194

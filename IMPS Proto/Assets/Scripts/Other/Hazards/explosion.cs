@@ -24,6 +24,7 @@ public class explosion : MonoBehaviour
                 }
             }
         }
+        Destroy(gameObject);
     }
 
 
