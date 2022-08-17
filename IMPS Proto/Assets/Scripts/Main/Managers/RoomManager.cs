@@ -20,6 +20,7 @@ public class RoomManager : MonoBehaviour
 
     public GameObject checkpoint;
 
+    bool LastLevel = false;
     void Awake()
     {
         instance = this;
@@ -50,12 +51,18 @@ public class RoomManager : MonoBehaviour
             openDoor();
         }
 
-        if (rooms == 0)
+        if (rooms == 0 && !LastLevel)
         {
             gamemanager.instance.menuCurrentlyOpen = gamemanager.instance.winGameMenu;
             gamemanager.instance.menuCurrentlyOpen.SetActive(true);
             gamemanager.instance.gameOver = true;
             gamemanager.instance.ConLockCursor();
+        }
+        else if (rooms == 0 && LastLevel)
+        {
+            currentRoom.text = "";
+            enemyDead.text = "???";
+            enemyTotal.text = "???";
         }
     }
 

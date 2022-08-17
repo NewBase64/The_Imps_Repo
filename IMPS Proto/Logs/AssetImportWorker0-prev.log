@@ -15,7 +15,7 @@ C:/Users/Rathalos/Documents/GitHub/The_Imps_Repo/IMPS Proto
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-60937
+63752
 Successfully changed project path to: C:/Users/Rathalos/Documents/GitHub/The_Imps_Repo/IMPS Proto
 C:/Users/Rathalos/Documents/GitHub/The_Imps_Repo/IMPS Proto
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/Rathalos/Documents/GitHub/The_Imps_Repo/IMPS Proto
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 105.57 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 103.71 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.4f1 (cb45f9cae8b7)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -63,39 +63,39 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56632
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56160
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008972 seconds.
+Registered in 0.008831 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 96.11 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 102.70 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.589 seconds
+- Completed reload, in  0.623 seconds
 Domain Reload Profiling:
-	ReloadAssembly (589ms)
-		BeginReloadAssembly (66ms)
+	ReloadAssembly (623ms)
+		BeginReloadAssembly (65ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (423ms)
-			LoadAssemblies (64ms)
+		EndReloadAssembly (454ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (91ms)
+			SetupTypeCache (102ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (261ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (278ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (96ms)
+				RefreshPlugins (103ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (118ms)
+				ProcessInitializeOnLoadAttributes (127ms)
 				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
@@ -103,38 +103,38 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006726 seconds.
+Registered in 0.006847 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Rathalos\Documents\GitHub\The_Imps_Repo\IMPS Proto\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Rathalos\Documents\GitHub\The_Imps_Repo\IMPS Proto\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 94.99 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 98.87 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.303 seconds
+- Completed reload, in  1.418 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1304ms)
+	ReloadAssembly (1419ms)
 		BeginReloadAssembly (98ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1101ms)
-			LoadAssemblies (80ms)
+		EndReloadAssembly (1197ms)
+			LoadAssemblies (78ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (253ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (676ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (758ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (95ms)
-				BeforeProcessingInitializeOnLoad (108ms)
-				ProcessInitializeOnLoadAttributes (436ms)
-				ProcessInitializeOnLoadMethodAttributes (22ms)
+				RefreshPlugins (99ms)
+				BeforeProcessingInitializeOnLoad (114ms)
+				ProcessInitializeOnLoadAttributes (506ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -143,12 +143,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.69 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4327 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 129 unused Assets / (1.6 MB). Loaded Objects now: 4771.
-Memory consumption went from 165.0 MB to 163.3 MB.
-Total: 3.456700 ms (FindLiveObjects: 0.317300 ms CreateObjectMapping: 0.264300 ms MarkObjects: 2.449800 ms  DeleteObjects: 0.424100 ms)
+Unloading 4328 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 129 unused Assets / (1.6 MB). Loaded Objects now: 4773.
+Memory consumption went from 165.0 MB to 163.4 MB.
+Total: 3.418400 ms (FindLiveObjects: 0.331600 ms CreateObjectMapping: 0.233700 ms MarkObjects: 2.464800 ms  DeleteObjects: 0.387200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,152 +162,80 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 33414.207256 seconds.
-  path: Assets/Prefabs/Weapons/Projectiles/Player Rocket.prefab
-  artifactKey: Guid(1aaf50aed1393564ab82bcd91a1ef195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Weapons/Projectiles/Player Rocket.prefab using Guid(1aaf50aed1393564ab82bcd91a1ef195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c4d439e7071982ef544bc6278ee1873') in 0.102805 seconds 
+  Time since last request: 38971.318683 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Large/Textures/Left_Large.png
+  artifactKey: Guid(748a12cc6c6855442a0b22285d628acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Large/Textures/Left_Large.png using Guid(748a12cc6c6855442a0b22285d628acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9011bcbc2c257a32ee42e9ab1e83699d') in 0.100722 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 160.348415 seconds.
-  path: Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_03_Day_a.png
-  artifactKey: Guid(e3de3e8435d45a64fa4aa46634ced55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_03_Day_a.png using Guid(e3de3e8435d45a64fa4aa46634ced55a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7279f3b62368b99316788b3e784b466b') in 0.245378 seconds 
+  Time since last request: 4.816053 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Medium/Textures/Left_Medium.png
+  artifactKey: Guid(2b0d1b37a958d594c927ed0f74c05325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Medium/Textures/Left_Medium.png using Guid(2b0d1b37a958d594c927ed0f74c05325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49df60701e764e72878e7079bd5c8e4f') in 0.081552 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.698960 seconds.
-  path: Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_11_morning_a.png
-  artifactKey: Guid(c1473a09822798a41a9cfa11f2721db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_11_morning_a.png using Guid(c1473a09822798a41a9cfa11f2721db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55d9b6d7946cc228c09ebd0b60198f34') in 0.123912 seconds 
+  Time since last request: 0.000022 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Medium/Textures/Up_Medium.png
+  artifactKey: Guid(6fbc111cfcf065641aea692bee74ec23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Medium/Textures/Up_Medium.png using Guid(6fbc111cfcf065641aea692bee74ec23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a58a11d4dcdb0115d24e5a025d350e8') in 0.035058 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.652589 seconds.
-  path: Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_15_Day_a.png
-  artifactKey: Guid(fca5a57d63136f6428a1d31d1ab2c777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_Anime_15_Day_a.png using Guid(fca5a57d63136f6428a1d31d1ab2c777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb046e0bf52f4aa90e9d05a162412468') in 0.100412 seconds 
+  Time since last request: 0.877352 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Small/Textures/Left_Small.png
+  artifactKey: Guid(fb2f74e40e39d6a4fa145c68f6c310bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Small/Textures/Left_Small.png using Guid(fb2f74e40e39d6a4fa145c68f6c310bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551102e594179d6131c75031593ff571') in 0.016936 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.318776 seconds.
-  path: Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_LowPoly_01_Day_a.png
-  artifactKey: Guid(15941f70fce71784da1321794120ea6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_LowPoly_01_Day_a.png using Guid(15941f70fce71784da1321794120ea6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad1a9d11de7d37d622ac1e560c9aadfa') in 0.080031 seconds 
+  Time since last request: 0.000022 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Small/Textures/Up_Small.png
+  artifactKey: Guid(cc07f5aabb9ca7040ac8ec1cb449afd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 4/Small/Textures/Up_Small.png using Guid(cc07f5aabb9ca7040ac8ec1cb449afd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b932959b476fce6be160b85f3be36af') in 0.014968 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.678146 seconds.
-  path: Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_LowPoly_02_Night_a.png
-  artifactKey: Guid(b4503954fd147c94180872808dde9eb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Free Stylized Skybox/CubeMap/Textures/Sky_LowPoly_02_Night_a.png using Guid(b4503954fd147c94180872808dde9eb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d0c8451eeeaeed1d9f3d32564439a4f') in 0.092565 seconds 
+  Time since last request: 1.355001 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Large/Textures/Left_Large.png
+  artifactKey: Guid(82196fb61639fad4287ff18fa4c1215f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Large/Textures/Left_Large.png using Guid(82196fb61639fad4287ff18fa4c1215f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cbe600826b6a78622fa0aba3c46c9d9') in 0.224711 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 3.073618 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Medium/Textures/Up_Skybox_Space 2 Medium.png
-  artifactKey: Guid(58cd44a803e92cb429bff158cb99b576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Medium/Textures/Up_Skybox_Space 2 Medium.png using Guid(58cd44a803e92cb429bff158cb99b576) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01eacf7c75918891e8fa597a6a00424a') in 0.038288 seconds 
+  Time since last request: 0.214513 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Medium/Textures/Left_Medium.png
+  artifactKey: Guid(3970feb74eed1c349a7443814e1e19f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Medium/Textures/Left_Medium.png using Guid(3970feb74eed1c349a7443814e1e19f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dae60d18ced93e0cbad776ba20ba153') in 0.032169 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.010192 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Large/Textures/Back_Space 1 Large.png
-  artifactKey: Guid(0b268821f988b7549b282e6fdd1a4725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Large/Textures/Back_Space 1 Large.png using Guid(0b268821f988b7549b282e6fdd1a4725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36a807ddd70a52a673decb85e98ce84') in 0.304797 seconds 
+  Time since last request: 0.000024 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Medium/Textures/Up_Medium.png
+  artifactKey: Guid(8525860a718e3f74996041e28fa3c8c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Medium/Textures/Up_Medium.png using Guid(8525860a718e3f74996041e28fa3c8c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36be11cc7eab46f6d8e3839ce676eda0') in 0.031205 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Large/Textures/Up_Space 1 Large.png
-  artifactKey: Guid(1bca99ffbc01a19419b7c072c1c59182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Large/Textures/Up_Space 1 Large.png using Guid(1bca99ffbc01a19419b7c072c1c59182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1472183da07f253b5a15388610f789e2') in 0.099117 seconds 
+  Time since last request: 15.389082 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Small/Textures/Left_Small.png
+  artifactKey: Guid(c2838410b7df3af449e347057d4d1b8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Small/Textures/Left_Small.png using Guid(c2838410b7df3af449e347057d4d1b8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a72d3d2203c3b43e73da665b0b1407') in 0.015367 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.609344 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Medium/Textures/Back_Space 1 Medium.png
-  artifactKey: Guid(6cbc4de83b9e0c5449cb12109fe05a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Medium/Textures/Back_Space 1 Medium.png using Guid(6cbc4de83b9e0c5449cb12109fe05a85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7efe7c0e5dd08439894bd517d659d98b') in 0.045864 seconds 
+  Time since last request: 0.000019 seconds.
+  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Small/Textures/Up_Small.png
+  artifactKey: Guid(51bd20b17a699834ab9f406b0ea852cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 5/Small/Textures/Up_Small.png using Guid(51bd20b17a699834ab9f406b0ea852cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '342c3626e54343731aff630b19c9368d') in 0.012172 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Medium/Textures/Right_Space 1 Medium.png
-  artifactKey: Guid(0fcf037655ad32140902641ba8e1a0a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Medium/Textures/Right_Space 1 Medium.png using Guid(0fcf037655ad32140902641ba8e1a0a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '808e1399626b6b3d2d5698d625aa70e1') in 0.068646 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.925725 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Large/Textures/Back_Large.png
-  artifactKey: Guid(82c46df918349224eb39c597169827bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Large/Textures/Back_Large.png using Guid(82c46df918349224eb39c597169827bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '446bb55d3b64841b95b74333f6734324') in 0.180232 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Large/Textures/Right_Large.png
-  artifactKey: Guid(880616304a939e546886487a0f41d7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Large/Textures/Right_Large.png using Guid(880616304a939e546886487a0f41d7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6af8de7828aaa658ac3793942572304') in 0.129999 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.472709 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Small/Textures/Back_Space 1 Small.png
-  artifactKey: Guid(dcb12d203cf5b194880adf2cc67e9817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Small/Textures/Back_Space 1 Small.png using Guid(dcb12d203cf5b194880adf2cc67e9817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8357888a0502d19835da5a8d38c300b') in 0.096251 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Small/Textures/Up_Space 1 Small.png
-  artifactKey: Guid(104a2646e9ff5c54c8f84995029cd0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 1/Small/Textures/Up_Space 1 Small.png using Guid(104a2646e9ff5c54c8f84995029cd0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75e037ecfdebe13253ab40cf4cac3724') in 0.043438 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.723009 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Medium/Textures/Back_Skybox_Space 2 Medium.png
-  artifactKey: Guid(9dd3467b025d4284fa9bf3f0a37cceb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 2/Medium/Textures/Back_Skybox_Space 2 Medium.png using Guid(9dd3467b025d4284fa9bf3f0a37cceb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73f6d0059910c92a7855230041ac00fb') in 0.074343 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.760643 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Large/Textures/Back_Large.png
-  artifactKey: Guid(cb4c13a68d3c198419fef62baaab599f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Large/Textures/Back_Large.png using Guid(cb4c13a68d3c198419fef62baaab599f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3471d2bfe3ed664bcdae9e7099be287') in 0.244736 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Large/Textures/Right_Large.png
-  artifactKey: Guid(7996cec8466051440b27b48304235db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Large/Textures/Right_Large.png using Guid(7996cec8466051440b27b48304235db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbe0ab706ccf7123a500ca29890e28c0') in 0.103917 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.229460 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Medium/Textures/Back_Medium.png
-  artifactKey: Guid(f35b7ba8c47d415418827d3e09138997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Medium/Textures/Back_Medium.png using Guid(f35b7ba8c47d415418827d3e09138997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63b88246866f5e9c94f51d9c643c87f6') in 0.035307 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Medium/Textures/Right_Medium.png
-  artifactKey: Guid(83ea2f4cbe0af51468067a6b06a8b6f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Medium/Textures/Right_Medium.png using Guid(83ea2f4cbe0af51468067a6b06a8b6f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bffc4373d3a63faa6449f40f01d6e6b') in 0.030573 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.608158 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Small/Textures/Back_Small.png
-  artifactKey: Guid(8d9b1b3d59b9f2849b749a77a3523bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Small/Textures/Back_Small.png using Guid(8d9b1b3d59b9f2849b749a77a3523bd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ca458fb1d69d8854ca30501a474ed8') in 0.016832 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Small/Textures/Up_Small.png
-  artifactKey: Guid(b6c81d1f5e954a54bbe15b4f163d2e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Enemies/PainBots/Free Skyboxes - Space/SBS Space 3/Small/Textures/Up_Small.png using Guid(b6c81d1f5e954a54bbe15b4f163d2e1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '465f910b48834c7cb7989698b618233e') in 0.016641 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 56.148060 seconds.
-  path: Assets/Prefabs/Level/Hazards/Falling Floor Platform.prefab
-  artifactKey: Guid(db96fed3b7de39142a2141d2a94dcaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Level/Hazards/Falling Floor Platform.prefab using Guid(db96fed3b7de39142a2141d2a94dcaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b37f700d57315e8b9f5bae3a07cf1a43') in 0.012480 seconds 
+  Time since last request: 438.224621 seconds.
+  path: Assets/Prefabs/Enemies/Hivemind/Brain in a tube.prefab
+  artifactKey: Guid(6f6a4069a2593ff4eb35c725e742c9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemies/Hivemind/Brain in a tube.prefab using Guid(6f6a4069a2593ff4eb35c725e742c9d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbcca8373d65d7156f0298e5b974e867') in 0.067590 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006278 seconds.
+Registered in 0.006810 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Rathalos\Documents\GitHub\The_Imps_Repo\IMPS Proto\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Rathalos\Documents\GitHub\The_Imps_Repo\IMPS Proto\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 1.20 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Warning: Annotation not found!
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -319,40 +247,40 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 [Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.092 seconds
+- Completed reload, in  1.250 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1092ms)
-		BeginReloadAssembly (127ms)
+	ReloadAssembly (1251ms)
+		BeginReloadAssembly (136ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		EndReloadAssembly (879ms)
-			LoadAssemblies (80ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1026ms)
+			LoadAssemblies (95ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (253ms)
+			SetupTypeCache (256ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (43ms)
-			SetupLoadedEditorAssemblies (456ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (611ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (89ms)
-				ProcessInitializeOnLoadAttributes (308ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				BeforeProcessingInitializeOnLoad (239ms)
+				ProcessInitializeOnLoadAttributes (326ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.52 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.26 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4237 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 39 unused Assets / (1.6 MB). Loaded Objects now: 4808.
-Memory consumption went from 161.9 MB to 160.3 MB.
-Total: 3.414500 ms (FindLiveObjects: 0.279700 ms CreateObjectMapping: 0.210400 ms MarkObjects: 2.576700 ms  DeleteObjects: 0.346700 ms)
+Unloading 4239 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 39 unused Assets / (1.6 MB). Loaded Objects now: 4787.
+Memory consumption went from 161.7 MB to 160.1 MB.
+Total: 3.760000 ms (FindLiveObjects: 0.330000 ms CreateObjectMapping: 0.255400 ms MarkObjects: 2.811000 ms  DeleteObjects: 0.362400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -364,3 +292,15 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1052.526666 seconds.
+  path: Assets/Scripts/KillBrain.cs
+  artifactKey: Guid(e20f9a68bc272d8469086fc9945adb9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/KillBrain.cs using Guid(e20f9a68bc272d8469086fc9945adb9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7344b74ab140aafd744660d084f2c3cd') in 0.014247 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.495967 seconds.
+  path: Assets/Prefabs/Level/Countdown.prefab
+  artifactKey: Guid(97531500ca517a848966c3c1d569c068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level/Countdown.prefab using Guid(97531500ca517a848966c3c1d569c068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7a5f3269c4f0144e8910adfa4ce0ff4') in 0.047612 seconds 
