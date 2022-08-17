@@ -20,7 +20,7 @@ public class RoomManager : MonoBehaviour
 
     public GameObject checkpoint;
 
-    bool LastLevel = false;
+    public bool LastLevel = false;
     void Awake()
     {
         instance = this;

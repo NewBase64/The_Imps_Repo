@@ -3871,6 +3871,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7510890771705081350, guid: e17216a1d175db8408dd422d68236c01, type: 3}
+      propertyPath: LastLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7510890771705081350, guid: e17216a1d175db8408dd422d68236c01, type: 3}
       propertyPath: enemyDead
       value: 
       objectReference: {fileID: 794083097}
