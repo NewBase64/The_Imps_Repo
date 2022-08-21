@@ -1,3 +1,5 @@
+//EDITED
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,45 +11,49 @@ public class Countdown : MonoBehaviour
     [SerializeField] int seconds;
     [SerializeField] TMP_Text timer;
 
-    private void Start()
-    {
-        setUpUi();
-        StartCoroutine(countdown());
-    }
+    int currentMins;
+    int currentSecs;
+
+    public bool active = false;
 
     public void StartCountdown()
     {
+        currentMins = minutes;
+        currentSecs = seconds;
+        //setUpUi();
         StartCoroutine(countdown());
     }
 
     IEnumerator countdown()
     {
-        while (minutes != 0 && seconds != 0)
+        while (currentMins != 0 || currentSecs != 0)
         {
-            yield return new WaitForSeconds(1);
-            if (seconds > 0)
-            {
-                seconds--;
-            }
-            if (minutes != 0 && seconds == 0)
-            {
-                seconds = 59;
-                minutes--;
-            }
             setUpUi();
+            yield return new WaitForSeconds(1);
+            if (currentSecs > 0)
+            {
+                currentSecs--;
+            }
+            if (currentMins != 0 && currentSecs == 0)
+            {
+                currentSecs = 59;
+                currentMins--;
+            }
         }
         gamemanager.instance.playerDead();
+        StopAllCoroutines();
+        StartCountdown();
     }
 
     void setUpUi()
     {
-        if (seconds < 10)
+        if (currentSecs < 10)
         {
-            timer.text = minutes + ":0" + seconds;
+            timer.text = currentMins + ":0" + currentSecs;
         }
         else
         {
-            timer.text = minutes + ":" + seconds;
+            timer.text = currentMins + ":" + currentSecs;
         }
     }
 }

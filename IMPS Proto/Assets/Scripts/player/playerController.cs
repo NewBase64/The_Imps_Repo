@@ -317,7 +317,7 @@ public class playerController : MonoBehaviour, IDamageable
     public void Teleport()
     {
         controller.enabled = false;
-        transform.position = playerSpawnPosition;
+        transform.position = RoomManager.instance.checkpoint.transform.position;
         controller.enabled = true;
         pushback = Vector3.zero;
     }

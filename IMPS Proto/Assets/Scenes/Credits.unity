@@ -300,15 +300,11 @@ MonoBehaviour:
   m_text: "<align=center><size=100>Credits</size></align>\n\r\nDevelopers:\r\n\r\nTJ
     Forest\t\tWeapon Systems\t\r\nMatthew Acevedo\tPlayer Movement\r\nGuilherme Silva\t\tEnemies\r\nGabriel
     Alvarez\t\tMenu UI\r\n\r\nModel Resources:\r\n\r\nEnemy Models\tMixamo\r\nEnemy
-    Animations\tMixamo\r\n\r\nUI Resources:\r\n\r\nStar Vectors from Vecteezy\nsource:
-    https://www.vecteezy.com/free-vector/star \r\n\n\"Capture It\" font from dafont\nsource:
-    https://www.dafont.com/capture-it.font\r\n\n\"Origin Tech\" font from dafont\nsource:
-    https://www.dafont.com/origin-tech.font\r\n\n\"Ignotum\" font from dafont\nsource:
-    https://www.dafont.com/ignotum.font\r\n\n\"Neuropool\" font from dafont\nsource:
-    https://www.dafont.com/neuropol.font\r\n\nammo from Noun Project\nsource: https://thenounproject.com/icon/ammo-2067180/\r\n\nBomb
-    Grenade icon from uxwing\nsource: https://uxwing.com/bomb-grenade-icon/\r\n\nSmiling
-    Imp, from KindPNG\nsource: https://www.kindpng.com/imgv/hRoiTbR_smiling-imp-png-download-devil-emoji-discord-transparent/\r\n\nGlow
-    Transparent from FreePNGimg\nsource: https://freepngimg.com/png/35622-glow-transparent-image\r"
+    Animations\tMixamo\r\n\r\nUI Resources:\r\n\r\nStar Vectors from Vecteezy\n\n\"Capture
+    It\" font from dafont\n\n\"Origin Tech\" font from dafont\n\n\"Ignotum\" font
+    from dafont\n\n\"Neuropool\" font from dafont\n\nammo from Noun Project\n\nBomb
+    Grenade icon from uxwing\n\nSmiling Imp, from KindPNG\n\nGlow Transparent from
+    FreePNGimg"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}
   m_sharedMaterial: {fileID: 8158222409198706254, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}

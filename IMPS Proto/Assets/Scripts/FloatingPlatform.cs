@@ -16,6 +16,12 @@ public class FloatingPlatform : MonoBehaviour
     {
         origPosition = platform.transform.position;
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        gamemanager.instance.player.transform.parent = gameObject.transform;
+    }
+
     public void OnTriggerStay()
     {
         platform.transform.position += platform.transform.up * Time.deltaTime * 10;
@@ -41,6 +47,7 @@ public class FloatingPlatform : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             platform.transform.position = origPosition;
+            gameObject.transform.DetachChildren();
         }
         //for(int i = 0; i < enemies.Count; i++)
         //{

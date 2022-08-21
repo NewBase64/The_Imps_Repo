@@ -6,6 +6,7 @@ public class BuildingDoors : MonoBehaviour
 {
     [SerializeField] Laser[] lasers;
     [SerializeField] GameObject[] walls;
+    [SerializeField] GameObject[] walls2;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class BuildingDoors : MonoBehaviour
             for (int i = 0; i < walls.Length; i++)
             {
                 walls[i].GetComponent<BoxCollider>().isTrigger = false;
+                walls2[i].SetActive(false);
             }
             for (int i = 0; i < lasers.Length; i++)
             {
@@ -36,6 +38,7 @@ public class BuildingDoors : MonoBehaviour
             for (int i = 0; i < walls.Length; i++)
             {
                 walls[i].GetComponent<BoxCollider>().isTrigger = true;
+                walls2[i].SetActive(true);
             }
             for (int i = 0; i < lasers.Length; i++)
             {
