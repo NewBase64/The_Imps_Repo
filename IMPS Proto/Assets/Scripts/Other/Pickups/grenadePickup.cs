@@ -5,6 +5,8 @@ using UnityEngine;
 public class grenadePickup : MonoBehaviour
 {
     private int gren;
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip grenPickSound;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -12,6 +14,7 @@ public class grenadePickup : MonoBehaviour
             gren = gamemanager.instance.weaponHandler.GiveGrenade(1);
             if (gren == 0)
             {
+                aud.PlayOneShot(grenPickSound);
                 Destroy(gameObject);
             }
         }

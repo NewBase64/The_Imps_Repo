@@ -6,6 +6,8 @@ public class jetpackPickup : MonoBehaviour
 {
     [SerializeField] GameObject prompt;
     bool Picky;
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip jetpackPickupSound;
 
     private void Update()
     {
@@ -16,6 +18,7 @@ public class jetpackPickup : MonoBehaviour
             if (Input.GetButtonDown("Pickup"))
             {
                 gamemanager.instance.playerScript.jetpack = true; // give player my stuff
+                aud.PlayOneShot(jetpackPickupSound);
                 Destroy(gameObject);
             }
         }

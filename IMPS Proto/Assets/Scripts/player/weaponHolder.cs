@@ -45,6 +45,8 @@ public class weaponHolder : MonoBehaviour
     [Header("----Weapon Sway----")]
     [SerializeField] float swayMult;
     [SerializeField] float swaySmooth;
+    [Header("----Audio----")]
+    [SerializeField] AudioClip shotgunPumpSound;
 
     //float shooting;
     bool shot = false;
@@ -184,6 +186,7 @@ public class weaponHolder : MonoBehaviour
     {
         bool pumping = true;
         float pumpcurr = 0, pumptarg = 1;
+        gamemanager.instance.playerScript.audi.PlayOneShot(shotgunPumpSound);
         while (pumping)
         {
             if (pumpcurr == 1)
@@ -203,7 +206,6 @@ public class weaponHolder : MonoBehaviour
             float tim = wepShotgun.fireRate / 4;
             Lerperator(shotgunBarrels, ShotgunBarrelsOrig, ShotgunBarrelRotated, spincurr);
             spincurr = Mathf.MoveTowards(spincurr, spintarg, (tim / (tim * tim)) * Time.deltaTime);
-
             yield return null;
         }
     }
@@ -243,7 +245,7 @@ public class weaponHolder : MonoBehaviour
             if (reloadCurr == 1)
             {
                 reloadTarget = 0;
-                gamemanager.instance.weaponHandler.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
+                gamemanager.instance.playerScript.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
             }
 
             float tim = wepPistol.reloadTime / 2;
@@ -267,7 +269,7 @@ public class weaponHolder : MonoBehaviour
             if (reloadCurr == 1)
             {
                 reloadTarget = 0;
-                gamemanager.instance.weaponHandler.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
+                gamemanager.instance.playerScript.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
             }
 
             float tim = wepRifle.reloadTime / 2;
@@ -291,7 +293,7 @@ public class weaponHolder : MonoBehaviour
             if (reloadCurr == 1)
             {
                 reloadTarget = 0;
-                gamemanager.instance.weaponHandler.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
+                gamemanager.instance.playerScript.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
             }
 
             float tim = wepShotgun.reloadTime / 2;
@@ -315,7 +317,7 @@ public class weaponHolder : MonoBehaviour
             if (reloadCurr == 1)
             {
                 reloadTarget = 0;
-                gamemanager.instance.weaponHandler.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
+                gamemanager.instance.playerScript.audi.PlayOneShot(gamemanager.instance.weaponHandler.reloadSound[Random.Range(0, gamemanager.instance.weaponHandler.reloadSound.Count)], gamemanager.instance.weaponHandler.reloadVol);
             }
 
             float tim = wepRocket.reloadTime / 2;

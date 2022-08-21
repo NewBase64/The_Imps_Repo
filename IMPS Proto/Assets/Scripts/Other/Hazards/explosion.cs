@@ -24,8 +24,11 @@ public class explosion : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(explosionTime());
+    }
+    IEnumerator explosionTime()
+    {
+        yield return new WaitForSeconds(.5f);
         Destroy(gameObject);
     }
-
-
 }

@@ -11,6 +11,8 @@ public class weaponPickup : MonoBehaviour
     [HideInInspector] public GameObject cloneMod = null;
     weaponHandler player;
     [SerializeField] GameObject prompt;
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip ammoPickupSound;
 
     bool Pick;
 
@@ -94,6 +96,7 @@ public class weaponPickup : MonoBehaviour
                     {
                         // give the player all my ammo and wait to get the ammount of ammo they took
                         int subammo = player.GiveAmmo(1, ammo + ammoReserve);
+                        aud.PlayOneShot(ammoPickupSound);
                         // if I got ammo back
                         if (subammo != 0)
                         {
@@ -116,6 +119,7 @@ public class weaponPickup : MonoBehaviour
                     if (player.GetSecondaryAmmoReserve() != secondary.ammoMax) // repeat for secondary
                     {
                         int subammo = player.GiveAmmo(2, ammo + ammoReserve);
+                        aud.PlayOneShot(ammoPickupSound);
                         if (subammo != 0)
                         {
                             if (ammoReserve - subammo < 0)

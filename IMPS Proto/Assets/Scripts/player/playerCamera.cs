@@ -17,7 +17,6 @@ public class playerCamera : MonoBehaviour
 
     int lockVertMin = -90;
     int lockVertMax = 90;
-    float xRot;
     float yRot;
 
     void Start()
@@ -27,7 +26,7 @@ public class playerCamera : MonoBehaviour
         Camera.main.fieldOfView = fov;
     }
 
-    void Update()
+    void LateUpdate()
     {
         // Get mouse input
         float mouseX = Input.GetAxis("Mouse X") * sensVert * Time.deltaTime;
@@ -35,33 +34,33 @@ public class playerCamera : MonoBehaviour
 
         // Invert Y
         if (invertY)
-            xRot += mouseY;
+            yRot += mouseY;
         else
-            xRot -= mouseY;
+            yRot -= mouseY;
 
         // Clamp the camera so the player cannot look upsidedown
-        xRot = Mathf.Clamp(xRot, lockVertMin, lockVertMax);
+        yRot = Mathf.Clamp(yRot, lockVertMin, lockVertMax);
 
         // Rotate the camera on the X axis for vertical momvement
-        transform.localRotation = Quaternion.Euler(xRot, 0, 0);
+        transform.localRotation = Quaternion.Euler(yRot, 0, 0);
 
         // Invert X
         if (invertX)
             // Rotate the transform of the parent so that the player can walk towards where they look
-            transform.parent.Rotate(Vector3.up * -mouseX);
+            transform.parent.Rotate(Vector3.up * -mouseX * sensHori * Time.deltaTime);
         else
-            transform.parent.Rotate(Vector3.up * mouseX);
+            transform.parent.Rotate(Vector3.up * mouseX * sensHori * Time.deltaTime);
 
         Camera.main.fieldOfView = fov;
 
     }
-        public void crouch()
-        {
-            transform.Translate(0, -1, 0);
+    public void crouch()
+    {
+        transform.Translate(0, -1, 0);
 
-        }
-        public void goUP()
-        {
-            transform.Translate(0, 1, 0);
-        }
+    }
+    public void goUP()
+    {
+        transform.Translate(0, 1, 0);
+    }
 }

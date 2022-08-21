@@ -143,7 +143,7 @@ public class weaponHandler : MonoBehaviour
             EditorGUI.indentLevel++;
             if (wepHand.soundsbool)
             {
-                wepHand.audi = EditorGUILayout.ObjectField("Audiop Source", wepHand.audi, typeof(AudioSource), true) as AudioSource;
+                //wepHand.audi = EditorGUILayout.ObjectField("Audiop Source", wepHand.audi, typeof(AudioSource), true) as AudioSource;
                 int gunsize = Mathf.Max(0, EditorGUILayout.IntField("Gunshots", wepHand.gunshot.Count));
                 while (gunsize > wepHand.gunshot.Count)
                 {
@@ -281,10 +281,9 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int grenades;
     [SerializeField] int maxGrenades;
     [SerializeField] GameObject playerGrenade;
-    [SerializeField] GameObject nonGrenade = null;
 
     [Header("----Audio----")]
-    [SerializeField] public AudioSource audi;
+    //[SerializeField] public AudioSource audi;
     [SerializeField] public List<AudioClip> gunshot;
     [SerializeField] public float gunShotVol;
     [SerializeField] public List<AudioClip> outofAmmo;
@@ -386,16 +385,8 @@ public class weaponHandler : MonoBehaviour
                 if (grenades != 0)
                 {
                     grenades--;
-                    nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                    grenade gren = nonGrenade.GetComponent<grenade>();
-                    gren.direction = true;
+                    Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
                 }
-            }
-            else
-            {
-                nonGrenade = Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
-                grenade gren = nonGrenade.GetComponent<grenade>();
-                gren.direction = true;
             }
         }
     }
@@ -631,7 +622,7 @@ public class weaponHandler : MonoBehaviour
                 gamemanager.instance.updateAmmoCount();
             }
             // play gunshot          
-            audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)], gunShotVol);
+            gamemanager.instance.playerScript.audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)], gunShotVol);
 
             wepHold.Shooting();
 
@@ -662,7 +653,7 @@ public class weaponHandler : MonoBehaviour
                     float max = 0.5f + angle;                                                            //
                     float x = Random.Range(min, max);                                                    //
                     float y = Random.Range(min, max);                                                    //
-                    if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(x, y, 0)), out hit, layerMask))  //
+                    if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(x, y, 0)), out hit, layerMask))//
                     {                                                                                    //
                         Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                 //  Shotgun weapons
                                                                                                          //
@@ -692,7 +683,7 @@ public class weaponHandler : MonoBehaviour
             if (!oOAmmo && !reloading) // if the sound is not playing already
             {              // play the sound
                 oOAmmo = true;
-                audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)], outofammoVol);
+                gamemanager.instance.playerScript.audi.PlayOneShot(outofAmmo[Random.Range(0, gunshot.Count)], outofammoVol);
                 yield return new WaitForSeconds(fireRate);
                 oOAmmo = false;
             }

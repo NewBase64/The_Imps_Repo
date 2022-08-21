@@ -33,29 +33,30 @@ public class playerController : MonoBehaviour, IDamageable
     [Range(0, 1)] [SerializeField] float JetBootsVolume;
     bool JetBootsPlaying;
 
-    [Header("----Crouch and Wall Running----")]
+    [Header("----Wall Running----")]
     public Transform orientation;
-
-    CapsuleCollider Collider;
-    [SerializeField] float minimumJumpHeight = 1.5f;
-    public float slidespeed = 10f;
-    [SerializeField] float distanceOfWall = 0.3f;
-    [SerializeField] float RunUp = 10f;
+    [SerializeField] float minimumJumpHeight;
+    [SerializeField] float distanceOfWall;
+    [SerializeField] float RunUp;
     [SerializeField] float WallJumpForce;
-    [SerializeField] float camTiltAngle;
-    [SerializeField] float tiltTime;
-
     [SerializeField] public float wallRunSpeed;
-    [SerializeField] public float Tilt { get; private set; }
+    [Header("----Crouchin----")]
+    [SerializeField] public float walljumpdelay;
+    CapsuleCollider Collider;
+    public float reducedCapsHeight;
+    //public float slidespeed;
+
+    //[SerializeField] float camTiltAngle;
+    //[SerializeField] float tiltTime;
+    //[SerializeField] public float Tilt;
     //[SerializeField] public LayerMask whatwall;
     #endregion
-    #region non_serialized_values_
+    #region Other Values
     float playerSpeedOrig;
-    public int HPOrig;
+    int HPOrig;
     float lerpHp;
     Vector3 playerSpawnPosition;
     float origCapsuleHeight;
-    public float reducedCapsHeight;
     bool isSliding;
     bool isSprinting = false;
     bool invulnerable = false;
@@ -64,15 +65,15 @@ public class playerController : MonoBehaviour, IDamageable
     int timesJumped = 0;
     private Vector3 playerVelocity;
     Vector3 move;
+    [Header("----Stuff----")]
     public bool slowed = false;
     public bool takingDamage = false;
     bool walljumping = true;
-    public float walljumpdelay;
     private bool _wallLeft, _wallRight, _wallFront, _wallBack;
     private bool _wallLefta = true, _wallRighta = true, _wallFronta = true, _wallBacka = true;
     private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
     public Shield shield;
-    public GameObject cam;
+    GameObject cam;
     float t = 0;
     [SerializeField] float lerpSpeed;
     [SerializeField] Gradient hpGradient;
@@ -132,17 +133,17 @@ public class playerController : MonoBehaviour, IDamageable
 
     void StartWall()
     {
-        if (_wallLeft)
-        {
-            Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
-            cam.transform.Rotate(0, 0, Tilt);
-        }
-
-        else if (_wallRight)
-        {
-            Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
-            cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
-        }
+        //if (_wallLeft)
+        //{
+        //    Tilt = Mathf.Lerp(Tilt, -camTiltAngle, tiltTime * Time.deltaTime * 100);
+        //    cam.transform.Rotate(0, 0, Tilt);
+        //}
+        //
+        //else if (_wallRight)
+        //{
+        //    Tilt = Mathf.Lerp(Tilt, camTiltAngle, tiltTime * Time.deltaTime * 100);
+        //    cam.transform.localRotation = Quaternion.Euler(0, 0, Tilt);
+        //}
 
         if (Input.GetButton("Jump"))
         {
@@ -207,8 +208,8 @@ public class playerController : MonoBehaviour, IDamageable
             playerVelocity.x = 0;
             playerVelocity.z = 0;
         }
-        Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
-        cam.transform.Rotate(0, 0, Tilt);
+        //Tilt = Mathf.Lerp(Tilt, 0, tiltTime * Time.deltaTime);
+        //cam.transform.Rotate(0, 0, Tilt);
     }
     private void movePlayer()
     {
@@ -443,6 +444,13 @@ public class playerController : MonoBehaviour, IDamageable
         walljumping = false;
         yield return new WaitForSeconds(walljumpdelay);
         walljumping = true;
+    }
+    #endregion
+
+    #region getters
+    public int GetHPOrig()
+    {
+        return HPOrig;
     }
     #endregion
 }

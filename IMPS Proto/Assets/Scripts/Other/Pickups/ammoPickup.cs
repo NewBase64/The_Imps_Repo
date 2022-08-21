@@ -6,6 +6,8 @@ public class ammoPickup : MonoBehaviour
 {
     //[Range(1, 50)][SerializeField] int AmmoAmount;
     [SerializeField] bool fillAmmo;
+    [SerializeField] AudioSource aud;
+    [SerializeField] AudioClip ammoPickupSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,23 +21,21 @@ public class ammoPickup : MonoBehaviour
                 if (fillAmmo)
                 {
                     gamemanager.instance.weaponHandler.FillAmmo();
+                    Destroy(gameObject);
                 }
                 else 
                 {
-                    if (player.GetAmmoReserve() != primary.ammoMax)
-                    {
-                        player.GiveAmmo(1);
-                        Destroy(gameObject);
-                    }
+                    if (player.GetAmmoReserve() != primary.ammoMax)                    
+                        player.GiveAmmo(1);                        
+                    
                     if (secondary != null)
                     {
-                        if (player.GetSecondaryAmmoReserve() != secondary.ammoMax)
-                        {
-                            player.GiveAmmo(2);
-                            Destroy(gameObject);
-                        }
+                        if (player.GetSecondaryAmmoReserve() != secondary.ammoMax)                        
+                            player.GiveAmmo(2);                                                    
                     }
                     gamemanager.instance.weaponHandler.GiveGrenade(2);
+                    aud.PlayOneShot(ammoPickupSound);
+                    Destroy(gameObject);
                 }
             }
         }

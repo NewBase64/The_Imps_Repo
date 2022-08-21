@@ -702,6 +702,7 @@ MonoBehaviour:
   wepShotgun: {fileID: 11400000, guid: 7254f983648820344a7001e280df6dfa, type: 2}
   swayMult: 8
   swaySmooth: 2
+  shotgunPumpSound: {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}
 --- !u!1 &7885064427557048961
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,21 +882,16 @@ MonoBehaviour:
   JetBootsVolume: 0.162
   orientation: {fileID: 8703058816639673488}
   minimumJumpHeight: 0.5
-  slidespeed: 10
   distanceOfWall: 1
   RunUp: 2
-  WallJumpForce: 5
-  camTiltAngle: 0
-  tiltTime: 0
+  WallJumpForce: 4
   wallRunSpeed: 0
-  HPOrig: 0
+  walljumpdelay: 0.75
   reducedCapsHeight: 0
-  jetpack: 0
+  jetpack: 1
   slowed: 0
   takingDamage: 0
-  walljumpdelay: 0.75
   shield: {fileID: 814245382596655100}
-  cam: {fileID: 0}
   lerpSpeed: 1
   hpGradient:
     serializedVersion: 2
@@ -950,10 +946,10 @@ MonoBehaviour:
   shootType: 0
   spreadshots: 0
   spreadangle: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 7280421206675279168, guid: 1aaf50aed1393564ab82bcd91a1ef195, type: 3}
   layerMask:
     serializedVersion: 2
-    m_Bits: 1975
+    m_Bits: 64
   canShoot: 1
   reloading: 0
   oOAmmo: 0
@@ -966,9 +962,7 @@ MonoBehaviour:
   holdammoRes: 0
   grenades: 0
   maxGrenades: 4
-  playerGrenade: {fileID: 2094192647477228935, guid: 046baa045daf60d44b4ad2a598eb1810, type: 3}
-  nonGrenade: {fileID: 0}
-  audi: {fileID: 539585104}
+  playerGrenade: {fileID: 2094192647477228935, guid: f2fd770594fcc664a859cb01d4a67481, type: 3}
   gunshot:
   - {fileID: 0}
   gunShotVol: 0.306
@@ -1148,7 +1142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf48cb897bda82545a990493eeab8fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHp: 10
+  shieldHp: 25
   shieldCurrentHp: 0
   shieldLerpHp: 0
   regenTimer: 1
@@ -1256,8 +1250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1748c5c643b1a49a46c998a766445c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensHori: 600
-  sensVert: 600
+  sensHori: 100
+  sensVert: 400
   fov: 90
   invertY: 0
   invertX: 0
