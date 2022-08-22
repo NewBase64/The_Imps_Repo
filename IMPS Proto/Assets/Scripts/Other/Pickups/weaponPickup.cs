@@ -78,12 +78,14 @@ public class weaponPickup : MonoBehaviour
             if (primary == null)
             {
                 player.AddGun(stats, ammo, ammoReserve); // give him my stuff
+                aud.PlayOneShot(ammoPickupSound);
                 Destroy(gameObject);
             }
             // if players has no secondary weapon
             else if (secondary == null)
             {
                 player.AddGun(stats, ammo, ammoReserve); // give him my stuff
+                aud.PlayOneShot(ammoPickupSound);
                 Destroy(gameObject);
             }
             // if player is holding the same gun
