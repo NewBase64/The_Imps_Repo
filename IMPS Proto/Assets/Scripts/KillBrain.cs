@@ -16,7 +16,10 @@ public class KillBrain : MonoBehaviour
     private void OnDestroy()
     {
         roomText.text = "Escape";
-        countdownCanvas.SetActive(true);
+        if (countdownCanvas != null)
+        {
+            countdownCanvas.SetActive(true);
+        }
         count.StartCountdown();
     }
 }

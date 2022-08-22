@@ -19,7 +19,7 @@ public class FloatingPlatform : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        gamemanager.instance.player.transform.parent = gameObject.transform;
+        gamemanager.instance.player.transform.parent = GameObject.Find("ElevatorCollider").transform;
     }
 
     public void OnTriggerStay()
