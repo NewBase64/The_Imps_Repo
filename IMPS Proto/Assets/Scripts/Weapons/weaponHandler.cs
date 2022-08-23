@@ -271,8 +271,6 @@ public class weaponHandler : MonoBehaviour
 
     [Header("----Holder objs----")]
     [SerializeField] GameObject wepEffect;
-    //[HideInInspector] GameObject wepFlash;
-    //[HideInInspector] GameObject wepSpawn; // Game object to dictate where player holds the weapon
     [SerializeField] weapon tempHolder;
     [SerializeField] int holdammo;
     [SerializeField] int holdammoRes;
@@ -325,9 +323,6 @@ public class weaponHandler : MonoBehaviour
     {
         // Set defaults so no null references
         //CurrCrosshair = NoCrosshair;
-
-        // Sets up the layermask for the raycasts when shooting
-        //layerMask = (9 << 1);
 
         wepHold = gamemanager.instance.player.GetComponentInChildren<weaponHolder>();
     }
@@ -629,7 +624,7 @@ public class weaponHandler : MonoBehaviour
             if (shootType == weapon.ShootType.Hitscan)
             {
                 RaycastHit hit;                                                                          //
-                if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit, layerMask))//
+                if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out hit, Mathf.Infinity, layerMask))//
                 {                                                                                        //
                     Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                     //
                                                                                                          //
@@ -653,7 +648,7 @@ public class weaponHandler : MonoBehaviour
                     float max = 0.5f + angle;                                                            //
                     float x = Random.Range(min, max);                                                    //
                     float y = Random.Range(min, max);                                                    //
-                    if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(x, y, 0)), out hit, layerMask))//
+                    if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector3(x, y, 0)), out hit, Mathf.Infinity, layerMask))//
                     {                                                                                    //
                         Instantiate(wepEffect, hit.point, wepEffect.transform.rotation);                 //  Shotgun weapons
                                                                                                          //
