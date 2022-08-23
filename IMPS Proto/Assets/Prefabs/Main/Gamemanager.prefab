@@ -11819,7 +11819,7 @@ MonoBehaviour:
   ShieldIndicator: {fileID: 9121014306034384247}
   ammo: {fileID: 8452094690964379717}
   ammoReserve: {fileID: 8452094692287102368}
-  grenades: {fileID: 0}
+  grenades: {fileID: 8919648224354898447}
   maxGrenades: {fileID: 0}
   enemyKillGoal: 0
   currCrosshiar: {fileID: 0}

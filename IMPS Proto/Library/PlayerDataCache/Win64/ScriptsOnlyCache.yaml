@@ -73,8 +73,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1921,7 +1923,7 @@ ScriptsOnlyBuild:
     className: outOfBounds
   - hash:
       serializedVersion: 2
-      Hash: dfd05b2f17cc3479983313506e5fc9be
+      Hash: 0c675863cee3b219294f68e595917422
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: gamemanager
@@ -2774,4 +2776,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Levels/Level3 1.unity
   - Assets/Scenes/Showcase/Showcase.unity
   - Assets/Scenes/Credits.unity
-  playerPath: C:/Users/Rathalos/Desktop/IMPS IN SPACE.exe
+  playerPath: C:/Users/alvar/Downloads/MainMenu/IMPS IN SPACE.exe

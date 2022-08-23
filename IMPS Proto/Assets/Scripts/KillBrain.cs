@@ -19,7 +19,10 @@ public class KillBrain : MonoBehaviour
         if (countdownCanvas != null)
         {
             countdownCanvas.SetActive(true);
-            count.StartCountdown();
+            if (count.gameObject.activeSelf)
+            {
+                count.StartCountdown();
+            }
         }
     }
 }

@@ -51,6 +51,7 @@ public class weaponPickup : MonoBehaviour
             modle.SetActive(true);
             prompt.SetActive(false);
         }
+        aud = AudioManager.instance.sfx;
     }
 
     private void Update()

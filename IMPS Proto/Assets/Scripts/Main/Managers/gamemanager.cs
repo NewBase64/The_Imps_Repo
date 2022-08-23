@@ -29,7 +29,6 @@ public class gamemanager : MonoBehaviour
     public TMP_Text ammo;
     public TMP_Text ammoReserve;
     public TMP_Text grenades;
-    public TMP_Text maxGrenades;
     [Header("----Numbers----")]
     public int enemyKillGoal;
     int enemiesKilled;
@@ -185,7 +184,6 @@ public class gamemanager : MonoBehaviour
     public void updateGrenadeCount()
     {
         grenades.text = weaponHandler.GetGrenades().ToString();
-        maxGrenades.text = weaponHandler.GetMaxGrenades().ToString();
     }
 
     //public void changeCrosshair()

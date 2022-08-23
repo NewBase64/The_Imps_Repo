@@ -36,7 +36,7 @@ public class RoomManager : MonoBehaviour
             playerRoom++;
             checkpoint = GameObject.Find("Checkpoint" + playerRoom);
             updateObjectiveUi();
-            if (playerRoom == 9)
+            if (playerRoom == 9 && LastLevel)
             {
                 currentRoom.text = "";
             }

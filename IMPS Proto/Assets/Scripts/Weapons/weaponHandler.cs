@@ -381,6 +381,7 @@ public class weaponHandler : MonoBehaviour
                 {
                     grenades--;
                     Instantiate(playerGrenade, gamemanager.instance.mainCam.transform.position + gamemanager.instance.mainCam.transform.forward, gamemanager.instance.mainCam.transform.rotation);
+                    gamemanager.instance.updateGrenadeCount();
                 }
             }
         }
@@ -556,6 +557,7 @@ public class weaponHandler : MonoBehaviour
         {
             grenades += gren;
             updateGunStats();
+            gamemanager.instance.updateGrenadeCount();
             return 0;
         }
     }
