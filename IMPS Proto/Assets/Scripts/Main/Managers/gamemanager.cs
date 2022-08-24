@@ -49,10 +49,20 @@ public class gamemanager : MonoBehaviour
     void Awake()
     {
         // Set the public game manager for other scripts to access to this game manager
-        instance = this;
+        instance = this;        
+    }
 
+    private void Start()
+    {
+        GetReferences();
+        currCrosshiar = noCrosshiar;
+    }
+
+    void GetReferences()
+    {
+        //Debug.Log("getting references");
         // Set the public player object to the player object in the scene
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Player");
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera");
 
@@ -61,17 +71,21 @@ public class gamemanager : MonoBehaviour
 
         // Set the Weapons Handler script to the players WeaponsHandler
         weaponHandler = player.GetComponent<weaponHandler>();
-
+        //Debug.Log("weaponHandler reference " + weaponHandler);
         // Set the camera Script from the main camera
         cameraScript = Camera.main.GetComponent<playerCamera>();
 
         levelLoader = GameObject.Find("LevelLoader").GetComponent<LevelLoader>();
-        currCrosshiar = noCrosshiar;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (weaponHandler == null || playerScript == null)
+        {
+            GetReferences();
+        }
+
         if (Input.GetButtonDown("Cancel") && !gameOver)
         {
             if (!paused && !menuCurrentlyOpen)
@@ -177,12 +191,29 @@ public class gamemanager : MonoBehaviour
 
     public void updateAmmoCount()
     {
-        ammo.text = weaponHandler.GetAmmo().ToString();
-        ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
+        if(weaponHandler == null)
+        {
+            Debug.Log("Weaponhandler null!");
+        }
+
+        if (weaponHandler.GetPrimary() == null)
+        {
+            Debug.Log("no weapon");
+        }
+
+        
+            //if (ammo != null)
+                ammo.text = weaponHandler.GetAmmo().ToString();
+            //if (ammoReserve != null)
+                ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
+        
     }
 
     public void updateGrenadeCount()
     {
+        if (grenades == null)
+            Debug.Log("nogrenade text");                
+        if (weaponHandler)
         grenades.text = weaponHandler.GetGrenades().ToString();
     }
 
@@ -207,7 +238,7 @@ public class gamemanager : MonoBehaviour
                 levelLoader.StartCoroutine(levelLoader.Load(4));
                 break;
             case 4:
-                restart();
+                //restart();
                 levelLoader.StartCoroutine(levelLoader.Load(5));
                 break;
             case 5:

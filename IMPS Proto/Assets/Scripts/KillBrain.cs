@@ -13,16 +13,16 @@ public class KillBrain : MonoBehaviour
         countdownCanvas.SetActive(false);
     }
 
-    private void OnDestroy()
-    {
-        roomText.text = "Escape";
-        if (countdownCanvas != null)
-        {
-            countdownCanvas.SetActive(true);
-            if (count.gameObject.activeSelf)
-            {
-                count.StartCountdown();
-            }
-        }
-    }
+    //private void OnDestroy()
+    //{
+    //    roomText.text = "Escape";
+    //    if (countdownCanvas != null)
+    //    {
+    //        countdownCanvas.SetActive(true);
+    //        if (count.gameObject.activeSelf)
+    //        {
+    //            count.StartCountdown();
+    //        }
+    //    }
+    //}
 }

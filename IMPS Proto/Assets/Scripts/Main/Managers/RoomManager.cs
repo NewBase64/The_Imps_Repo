@@ -24,7 +24,11 @@ public class RoomManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        checkpoint = GameObject.Find("Checkpoint1");
+    }
+
+    private void Start()
+    {
+        checkpoint = GameObject.Find("Checkpoint1");       
     }
 
     public void openDoor()

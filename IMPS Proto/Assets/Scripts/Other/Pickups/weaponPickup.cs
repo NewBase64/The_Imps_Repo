@@ -18,7 +18,7 @@ public class weaponPickup : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         // if spawning from player, get the players info
         if (gamemanager.instance.weaponHandler.catchMe)
         {
@@ -33,6 +33,7 @@ public class weaponPickup : MonoBehaviour
             modle.SetActive(true);
             prompt.SetActive(false);
         }
+    
         else // if not spawning from a player
         {
             if (stats == null) // if I'm not specified to be a certain gun 

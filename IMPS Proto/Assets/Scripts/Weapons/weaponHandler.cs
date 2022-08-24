@@ -9,23 +9,23 @@ public class weaponHandler : MonoBehaviour
 {
     #region customClassForSerializedFields
 #if UNITY_EDITOR
-    [CustomEditor(typeof(weaponHandler))]
-    [System.Serializable]
-    public class weaponHandlerFieldEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-
-            weaponHandler wepHand = (weaponHandler)target;
-
-            //EditorGUILayout.Space(); // delete me later
-            //DrawWeapon(wepHand);
-            //DrawGrenades(wepHand);
-            //DrawSounds(wepHand);
-            //DrawDev(wepHand);
-            //DrawDropping(wepHand);
-            //DrawFlash(wepHand);
-            #region ListExample
+    //[CustomEditor(typeof(weaponHandler))]
+    //[System.Serializable]
+    //public class weaponHandlerFieldEditor : Editor
+    //{
+    //    public override void OnInspectorGUI()
+    //    {
+    //
+    //        weaponHandler wepHand = (weaponHandler)target;
+    //
+    //        //EditorGUILayout.Space(); // delete me later
+    //        //DrawWeapon(wepHand);
+    //        //DrawGrenades(wepHand);
+    //        //DrawSounds(wepHand);
+    //        //DrawDev(wepHand);
+    //        //DrawDropping(wepHand);
+    //        //DrawFlash(wepHand);
+    //        #region ListExample
             /*           
             List <GameObject> list = wepHand.listname;
             int size = mathf.Max(0, EditorGUILayout.IntField("Size", list.Count));            
@@ -43,204 +43,204 @@ public class weaponHandler : MonoBehaviour
             }
             */
 
-            base.OnInspectorGUI();
-            #endregion
-        }
-
-        static void DrawWeapon(weaponHandler wepHand)
-        {
-            wepHand.weaponsbool = EditorGUILayout.Foldout(wepHand.weaponsbool, "Weapons", true);
-            if (wepHand.weaponsbool)
-            {
-                EditorGUI.indentLevel++;
-                wepHand.secondary = EditorGUILayout.ObjectField("Secondary", wepHand.secondary, typeof(weapon), false) as weapon;
-                if (wepHand.secondary != null)
-                {
-                    EditorGUILayout.BeginHorizontal();
-                    wepHand.secammo = EditorGUILayout.IntField("Secondary Ammo", wepHand.secammo);
-                    wepHand.secammoRes = EditorGUILayout.IntField("Ammo Reserve", wepHand.secammoRes);
-                    EditorGUILayout.EndHorizontal();
-                }
-                wepHand.primary = EditorGUILayout.ObjectField("Primary", wepHand.primary, typeof(weapon), false) as weapon;
-                if (wepHand.primary != null)
-                {
-                    DrawAmmo(wepHand);
-                    DrawStats(wepHand);
-                    DrawTypes(wepHand);
-                }
-                EditorGUI.indentLevel--;
-            }
-        }
-        static void DrawAmmo(weaponHandler wepHand)
-        {
-            EditorGUILayout.LabelField("Ammo");
-            EditorGUI.indentLevel++;
-            EditorGUILayout.BeginHorizontal();
-            wepHand.ammo = EditorGUILayout.IntField("Ammo", wepHand.ammo);
-            wepHand.magCap = EditorGUILayout.IntField("Magazine Capacity", wepHand.magCap);
-            EditorGUILayout.EndHorizontal();
-
-            EditorGUILayout.BeginHorizontal();
-            wepHand.ammoReserve = EditorGUILayout.IntField("Ammo Reserve", wepHand.ammoReserve);
-            wepHand.ammoMax = EditorGUILayout.IntField("Ammo Max", wepHand.ammoMax);
-            EditorGUILayout.EndHorizontal();
-            
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Can Shoot", GUILayout.Width(127));
-            wepHand.canShoot = EditorGUILayout.Toggle(wepHand.canShoot, GUILayout.Width(20));
-            EditorGUILayout.LabelField("Reloading", GUILayout.Width(89));
-            wepHand.reloading = EditorGUILayout.Toggle(wepHand.reloading, GUILayout.Width(20));
-            EditorGUILayout.LabelField("Out Of Ammo", GUILayout.Width(106));
-            wepHand.oOAmmo = EditorGUILayout.Toggle(wepHand.oOAmmo);
-            EditorGUILayout.EndHorizontal();
-            EditorGUI.indentLevel--;
-        }
-        static void DrawStats(weaponHandler wepHand)
-        {
-            EditorGUILayout.LabelField("Stats");
-            EditorGUI.indentLevel++;
-            EditorGUILayout.BeginHorizontal();
-            wepHand.reloadTime = EditorGUILayout.FloatField("Reload Time", wepHand.reloadTime);
-            wepHand.fireRate = EditorGUILayout.FloatField("Fire Rate", wepHand.fireRate);
-            EditorGUILayout.EndHorizontal();
-
-            EditorGUILayout.BeginHorizontal();
-            wepHand.damage = EditorGUILayout.IntField("Damage", wepHand.damage);
-            EditorGUILayout.EndHorizontal();
-            EditorGUI.indentLevel--;
-        }
-        static void DrawTypes(weaponHandler wepHand)
-        {
-            EditorGUILayout.LabelField("Types");
-            EditorGUI.indentLevel++;
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Shoot Action", GUILayout.MaxWidth(125));
-            EditorGUILayout.EnumFlagsField(wepHand.shootAction);
-            EditorGUILayout.EndHorizontal();
-            //Draw Action Attributes
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Shoot Type", GUILayout.MaxWidth(125));
-            EditorGUILayout.EnumFlagsField(wepHand.shootType);
-            EditorGUILayout.EndHorizontal();
-            //Draw Type Attributes
-            EditorGUI.indentLevel--;
-        }
-        static void DrawGrenades(weaponHandler wepHand)
-        {
-            wepHand.grenadesbool = EditorGUILayout.Foldout(wepHand.grenadesbool, "Grenades", true);
-            EditorGUI.indentLevel++;
-            if (wepHand.grenadesbool)
-            {
-                wepHand.grenades = EditorGUILayout.IntField("Grenades", wepHand.grenades);
-                wepHand.maxGrenades = EditorGUILayout.IntField("Max Grenades", wepHand.maxGrenades);
-                wepHand.playerGrenade = EditorGUILayout.ObjectField("Grenade Object", wepHand.playerGrenade, typeof(GameObject), true) as GameObject;
-            }
-            EditorGUI.indentLevel--;
-        }
-        static void DrawSounds(weaponHandler wepHand)
-        {
-            wepHand.soundsbool = EditorGUILayout.Foldout(wepHand.soundsbool, "Sounds", true);
-            EditorGUI.indentLevel++;
-            if (wepHand.soundsbool)
-            {
-                //wepHand.audi = EditorGUILayout.ObjectField("Audiop Source", wepHand.audi, typeof(AudioSource), true) as AudioSource;
-                int gunsize = Mathf.Max(0, EditorGUILayout.IntField("Gunshots", wepHand.gunshot.Count));
-                while (gunsize > wepHand.gunshot.Count)
-                {
-                    wepHand.gunshot.Add(null);
-                }
-                while (gunsize < wepHand.gunshot.Count)
-                {
-                    wepHand.gunshot.RemoveAt(wepHand.gunshot.Count - 1);
-                }
-                EditorGUI.indentLevel++;
-                for (int i = 0; i < wepHand.gunshot.Count; i++)
-                {
-                    wepHand.gunshot[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.gunshot[i], typeof(AudioClip), true) as AudioClip;
-                }
-                EditorGUI.indentLevel--;
-                EditorGUI.indentLevel++;
-                EditorGUILayout.Slider("Volume", wepHand.gunShotVol, 0, 1);
-                EditorGUI.indentLevel--;
-
-                int ooasize = Mathf.Max(0, EditorGUILayout.IntField("Out Of Ammo", wepHand.outofAmmo.Count));
-                while (ooasize > wepHand.outofAmmo.Count)
-                {
-                    wepHand.outofAmmo.Add(null);
-                }
-                while (ooasize < wepHand.outofAmmo.Count)
-                {
-                    wepHand.outofAmmo.RemoveAt(wepHand.outofAmmo.Count - 1);
-                }
-                EditorGUI.indentLevel++;
-                for (int i = 0; i < wepHand.outofAmmo.Count; i++)
-                {
-                    wepHand.outofAmmo[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.outofAmmo[i], typeof(AudioClip), true) as AudioClip;
-                }
-                EditorGUI.indentLevel--;
-                EditorGUI.indentLevel++;
-                EditorGUILayout.Slider("Volume", wepHand.outofammoVol, 0, 1);
-                EditorGUI.indentLevel--;
-
-                int relsize = Mathf.Max(0, EditorGUILayout.IntField("Reload", wepHand.reloadSound.Count));
-                while (relsize > wepHand.reloadSound.Count)
-                {
-                    wepHand.reloadSound.Add(null);
-                }
-                while (relsize < wepHand.reloadSound.Count)
-                {
-                    wepHand.reloadSound.RemoveAt(wepHand.reloadSound.Count - 1);
-                }
-                EditorGUI.indentLevel++;
-                for (int i = 0; i < wepHand.reloadSound.Count; i++)
-                {
-                    wepHand.reloadSound[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.reloadSound[i], typeof(AudioClip), true) as AudioClip;
-                }
-                EditorGUI.indentLevel--;
-                EditorGUI.indentLevel++;
-                EditorGUILayout.Slider("Volume", wepHand.reloadVol, 0, 1);
-                EditorGUI.indentLevel--;
-            }
-            EditorGUI.indentLevel--;
-        }
-        static void DrawDev(weaponHandler wepHand)
-        {
-            wepHand.devbool = EditorGUILayout.Foldout(wepHand.devbool, "Developer Items", true);
-            if (wepHand.devbool)
-            {
-                EditorGUI.indentLevel++;
-                wepHand.InfiniteAmmo = EditorGUILayout.Toggle("Infinite Ammo", wepHand.InfiniteAmmo);
-                wepHand.bottomlessClip = EditorGUILayout.Toggle("Bottomless Clip", wepHand.bottomlessClip);
-                wepHand.unlimitedGrenades = EditorGUILayout.Toggle("Unlimited Grenades", wepHand.unlimitedGrenades);
-                EditorGUI.indentLevel--;
-            }
-        }
-        static void DrawDropping(weaponHandler wepHand)
-        {
-            wepHand.dropbool = EditorGUILayout.Foldout(wepHand.dropbool, "Weapon Droping stuff", true);
-            if (wepHand.dropbool)
-            {
-                EditorGUI.indentLevel++;
-                wepHand.wepPickup = EditorGUILayout.ObjectField("Weapon Pickup", wepHand.wepPickup, typeof(GameObject), true) as GameObject;
-                EditorGUI.indentLevel--;
-            }
-        }
-        static void DrawFlash(weaponHandler wepHand)
-        {
-            wepHand.flashbool = EditorGUILayout.Foldout(wepHand.flashbool, "Flash Variables", true);
-            if (wepHand.flashbool)
-            {
-                EditorGUI.indentLevel++;
-                wepHand.catchMe = EditorGUILayout.Toggle("Catch Me", wepHand.catchMe);
-                EditorGUILayout.BeginHorizontal();
-                wepHand.pubammo = EditorGUILayout.IntField("Public Ammo", wepHand.pubammo);
-                wepHand.pubammoRes = EditorGUILayout.IntField("Public Ammo Reserve", wepHand.pubammoRes);
-                EditorGUILayout.EndHorizontal();
-                wepHand.pubHolder = EditorGUILayout.ObjectField("Public Weapon Holder", wepHand.pubHolder, typeof(weapon), false) as weapon;
-                EditorGUI.indentLevel--;
-            }
-        }
-    }
+    //      base.OnInspectorGUI();
+    //      #endregion
+    //    }
+    //
+    //    static void DrawWeapon(weaponHandler wepHand)
+    //    {
+    //        wepHand.weaponsbool = EditorGUILayout.Foldout(wepHand.weaponsbool, "Weapons", true);
+    //        if (wepHand.weaponsbool)
+    //        {
+    //            EditorGUI.indentLevel++;
+    //            wepHand.secondary = EditorGUILayout.ObjectField("Secondary", wepHand.secondary, typeof(weapon), false) as weapon;
+    //            if (wepHand.secondary != null)
+    //            {
+    //                EditorGUILayout.BeginHorizontal();
+    //                wepHand.secammo = EditorGUILayout.IntField("Secondary Ammo", wepHand.secammo);
+    //                wepHand.secammoRes = EditorGUILayout.IntField("Ammo Reserve", wepHand.secammoRes);
+    //                EditorGUILayout.EndHorizontal();
+    //            }
+    //            wepHand.primary = EditorGUILayout.ObjectField("Primary", wepHand.primary, typeof(weapon), false) as weapon;
+    //            if (wepHand.primary != null)
+    //            {
+    //                DrawAmmo(wepHand);
+    //                DrawStats(wepHand);
+    //                DrawTypes(wepHand);
+    //            }
+    //            EditorGUI.indentLevel--;
+    //        }
+    //    }
+    //    static void DrawAmmo(weaponHandler wepHand)
+    //    {
+    //        EditorGUILayout.LabelField("Ammo");
+    //        EditorGUI.indentLevel++;
+    //        EditorGUILayout.BeginHorizontal();
+    //        wepHand.ammo = EditorGUILayout.IntField("Ammo", wepHand.ammo);
+    //        wepHand.magCap = EditorGUILayout.IntField("Magazine Capacity", wepHand.magCap);
+    //        EditorGUILayout.EndHorizontal();
+    //
+    //        EditorGUILayout.BeginHorizontal();
+    //        wepHand.ammoReserve = EditorGUILayout.IntField("Ammo Reserve", wepHand.ammoReserve);
+    //        wepHand.ammoMax = EditorGUILayout.IntField("Ammo Max", wepHand.ammoMax);
+    //        EditorGUILayout.EndHorizontal();
+    //        
+    //        EditorGUILayout.BeginHorizontal();
+    //        EditorGUILayout.LabelField("Can Shoot", GUILayout.Width(127));
+    //        wepHand.canShoot = EditorGUILayout.Toggle(wepHand.canShoot, GUILayout.Width(20));
+    //        EditorGUILayout.LabelField("Reloading", GUILayout.Width(89));
+    //        wepHand.reloading = EditorGUILayout.Toggle(wepHand.reloading, GUILayout.Width(20));
+    //        EditorGUILayout.LabelField("Out Of Ammo", GUILayout.Width(106));
+    //        wepHand.oOAmmo = EditorGUILayout.Toggle(wepHand.oOAmmo);
+    //        EditorGUILayout.EndHorizontal();
+    //        EditorGUI.indentLevel--;
+    //    }
+    //    static void DrawStats(weaponHandler wepHand)
+    //    {
+    //        EditorGUILayout.LabelField("Stats");
+    //        EditorGUI.indentLevel++;
+    //        EditorGUILayout.BeginHorizontal();
+    //        wepHand.reloadTime = EditorGUILayout.FloatField("Reload Time", wepHand.reloadTime);
+    //        wepHand.fireRate = EditorGUILayout.FloatField("Fire Rate", wepHand.fireRate);
+    //        EditorGUILayout.EndHorizontal();
+    //
+    //        EditorGUILayout.BeginHorizontal();
+    //        wepHand.damage = EditorGUILayout.IntField("Damage", wepHand.damage);
+    //        EditorGUILayout.EndHorizontal();
+    //        EditorGUI.indentLevel--;
+    //    }
+    //    static void DrawTypes(weaponHandler wepHand)
+    //    {
+    //        EditorGUILayout.LabelField("Types");
+    //        EditorGUI.indentLevel++;
+    //        EditorGUILayout.BeginHorizontal();
+    //        EditorGUILayout.LabelField("Shoot Action", GUILayout.MaxWidth(125));
+    //        EditorGUILayout.EnumFlagsField(wepHand.shootAction);
+    //        EditorGUILayout.EndHorizontal();
+    //        //Draw Action Attributes
+    //        EditorGUILayout.BeginHorizontal();
+    //        EditorGUILayout.LabelField("Shoot Type", GUILayout.MaxWidth(125));
+    //        EditorGUILayout.EnumFlagsField(wepHand.shootType);
+    //        EditorGUILayout.EndHorizontal();
+    //        //Draw Type Attributes
+    //        EditorGUI.indentLevel--;
+    //    }
+    //    static void DrawGrenades(weaponHandler wepHand)
+    //    {
+    //        wepHand.grenadesbool = EditorGUILayout.Foldout(wepHand.grenadesbool, "Grenades", true);
+    //        EditorGUI.indentLevel++;
+    //        if (wepHand.grenadesbool)
+    //        {
+    //            wepHand.grenades = EditorGUILayout.IntField("Grenades", wepHand.grenades);
+    //            wepHand.maxGrenades = EditorGUILayout.IntField("Max Grenades", wepHand.maxGrenades);
+    //            wepHand.playerGrenade = EditorGUILayout.ObjectField("Grenade Object", wepHand.playerGrenade, typeof(GameObject), true) as GameObject;
+    //        }
+    //        EditorGUI.indentLevel--;
+    //    }
+    //    static void DrawSounds(weaponHandler wepHand)
+    //    {
+    //        //wepHand.soundsbool = EditorGUILayout.Foldout(wepHand.soundsbool, "Sounds", true);
+    //        //EditorGUI.indentLevel++;
+    //        //if (wepHand.soundsbool)
+    //        //{
+    //        //    //wepHand.audi = EditorGUILayout.ObjectField("Audiop Source", wepHand.audi, typeof(AudioSource), true) as AudioSource;
+    //        //    int gunsize = Mathf.Max(0, EditorGUILayout.IntField("Gunshots", wepHand.gunshot.Count));
+    //        //    while (gunsize > wepHand.gunshot.Count)
+    //        //    {
+    //        //        wepHand.gunshot.Add(null);
+    //        //    }
+    //        //    while (gunsize < wepHand.gunshot.Count)
+    //        //    {
+    //        //        wepHand.gunshot.RemoveAt(wepHand.gunshot.Count - 1);
+    //        //    }
+    //        //    EditorGUI.indentLevel++;
+    //        //    for (int i = 0; i < wepHand.gunshot.Count; i++)
+    //        //    {
+    //        //        wepHand.gunshot[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.gunshot[i], typeof(AudioClip), true) as AudioClip;
+    //        //    }
+    //        //    EditorGUI.indentLevel--;
+    //        //    EditorGUI.indentLevel++;
+    //        //    EditorGUILayout.Slider("Volume", wepHand.gunShotVol, 0, 1);
+    //        //    EditorGUI.indentLevel--;
+    //        //
+    //        //    int ooasize = Mathf.Max(0, EditorGUILayout.IntField("Out Of Ammo", wepHand.outofAmmo.Count));
+    //        //    while (ooasize > wepHand.outofAmmo.Count)
+    //        //    {
+    //        //        wepHand.outofAmmo.Add(null);
+    //        //    }
+    //        //    while (ooasize < wepHand.outofAmmo.Count)
+    //        //    {
+    //        //        wepHand.outofAmmo.RemoveAt(wepHand.outofAmmo.Count - 1);
+    //        //    }
+    //        //    EditorGUI.indentLevel++;
+    //        //    for (int i = 0; i < wepHand.outofAmmo.Count; i++)
+    //        //    {
+    //        //        wepHand.outofAmmo[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.outofAmmo[i], typeof(AudioClip), true) as AudioClip;
+    //        //    }
+    //        //    EditorGUI.indentLevel--;
+    //        //    EditorGUI.indentLevel++;
+    //        //    EditorGUILayout.Slider("Volume", wepHand.outofammoVol, 0, 1);
+    //        //    EditorGUI.indentLevel--;
+    //        //
+    //        //    int relsize = Mathf.Max(0, EditorGUILayout.IntField("Reload", wepHand.reloadSound.Count));
+    //        //    while (relsize > wepHand.reloadSound.Count)
+    //        //    {
+    //        //        wepHand.reloadSound.Add(null);
+    //        //    }
+    //        //    while (relsize < wepHand.reloadSound.Count)
+    //        //    {
+    //        //        wepHand.reloadSound.RemoveAt(wepHand.reloadSound.Count - 1);
+    //        //    }
+    //        //    EditorGUI.indentLevel++;
+    //        //    for (int i = 0; i < wepHand.reloadSound.Count; i++)
+    //        //    {
+    //        //        wepHand.reloadSound[i] = EditorGUILayout.ObjectField("Clip " + i + 1, wepHand.reloadSound[i], typeof(AudioClip), true) as AudioClip;
+    //        //    }
+    //        //    EditorGUI.indentLevel--;
+    //        //    EditorGUI.indentLevel++;
+    //        //    EditorGUILayout.Slider("Volume", wepHand.reloadVol, 0, 1);
+    //        //    EditorGUI.indentLevel--;
+    //        //}
+    //        //EditorGUI.indentLevel--;
+    //    }
+    //    static void DrawDev(weaponHandler wepHand)
+    //    {
+    //        wepHand.devbool = EditorGUILayout.Foldout(wepHand.devbool, "Developer Items", true);
+    //        if (wepHand.devbool)
+    //        {
+    //            EditorGUI.indentLevel++;
+    //            wepHand.InfiniteAmmo = EditorGUILayout.Toggle("Infinite Ammo", wepHand.InfiniteAmmo);
+    //            wepHand.bottomlessClip = EditorGUILayout.Toggle("Bottomless Clip", wepHand.bottomlessClip);
+    //            wepHand.unlimitedGrenades = EditorGUILayout.Toggle("Unlimited Grenades", wepHand.unlimitedGrenades);
+    //            EditorGUI.indentLevel--;
+    //        }
+    //    }
+    //    static void DrawDropping(weaponHandler wepHand)
+    //    {
+    //        wepHand.dropbool = EditorGUILayout.Foldout(wepHand.dropbool, "Weapon Droping stuff", true);
+    //        if (wepHand.dropbool)
+    //        {
+    //            EditorGUI.indentLevel++;
+    //            wepHand.wepPickup = EditorGUILayout.ObjectField("Weapon Pickup", wepHand.wepPickup, typeof(GameObject), true) as GameObject;
+    //            EditorGUI.indentLevel--;
+    //        }
+    //    }
+    //    static void DrawFlash(weaponHandler wepHand)
+    //    {
+    //        wepHand.flashbool = EditorGUILayout.Foldout(wepHand.flashbool, "Flash Variables", true);
+    //        if (wepHand.flashbool)
+    //        {
+    //            EditorGUI.indentLevel++;
+    //            wepHand.catchMe = EditorGUILayout.Toggle("Catch Me", wepHand.catchMe);
+    //            EditorGUILayout.BeginHorizontal();
+    //            wepHand.pubammo = EditorGUILayout.IntField("Public Ammo", wepHand.pubammo);
+    //            wepHand.pubammoRes = EditorGUILayout.IntField("Public Ammo Reserve", wepHand.pubammoRes);
+    //            EditorGUILayout.EndHorizontal();
+    //            wepHand.pubHolder = EditorGUILayout.ObjectField("Public Weapon Holder", wepHand.pubHolder, typeof(weapon), false) as weapon;
+    //            EditorGUI.indentLevel--;
+    //        }
+    //    }
+    //}
 #endif
     #endregion
     #region Declarations
@@ -276,7 +276,7 @@ public class weaponHandler : MonoBehaviour
     [SerializeField] int holdammoRes;
 
     [Header("----Grenades----")]
-    [SerializeField] int grenades;
+    [SerializeField] int grenades = 0;
     [SerializeField] int maxGrenades;
     [SerializeField] GameObject playerGrenade;
 
@@ -310,7 +310,7 @@ public class weaponHandler : MonoBehaviour
     //[Header("----Editor Bools----")]
     [HideInInspector][SerializeField] bool weaponsbool;
     [HideInInspector][SerializeField] bool grenadesbool;
-    [HideInInspector][SerializeField] bool soundsbool;
+    //[HideInInspector][SerializeField] bool soundsbool;
     [HideInInspector][SerializeField] bool devbool;
     [HideInInspector][SerializeField] bool dropbool;
     [HideInInspector][SerializeField] bool flashbool;
@@ -325,6 +325,11 @@ public class weaponHandler : MonoBehaviour
         //CurrCrosshair = NoCrosshair;
 
         wepHold = gamemanager.instance.player.GetComponentInChildren<weaponHolder>();
+
+        if (primary != null)
+        {
+            updateGunStats();
+        }
     }
 
     // Update is called once per frame
@@ -336,7 +341,7 @@ public class weaponHandler : MonoBehaviour
             Shooting();
 
             // Reload
-            if (Input.GetButtonDown("Reload") && !reloading && canShoot && ammoReserve != 0)
+            if (Input.GetButtonDown("Reload") && !reloading && canShoot && ammoReserve != 0 && ammo != magCap)
             {
                 StartCoroutine(Reload());
                 wepHold.Reloadstart();
