@@ -86,7 +86,7 @@ public class gamemanager : MonoBehaviour
             GetReferences();
         }
 
-        if (Input.GetButtonDown("Cancel") && !gameOver)
+        if (Input.GetButtonDown("Cancel") && !gameOver && menuCurrentlyOpen != winGameMenu)
         {
             if (!paused && !menuCurrentlyOpen)
             {

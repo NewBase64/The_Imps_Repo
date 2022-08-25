@@ -14,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip startGame;
     public AudioClip scrolling;
     public AudioClip shieldDink;
+    public AudioClip danger;
+    public AudioClip alarm;
 
     public const string musicSettings = "MusicSettings";
     public const string sfxSettings = "SFXSettings";

@@ -8,6 +8,7 @@ public class FloatingPlatform : MonoBehaviour
     //[SerializeField] Animator transition;
     [SerializeField] GameObject platform;
     Vector3 origPosition;
+    public AudioClip lift;
     //[SerializeField] GameObject enemy;
     //bool canSpawn = true;
     //List<GameObject> enemies;
@@ -19,12 +20,13 @@ public class FloatingPlatform : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        gamemanager.instance.player.transform.parent = GameObject.Find("ElevatorCollider").transform;
+        //gamemanager.instance.player.transform.parent = GameObject.Find("ElevatorCollider").transform;
+        AudioManager.instance.sfx.PlayOneShot(lift);
     }
 
     public void OnTriggerStay()
     {
-        platform.transform.position += platform.transform.up * Time.deltaTime * 10;
+        //platform.transform.position += platform.transform.up * Time.deltaTime * 10;
         //if (canSpawn)
         //{
         //    StartCoroutine(spawnEnemy());
