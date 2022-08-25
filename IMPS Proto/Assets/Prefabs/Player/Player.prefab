@@ -545,14 +545,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5886794262821607503}
-  m_LocalRotation: {x: -0.5312433, y: 0.53419626, z: 0.46626815, w: 0.46369052}
-  m_LocalPosition: {x: 0.3, y: -0.023, z: 0.306}
+  m_LocalRotation: {x: -0.1416899, y: 0.14247698, z: 0.6946022, w: 0.690762}
+  m_LocalPosition: {x: 0.3, y: -0.345, z: 0.274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1774244174603824706}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -97.768, y: 0, z: 90.318}
+  m_LocalEulerAnglesHint: {x: -23.184, y: 0, z: 90.318}
 --- !u!1 &6836692102843577946
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,16 +870,16 @@ MonoBehaviour:
   audi: {fileID: 539585104}
   footsep:
   - {fileID: 8300000, guid: b49e00408863b9a46ae0db2ece0bd0ee, type: 3}
-  footstepVolume: 0.342
+  footstepVolume: 1
   playerHurt:
   - {fileID: 8300000, guid: c852f467032953849ad8a0b054473136, type: 3}
-  PlayerhurtVol: 0.269
+  PlayerhurtVol: 1
   jumpsound:
   - {fileID: 8300000, guid: b15121eff33d7a64195724687f8bad41, type: 3}
-  jumpVol: 0.277
+  jumpVol: 1
   JetBoots:
   - {fileID: 8300000, guid: 47544bfeeff00844280535c0d06253d8, type: 3}
-  JetBootsVolume: 0.162
+  JetBootsVolume: 1
   orientation: {fileID: 8703058816639673488}
   minimumJumpHeight: 0.5
   distanceOfWall: 1
@@ -965,13 +965,13 @@ MonoBehaviour:
   playerGrenade: {fileID: 2094192647477228935, guid: f2fd770594fcc664a859cb01d4a67481, type: 3}
   gunshot:
   - {fileID: 0}
-  gunShotVol: 0.306
+  gunShotVol: 1
   outofAmmo:
   - {fileID: 8300000, guid: 42fb17b6d9356934c85100779142143a, type: 3}
-  outofammoVol: 0.157
+  outofammoVol: 1
   reloadSound:
   - {fileID: 8300000, guid: 1b10225dfc98f36488d47023d3c73ced, type: 3}
-  reloadVol: 0.149
+  reloadVol: 1
   InfiniteAmmo: 0
   bottomlessClip: 0
   unlimitedGrenades: 0
@@ -982,7 +982,6 @@ MonoBehaviour:
   pubHolder: {fileID: 0}
   weaponsbool: 0
   grenadesbool: 0
-  soundsbool: 0
   devbool: 0
   dropbool: 0
   flashbool: 0

@@ -70,7 +70,7 @@ public class playerController : MonoBehaviour, IDamageable
     public bool takingDamage = false;
     bool walljumping = true;
     private bool _wallLeft, _wallRight, _wallFront, _wallBack;
-    private bool _wallLefta = true, _wallRighta = true, _wallFronta = true, _wallBacka = true;
+    //private bool _wallLefta = true, _wallRighta = true, _wallFronta = true, _wallBacka = true;
     private RaycastHit _leftWallHit, _rightWallHit, _wallFrontHit, _wallBackHit;
     public Shield shield;
     GameObject cam;
@@ -147,52 +147,52 @@ public class playerController : MonoBehaviour, IDamageable
 
         if (Input.GetButton("Jump"))
         {
-            if (_wallLeft && _wallLefta)
+            if (_wallLeft)
             {
-                _wallLefta = false;
+                //_wallLefta = false;
                 Vector3 wallJumpDirect = transform.up * RunUp + _leftWallHit.normal;
                 playerVelocity = wallJumpDirect * WallJumpForce;
 
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
-                _wallRighta = true;
-                _wallFronta = true;
-                _wallBacka = true;
+                //_wallRighta = true;
+                //_wallFronta = true;
+                //_wallBacka = true;
                 StartCoroutine(WallJumpDelay());
             }
-            if (_wallRight && _wallRighta)
+            if (_wallRight)
             {
-                _wallRighta = false;
+                //_wallRighta = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _rightWallHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
-                _wallLefta = true;
-                _wallFronta = true;
-                _wallBacka = true;
+                //_wallLefta = true;
+                //_wallFronta = true;
+                //_wallBacka = true;
                 StartCoroutine(WallJumpDelay());
             }
-            if (_wallFront && _wallFronta)
+            if (_wallFront)
             {
-                _wallFronta = false;
+                //_wallFronta = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallFrontHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
-                _wallRighta = true;
-                _wallLefta = true;
-                _wallBacka = true;
+                //_wallRighta = true;
+                //_wallLefta = true;
+                //_wallBacka = true;
                 StartCoroutine(WallJumpDelay());
             }
-            if (_wallBack && _wallBacka)
+            if (_wallBack)
             {
-                _wallBacka = false;
+                //_wallBacka = false;
                 Vector3 wallRunJumpDirection = transform.up * RunUp + _wallBackHit.normal;
                 playerVelocity = wallRunJumpDirection * WallJumpForce;
                 //-Giga I commented this out because I kept getting an error and I needed to test out my level 
                 audi.PlayOneShot(JetBoots[Random.Range(0, JetBoots.Length)], JetBootsVolume);
-                _wallRighta = true;
-                _wallFronta = true;
-                _wallLefta = true;
+                //_wallRighta = true;
+                //_wallFronta = true;
+                //_wallLefta = true;
                 StartCoroutine(WallJumpDelay());
             }
         }
@@ -221,7 +221,6 @@ public class playerController : MonoBehaviour, IDamageable
 
         // play footstep audio
         StartCoroutine(playFootsteps());
-
 
         // Jump if needed
         Jump();

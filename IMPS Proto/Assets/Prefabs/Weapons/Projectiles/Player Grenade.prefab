@@ -130,8 +130,8 @@ MonoBehaviour:
   rb: {fileID: 2368537291949553098}
   speedMult: 5
   ark: 0.5
-  distance: 1
-  timer: 5
+  distance: 2
+  timer: 3
   explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}
   rend: {fileID: 662965484055534580}
   startColor: {r: 0.14751692, g: 0.8018868, b: 0.14751692, a: 1}
