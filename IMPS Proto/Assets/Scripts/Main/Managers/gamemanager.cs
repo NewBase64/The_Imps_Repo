@@ -18,13 +18,14 @@ public class gamemanager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject playerDeadMenu;
     public GameObject playerDamageFlash;
+    public GameObject shieldFlash;
     public GameObject winGameMenu;
     public GameObject settingsMenu;
     [Header("----UI Stuff----")]
     public Image HPBar;
     public TMP_Text enemyDead;
     public TMP_Text enemyTotal;
-    public Image ShieldBar; 
+    public Image ShieldBar;
     public Image ShieldIndicator;
     public TMP_Text ammo;
     public TMP_Text ammoReserve;
@@ -49,7 +50,7 @@ public class gamemanager : MonoBehaviour
     void Awake()
     {
         // Set the public game manager for other scripts to access to this game manager
-        instance = this;        
+        instance = this;
     }
 
     private void Start()
@@ -86,7 +87,7 @@ public class gamemanager : MonoBehaviour
             GetReferences();
         }
 
-        if (Input.GetButtonDown("Cancel") && !gameOver && menuCurrentlyOpen != winGameMenu)
+        if (Input.GetButtonDown("Cancel") && !gameOver && menuCurrentlyOpen != winGameMenu && levelLoader.gameObject.transform.GetChild(0).GetComponent<CanvasGroup>().alpha == 0)
         {
             if (!paused && !menuCurrentlyOpen)
             {
@@ -131,10 +132,17 @@ public class gamemanager : MonoBehaviour
     {
         gameOver = true;
         //weaponHandler.CurrCrosshair.SetActive(false);
+
+        if (menuCurrentlyOpen != null && menuCurrentlyOpen.activeSelf)
+        {
+            menuCurrentlyOpen.SetActive(false);
+        }
         menuCurrentlyOpen = playerDeadMenu;
         menuCurrentlyOpen.SetActive(true);
         ConLockCursor();
+
     }
+
     public void checkEnemyKills()
     {
         enemiesKilled++;
@@ -191,7 +199,7 @@ public class gamemanager : MonoBehaviour
 
     public void updateAmmoCount()
     {
-        if(weaponHandler == null)
+        if (weaponHandler == null)
         {
             Debug.Log("Weaponhandler null!");
         }
@@ -201,20 +209,20 @@ public class gamemanager : MonoBehaviour
             Debug.Log("no weapon");
         }
 
-        
-            //if (ammo != null)
-                ammo.text = weaponHandler.GetAmmo().ToString();
-            //if (ammoReserve != null)
-                ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
-        
+
+        //if (ammo != null)
+        ammo.text = weaponHandler.GetAmmo().ToString();
+        //if (ammoReserve != null)
+        ammoReserve.text = weaponHandler.GetAmmoReserve().ToString();
+
     }
 
     public void updateGrenadeCount()
     {
         if (grenades == null)
-            Debug.Log("nogrenade text");                
+            Debug.Log("nogrenade text");
         if (weaponHandler)
-        grenades.text = weaponHandler.GetGrenades().ToString();
+            grenades.text = weaponHandler.GetGrenades().ToString();
     }
 
     //public void changeCrosshair()
@@ -229,7 +237,7 @@ public class gamemanager : MonoBehaviour
         switch (causedEvent)
         {
             case 1:
-               levelLoader.StartCoroutine(levelLoader.Load(2));
+                levelLoader.StartCoroutine(levelLoader.Load(2));
                 break;
             case 2:
                 levelLoader.StartCoroutine(levelLoader.Load(3));
@@ -249,7 +257,7 @@ public class gamemanager : MonoBehaviour
                 ConLockCursor();
                 break;
             case 6:
-                Instantiate(weaponHandler.wepPickup, mainCam.transform.position+mainCam.transform.forward ,transform.rotation);
+                Instantiate(weaponHandler.wepPickup, mainCam.transform.position + mainCam.transform.forward, transform.rotation);
 
 
 

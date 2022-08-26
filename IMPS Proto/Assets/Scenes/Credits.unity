@@ -365,7 +365,7 @@ MonoBehaviour:
     It\" font from dafont\n\n\"Origin Tech\" font from dafont\n\n\"Ignotum\" font
     from dafont\n\n\"Neuropool\" font from dafont\n\nammo from Noun Project\n\nBomb
     Grenade icon from uxwing\n\nSmiling Imp, from KindPNG\n\nGlow Transparent from
-    FreePNGimg"
+    FreePNGimg\n\nAudio:\n\nMusic by TJ Forest\n\nSound Effects from Westar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}
   m_sharedMaterial: {fileID: 8158222409198706254, guid: 7061b4670ddd9c048ba63ee881fcf845, type: 2}

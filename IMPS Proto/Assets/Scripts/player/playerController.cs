@@ -22,6 +22,7 @@ public class playerController : MonoBehaviour, IDamageable
 
     [Header("----Audio----")]
     public AudioSource audi;
+    public AudioSource reloadSource;
     [SerializeField] AudioClip[] footsep;
     [Range(0, 1)] [SerializeField] float footstepVolume;
     bool footstepplaying = false;
@@ -325,7 +326,7 @@ public class playerController : MonoBehaviour, IDamageable
     {
         if (shield != null && shield.isActive)
         {
-            audi.PlayOneShot(AudioManager.instance.shieldDink);
+            audi.PlayOneShot(AudioManager.instance.shieldDink[Random.Range(0, AudioManager.instance.shieldDink.Length)]);
             shield.takeDamage(dmg);
         }
         else

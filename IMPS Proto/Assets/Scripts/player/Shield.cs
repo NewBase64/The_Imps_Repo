@@ -48,6 +48,7 @@ public class Shield : MonoBehaviour
         else
         {
             shieldCurrentHp -= dmg;
+
             if (shieldCurrentHp <= 0)
             {
                 isActive = false;
@@ -55,11 +56,14 @@ public class Shield : MonoBehaviour
 
                 gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
             }
-
             //gamemanager.instance.playerScript.updateShieldHp();
         }
         t = 0;
         StopAllCoroutines();
+        if (dmg > 0)
+        {
+            StartCoroutine(ShieldFlash());
+        }
         canRegen = false;
         regenning = false;
         StartCoroutine(delay());
@@ -94,6 +98,7 @@ public class Shield : MonoBehaviour
                 gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
             }
             yield return new WaitForSeconds(regenTimer);
+            AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.shieldRegen);
             takeDamage(-1);
 
             //gamemanager.instance.playerScript.updateShieldHp();
@@ -121,5 +126,17 @@ public class Shield : MonoBehaviour
         }
         isActive = true;
         canRegen = true;
+    }
+
+    IEnumerator ShieldFlash()
+    {
+        gamemanager.instance.menuCurrentlyOpen = gamemanager.instance.shieldFlash;
+        gamemanager.instance.menuCurrentlyOpen.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        if (gamemanager.instance.menuCurrentlyOpen == gamemanager.instance.shieldFlash)
+        {
+            gamemanager.instance.menuCurrentlyOpen.SetActive(false);
+            gamemanager.instance.menuCurrentlyOpen = null;
+        }
     }
 }

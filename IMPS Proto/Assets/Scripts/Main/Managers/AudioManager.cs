@@ -13,9 +13,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip confirm;
     public AudioClip startGame;
     public AudioClip scrolling;
-    public AudioClip shieldDink;
+    public AudioClip[] shieldDink;
+    public AudioClip shieldRegen;
     public AudioClip danger;
     public AudioClip alarm;
+    public AudioClip reloadVoice;
 
     public const string musicSettings = "MusicSettings";
     public const string sfxSettings = "SFXSettings";

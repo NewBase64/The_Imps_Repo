@@ -343,6 +343,10 @@ public class weaponHandler : MonoBehaviour
             // Reload
             if (Input.GetButtonDown("Reload") && !reloading && canShoot && ammoReserve != 0 && ammo != magCap)
             {
+                if (gamemanager.instance.playerScript.reloadSource.isPlaying)
+                {
+                    gamemanager.instance.playerScript.reloadSource.Stop();
+                }
                 StartCoroutine(Reload());
                 wepHold.Reloadstart();
             }
@@ -622,6 +626,10 @@ public class weaponHandler : MonoBehaviour
             {
                 ammo--;
                 gamemanager.instance.updateAmmoCount();
+                if(ammo == 0 && ammoReserve != 0)
+                {
+                    gamemanager.instance.playerScript.reloadSource.Play();
+                }
             }
             // play gunshot          
             gamemanager.instance.playerScript.audi.PlayOneShot(gunshot[Random.Range(0, gunshot.Count)], gunShotVol);

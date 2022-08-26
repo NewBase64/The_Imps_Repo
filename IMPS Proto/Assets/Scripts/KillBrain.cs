@@ -9,26 +9,19 @@ public class KillBrain : MonoBehaviour
     public TMP_Text roomText;
     public Countdown count;
     public GameObject lightFlickerer;
-    void Start()
-    {
-        countdownCanvas.SetActive(false);
-    }
 
-    private void OnDestroy()
+    public void StartDestruction()
     {
         roomText.text = "Escape";
-        if (countdownCanvas != null)
-        {
-            countdownCanvas.SetActive(true);
-            if (count.gameObject.activeSelf)
-            {
-                count.StartCountdown();
-                lightFlickerer.GetComponent<LightFlicker>().StartFlicker();
-                AudioManager.instance.sfx.loop = true;
-                AudioManager.instance.sfx.clip = AudioManager.instance.alarm;
-                AudioManager.instance.sfx.Play();
-                AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.danger);
-            }
-        }
+        GameObject canvas = Instantiate(countdownCanvas);
+        count = canvas.transform.GetChild(0).GetComponent<Countdown>();
+        count.StartCountdown();
+        lightFlickerer.GetComponent<LightFlicker>().StartFlicker();
+        AudioManager.instance.sfx.loop = true;
+        AudioManager.instance.sfx.clip = AudioManager.instance.alarm;
+        AudioManager.instance.sfx.Play();
+        AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.danger);
+        GameObject.Find("Door9").SetActive(false);
+
     }
 }

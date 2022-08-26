@@ -9,6 +9,7 @@ public class landmine : MonoBehaviour, IDamageable
     [Range(0,.5f)][SerializeField] float landeminDelayExplosion;
     [SerializeField] GameObject explosion;
     [SerializeField] int hp;
+    [SerializeField] bool isBrain = false;
 
     void Start()
     {
@@ -46,6 +47,10 @@ public class landmine : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(landeminDelayExplosion);
         Instantiate(explosion, transform.position, explosion.transform.rotation);
         rb.velocity = (gamemanager.instance.player.transform.position - transform.position) + new Vector3(0, 0.5f, 0) * speed;
+        if(isBrain)
+        {
+            gameObject.GetComponent<KillBrain>().StartDestruction();
+        }
         Destroy(gameObject);
 
     }

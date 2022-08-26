@@ -180,7 +180,13 @@ MonoBehaviour:
   confirm: {fileID: 8300000, guid: fe006e1e9435b1549bce83932190c59b, type: 3}
   startGame: {fileID: 8300000, guid: 6ce7ce7431116164faae5e616416636e, type: 3}
   scrolling: {fileID: 8300000, guid: 0605664c6ddceb54f8e1a14db3092678, type: 3}
-  shieldDink: {fileID: 8300000, guid: c98e5331895811846b9c34e6be3ee4ad, type: 3}
+  shieldDink:
+  - {fileID: 8300000, guid: c4262af7adc8f464293a9da51575c3e4, type: 3}
+  - {fileID: 8300000, guid: 52ccd3fc8fe699544b98e8d452c671de, type: 3}
+  shieldRegen: {fileID: 8300000, guid: 7cbfe8dcced2f8045ac250d7d3d013df, type: 3}
+  danger: {fileID: 0}
+  alarm: {fileID: 0}
+  reloadVoice: {fileID: 8300000, guid: d1606cdd47144e241a69396e801f3b74, type: 3}
   mixer: {fileID: 24100000, guid: ca320972daa86304f98f05ba12818de6, type: 2}
 --- !u!1 &5718125333650059275
 GameObject:
