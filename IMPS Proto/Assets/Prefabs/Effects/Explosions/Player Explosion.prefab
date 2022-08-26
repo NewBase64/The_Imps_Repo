@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3809519118320257195}
-  - component: {fileID: 3809519118320257365}
+  - component: {fileID: 1187415202290360778}
   - component: {fileID: 3809519118320257194}
   - component: {fileID: 3809519118320257198}
   - component: {fileID: 7763499756354414389}
@@ -37,7 +37,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3809519118320257365
+--- !u!114 &1187415202290360778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,12 +46,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3809519118320257199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac15fe61cde3428488e7e36d82b81598, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c4fb4e2e69aa184c9ad9a74904ae8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 0
-  enemyDamage: 10
-  explosionPushBack: 10
+  playerDamage: 20
+  explosionPushBack: 20
 --- !u!54 &3809519118320257194
 Rigidbody:
   m_ObjectHideFlags: 0

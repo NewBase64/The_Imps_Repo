@@ -108,23 +108,25 @@ public class enemyAI : MonoBehaviour, IDamageable
         RaycastHit hit;
         float angle = Vector3.Angle(playerDir, transform.forward);
 
-        //Debug.Log(angle);
 
         if (Physics.Raycast(transform.position, playerDir, out hit))
         {
             //aud.PlayOneShot(playerDetected[Random.Range(0, playerDetected.Length)], 1);
-                if (hit.collider.CompareTag("Player"))
-                {
-                    anim.SetBool("Shooting", true);
-                }
-                else
-                {
-                    anim.SetBool("Shooting", false);
-                }
-            Debug.DrawRay(transform.position, gamemanager.instance.player.transform.position - transform.position);
             //timer for the Grenades, this sets a cooldown so he cant infinite throw grenades while shooting
+             if (hit.collider.CompareTag("Player"))
+             {
+                 anim.SetBool("Shooting", true);
+             }
+             else
+             {
+                 anim.SetBool("Shooting", false);
+             }
+            Debug.DrawRay(transform.position, gamemanager.instance.player.transform.position - transform.position);
             if (hit.collider.CompareTag("Player") && canShoot && angle <= viewAngle)
+            {
                 StartCoroutine(shoot());
+            }
+
 
             if (grenade == true)
             {

@@ -14,7 +14,9 @@ public class rocket : MonoBehaviour, IDamageable
 
     void Start()
     {
-        rb.velocity = (gamemanager.instance.player.transform.position - transform.position) + new Vector3(0, 0.5f, 0) * speed;
+        rb.velocity = (gamemanager.instance.player.transform.position - transform.position).normalized * speed;
+
+        //rb.velocity = (gamemanager.instance.player.transform.position - transform.position) + new Vector3(0, 0.5f, 0) * speed;
         Destroy(gameObject, destroyTime);
     }
 
