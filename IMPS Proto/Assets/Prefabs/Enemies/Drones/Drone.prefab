@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 6240834580256208989}
-  explosion: {fileID: 3809519118320257199, guid: 61c544e4d0fb73d48b80cbfac14f5013, type: 3}
+  explosion: {fileID: 3809519118320257199, guid: 358183350e60b3a4ab12f3e012497fad, type: 3}
   hp: 5
   viewAngle: 90
   playerFaceSpeed: 25

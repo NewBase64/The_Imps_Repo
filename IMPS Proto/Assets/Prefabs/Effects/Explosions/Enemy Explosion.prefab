@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDamage: 2
-  enemyDamage: 2
+  enemyDamage: 0
   explosionPushBack: 8
 --- !u!54 &3809519118320257194
 Rigidbody:

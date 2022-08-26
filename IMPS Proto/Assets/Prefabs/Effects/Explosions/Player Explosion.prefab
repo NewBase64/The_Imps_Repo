@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4fb4e2e69aa184c9ad9a74904ae8d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerDamage: 20
-  explosionPushBack: 20
+  playerDamage: 10
+  explosionPushBack: 10
 --- !u!54 &3809519118320257194
 Rigidbody:
   m_ObjectHideFlags: 0

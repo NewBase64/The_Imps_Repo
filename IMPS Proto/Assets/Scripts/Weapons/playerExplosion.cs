@@ -9,16 +9,19 @@ public class playerExplosion : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (!other.isTrigger)
         {
-            gamemanager.instance.playerScript.pushback = (gamemanager.instance.player.transform.position - transform.position) * explosionPushBack;
-            if (other.GetComponent<IDamageable>() != null)
-            {
-                IDamageable isDamagable = other.GetComponent<IDamageable>();
-                isDamagable.takeDamage(playerDamage);
-            }
+             if (!other.CompareTag("Player"))
+             {
+                 gamemanager.instance.playerScript.pushback = (gamemanager.instance.player.transform.position - transform.position) * explosionPushBack;
+                 if (other.GetComponent<IDamageable>() != null)
+                 {
+                     IDamageable isDamagable = other.GetComponent<IDamageable>();
+                     isDamagable.takeDamage(playerDamage);
+                 }
+             }
+             StartCoroutine(explosionTime());
         }
-        StartCoroutine(explosionTime());
     }
     IEnumerator explosionTime()
     {
