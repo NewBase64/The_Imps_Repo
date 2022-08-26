@@ -5,8 +5,8 @@ using UnityEngine;
 public class playerCamera : MonoBehaviour
 {
     [Header("Sensitivity")]
-    [Range(100, 1200)][SerializeField] int sensHori;
-    [Range(100, 1200)][SerializeField] int sensVert;
+    [Range(1, 1200)] public int sensHori;
+    [Range(1, 1200)] public int sensVert;
     [Header("-----------")]
     [Header("Attributes")]
     [Range(10, 180)][SerializeField] public float fov;
@@ -19,11 +19,15 @@ public class playerCamera : MonoBehaviour
     int lockVertMax = 90;
     float yRot;
 
+    public const string HorizontalSensitibility = "SensHori";
+    public const string VerticalSensitibility = "SensVert";
+
     void Start()
     {
         // Lock the cursor and hide it during gameplay
         gamemanager.instance.LockCursor();
         Camera.main.fieldOfView = fov;
+        LoadSensitivity();
     }
 
     void LateUpdate()
@@ -62,5 +66,13 @@ public class playerCamera : MonoBehaviour
     public void goUP()
     {
         transform.Translate(0, 1, 0);
+    }
+
+    void LoadSensitivity()
+    {
+        int horiSens = PlayerPrefs.GetInt(HorizontalSensitibility, 100);
+        int vertSens = PlayerPrefs.GetInt(VerticalSensitibility, 400);
+        sensHori = horiSens;
+        sensVert = vertSens;
     }
 }

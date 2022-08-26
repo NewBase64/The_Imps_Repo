@@ -98,7 +98,6 @@ public class Shield : MonoBehaviour
                 gamemanager.instance.ShieldIndicator.color = new Color(1, 1, 1, 0.68f);
             }
             yield return new WaitForSeconds(regenTimer);
-            AudioManager.instance.sfx.PlayOneShot(AudioManager.instance.shieldRegen);
             takeDamage(-1);
 
             //gamemanager.instance.playerScript.updateShieldHp();
